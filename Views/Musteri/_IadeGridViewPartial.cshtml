@@ -1,0 +1,68 @@
+@{
+
+
+        @Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+    )
+        @Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new Script { ExtensionSuite = ExtensionSuite.Editors },
+    new Script { ExtensionSuite = ExtensionSuite.GridView }
+    )
+
+
+
+
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "IadeGridView";
+        settings.CallbackRouteValues = new { Controller = "Musteri", Action = "IadeGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Musteri", Action = "IadeGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Musteri", Action = "IadeGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Musteri", Action = "IadeGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = false;
+        settings.CommandColumn.ShowNewButton = false;
+        settings.CommandColumn.ShowDeleteButton = false;
+        settings.CommandColumn.ShowEditButton = false;
+
+        settings.KeyFieldName = "StokId";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.ClientSideEvents.RowClick = "OnRowClick";
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+        settings.Columns.Add("StokId");
+        settings.Columns.Add("MusteriAdi");
+        settings.Columns.Add("Islemci");
+        settings.Columns.Add("Miktar");
+        settings.Columns.Add("IscilikCm");
+        settings.Columns.Add("IscilikCmG");
+        settings.Columns.Add("BirimFiyat");
+        settings.Columns.Add("Maliyet");
+        settings.Columns.Add("SatisTutari");
+        settings.Columns.Add("ToptanciAdi");
+        settings.Columns.Add("Ozellik1");
+        settings.Columns.Add("Ozellik2");
+        settings.Columns.Add("Ozellik3");
+        settings.Columns.Add("Ozellik4");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

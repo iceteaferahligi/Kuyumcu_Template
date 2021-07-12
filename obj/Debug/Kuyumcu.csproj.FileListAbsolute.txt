@@ -1,0 +1,1694 @@
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Data.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Utils.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxThemes.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.Mvc5.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\EntityFramework.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\EntityFramework.SqlServer.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Net.Http.Formatting.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Helpers.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Http.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Http.WebHost.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Mvc.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Razor.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.Razor.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\WebMatrix.Data.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Office.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Charts.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.Resources.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.DataAccess.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Xpo.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.CodeParser.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\EntityFramework.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\EntityFramework.SqlServer.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Net.Http.Formatting.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Helpers.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Http.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Http.WebHost.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Mvc.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.Razor.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\System.Web.WebPages.Razor.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Utils.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Data.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\WebMatrix.Data.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Office.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.DataAccess.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\DevExpress.Xpo.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\de\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\es\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Data.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Utils.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxThemes.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.Mvc5.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Office.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraReports.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Charts.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.Resources.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.DataAccess.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Xpo.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.CodeParser.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Utils.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Data.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Office.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraReports.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.DataAccess.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.Xpo.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Antlr3.Runtime.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExtreme.AspNet.Data.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\System.Web.Optimization.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\WebGrease.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Antlr3.Runtime.pdb
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExtreme.AspNet.Data.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\System.Web.Optimization.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Web.Resources.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Export.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.csproj.GenerateResource.cache
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraBars.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraBars.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\de\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\es\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ja\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\ru\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\Ercan Kardeşler Son\Kuyumcu\bin\tr\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Antlr3.Runtime.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExtreme.AspNet.Data.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\System.Web.Optimization.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\WebGrease.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Antlr3.Runtime.pdb
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExtreme.AspNet.Data.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\System.Web.Optimization.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.csproj.GenerateResource.Cache
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.pdb
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Charts.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.CodeParser.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Data.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.DataAccess.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Office.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Export.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Utils.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxThemes.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.Mvc5.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Xpo.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraReports.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraBars.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.Resources.v17.1.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.DataAccess.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Office.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Xpo.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraReports.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Utils.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Data.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraBars.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Data.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\de\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\es\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ja\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\ru\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\tr\DevExpress.Web.Resources.v17.1.resources.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.Barcode.resources
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\IronBarCode.dll
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\bin\IronBarCode.xml
+C:\Users\Musta\OneDrive\Masaüstü\KuyumcuSon\Kuyumcu\obj\Debug\Kuyumcu.Pirlantabarkod.resources
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Antlr3.Runtime.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Charts.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.CodeParser.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Data.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.DataAccess.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Office.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Export.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Utils.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxThemes.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.Mvc5.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.Resources.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Xpo.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraReports.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExtreme.AspNet.Data.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\IronBarCode.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Web.Optimization.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\WebGrease.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraBars.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Antlr3.Runtime.pdb
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.DataAccess.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Office.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Pdf.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.PivotGrid.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Sparkline.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Xpo.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraGauges.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraPrinting.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraReports.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraReports.v17.1.Web.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExtreme.AspNet.Data.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\IronBarCode.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Web.Optimization.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Utils.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Data.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Printing.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraEditors.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraBars.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraTreeList.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraLayout.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.XtraCharts.v17.1.Web.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v17.1.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.SpellChecker.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\DevExpress.Spreadsheet.v17.1.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.DataAccess.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Sparkline.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxScheduler.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraCharts.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraReports.v17.1.Web.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Utils.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Printing.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraEditors.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraBars.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxHtmlEditor.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxRichEdit.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpellChecker.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpreadsheet.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Web.ASPxTreeList.v17.1.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\de\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\es\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ja\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\ru\DevExpress.Spreadsheet.v17.1.Core.resources.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.Barcode.resources
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.Pirlantabarkod.resources
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.csproj.GenerateResource.cache
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.pdb
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Localization.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Options.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Win32.Primitives.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Mvc.Grid.Core.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.AppContext.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Buffers.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Console.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Globalization.Calendars.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.IO.Compression.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.IO.Compression.ZipFile.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.IO.FileSystem.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Net.Http.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Net.Sockets.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Text.Encodings.Web.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Xml.ReaderWriter.dll
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Localization.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Options.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\bin\System.Text.Encodings.Web.xml
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\Ferhat\source\repos\Kuyumcu\obj\Debug\Kuyumcu.AlyansTamirRapor.resources
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Kuyumcu.dll.config
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Kuyumcu.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Kuyumcu.pdb
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Antlr3.Runtime.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExtreme.AspNet.Data.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\IronBarCode.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Localization.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Options.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Win32.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Mvc.Grid.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Newtonsoft.Json.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.AppContext.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Buffers.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Console.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Globalization.Calendars.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.IO.Compression.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.IO.Compression.ZipFile.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.IO.FileSystem.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Net.Http.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Net.Sockets.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Text.Encodings.Web.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Web.Optimization.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Xml.ReaderWriter.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\WebGrease.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraEditors.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraBars.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraLayout.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraTreeList.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Images.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxHtmlEditor.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxDiagram.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraCharts.v19.2.Web.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxGantt.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxTreeList.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxSpellChecker.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxPivotGrid.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxRichEdit.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.SpellChecker.v19.2.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxSpreadsheet.v19.2.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Spreadsheet.v19.2.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Antlr3.Runtime.pdb
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.DataAccess.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Office.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Pdf.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.PivotGrid.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Sparkline.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxScheduler.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Xpo.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraCharts.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraGauges.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraPrinting.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraReports.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraReports.v19.2.Web.WebForms.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraReports.v19.2.Web.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraScheduler.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExtreme.AspNet.Data.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\IronBarCode.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Localization.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Options.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.PlatformAbstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\Newtonsoft.Json.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Text.Encodings.Web.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\System.Web.Optimization.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Utils.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Data.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.RichEdit.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Printing.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.Mvc5.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraEditors.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraBars.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraLayout.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraTreeList.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxHtmlEditor.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxDiagram.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.XtraCharts.v19.2.Web.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxGantt.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxTreeList.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxSpellChecker.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxPivotGrid.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxRichEdit.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.SpellChecker.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Web.ASPxSpreadsheet.v19.2.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\DevExpress.Spreadsheet.v19.2.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Utils.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Utils.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Utils.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Utils.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Data.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Data.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Data.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Data.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\de\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\es\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ja\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\bin\ru\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.AlyansTamirRapor.resources
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.Barcode.resources
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.Pirlantabarkod.resources
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.csproj.GenerateResource.cache
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.dll
+C:\Users\oztas\Desktop\Kuyumcu NO1\obj\Debug\Kuyumcu.pdb
+C:\Users\oztas\Desktop\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\oztas\Desktop\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\oztas\Desktop\Kuyumcu\bin\Antlr3.Runtime.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\DevExtreme.AspNet.Data.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\IronBarCode.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Localization.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Options.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Win32.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Mvc.Grid.Core.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.AppContext.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Buffers.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Console.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Globalization.Calendars.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.IO.Compression.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.IO.Compression.ZipFile.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.IO.FileSystem.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Net.Http.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Net.Sockets.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Text.Encodings.Web.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Web.Optimization.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Xml.ReaderWriter.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\WebGrease.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\Antlr3.Runtime.pdb
+C:\Users\oztas\Desktop\Kuyumcu\bin\DevExtreme.AspNet.Data.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\IronBarCode.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Localization.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Options.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Text.Encodings.Web.xml
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Web.Optimization.xml
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.AlyansTamirRapor.resources
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.Barcode.resources
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.Pirlantabarkod.resources
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.csproj.GenerateResource.cache
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.pdb
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\oztas\Desktop\Kuyumcu\bin\System.Web.Razor.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\AForge.Imaging.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\AForge.dll
+C:\Users\oztas\Desktop\Kuyumcu\bin\AForge.Math.dll
+C:\Users\oztas\Desktop\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Kuyumcu.dll.config
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Kuyumcu.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Kuyumcu.pdb
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Antlr3.Runtime.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Charts.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.CodeParser.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Data.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.DataAccess.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Office.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Pdf.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.PivotGrid.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Printing.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.RichEdit.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.RichEdit.v19.2.Export.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Sparkline.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Utils.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxThemes.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.Mvc5.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.Resources.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Xpo.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraGauges.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraPrinting.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.Web.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.Web.WebForms.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraScheduler.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExtreme.AspNet.Data.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExtreme.AspNet.Mvc.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\IronBarCode.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Localization.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Options.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Win32.Primitives.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Mvc.Grid.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Newtonsoft.Json.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.AppContext.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Buffers.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Console.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Globalization.Calendars.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.IO.Compression.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.IO.Compression.ZipFile.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.IO.FileSystem.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Net.Http.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Net.Sockets.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Text.Encodings.Web.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Web.Optimization.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Xml.ReaderWriter.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\WebGrease.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Images.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxDiagram.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v19.2.Web.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxGantt.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.SpellChecker.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Spreadsheet.v19.2.Core.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraEditors.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraBars.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraLayout.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraTreeList.v19.2.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\AForge.Imaging.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\AForge.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\AForge.Math.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Antlr3.Runtime.pdb
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Data.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.DataAccess.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Office.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Pdf.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.PivotGrid.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Printing.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.RichEdit.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Sparkline.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Utils.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxScheduler.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.Mvc5.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Xpo.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraGauges.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraPrinting.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.Web.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraReports.v19.2.Web.WebForms.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraScheduler.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExtreme.AspNet.Data.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExtreme.AspNet.Mvc.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\IronBarCode.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Localization.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Options.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.PlatformAbstractions.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\Newtonsoft.Json.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Text.Encodings.Web.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\System.Web.Optimization.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxHtmlEditor.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxDiagram.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraCharts.v19.2.Web.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxGantt.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxTreeList.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpellChecker.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxPivotGrid.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxRichEdit.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.SpellChecker.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Web.ASPxSpreadsheet.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.Spreadsheet.v19.2.Core.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraEditors.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraBars.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraLayout.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\DevExpress.XtraTreeList.v19.2.xml
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Data.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Data.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Data.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Data.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.DataAccess.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.PivotGrid.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Utils.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Utils.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Utils.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Utils.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxScheduler.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.Resources.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Xpo.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraCharts.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraReports.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraReports.v19.2.Web.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxHtmlEditor.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxDiagram.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxDiagram.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxDiagram.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxDiagram.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpellChecker.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxRichEdit.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Web.ASPxSpreadsheet.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.Spreadsheet.v19.2.Core.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\de\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\es\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\bin\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csprojAssemblyReference.cache
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.AlyansTamirRapor.resources
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.Barcode.resources
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.Fis.resources
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.Pirlantabarkod.resources
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csproj.GenerateResource.cache
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.dll.licenses
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csproj.CoreCompileInputs.cache
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.csproj.CopyComplete
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.dll
+C:\Users\reza_\Desktop\Kuyumcu\Kuyumcu\obj\Debug\Kuyumcu.pdb

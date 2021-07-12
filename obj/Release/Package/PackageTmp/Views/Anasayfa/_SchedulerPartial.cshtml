@@ -1,0 +1,17 @@
+@using Kuyumcu.Controllers;
+
+@{
+    var scheduler = Html.DevExpress().Scheduler(settings => {
+        settings.Name = "Scheduler";
+        settings.CallbackRouteValues = new { Controller = "Anasayfa", Action = "SchedulerPartial" };
+        settings.EditAppointmentRouteValues = new { Controller = "Anasayfa", Action = "SchedulerPartialEditAppointment" };
+
+        settings.Storage.EnableReminders = false;
+		settings.Storage.Appointments.Assign(AnasayfaControllerSchedulerSettings.AppointmentStorage);
+        settings.Storage.Resources.Assign(AnasayfaControllerSchedulerSettings.ResourceStorage);
+    });
+    if (ViewData["SchedulerErrorText"] != null) {
+        scheduler.SetErrorText((string)ViewData["SchedulerErrorText"]);
+    }
+}
+@scheduler.Bind(ViewData["Appointments"], ViewData["Resources"]).GetHtml()

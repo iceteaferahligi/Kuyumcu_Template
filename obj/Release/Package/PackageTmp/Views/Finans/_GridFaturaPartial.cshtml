@@ -1,0 +1,45 @@
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GridFatura";
+        settings.CallbackRouteValues = new { Controller = "Finans", Action = "GridFaturaPartial" };
+
+        //		settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Finans", Action = "GridFaturaPartialAddNew" };
+        //      settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Finans", Action = "GridFaturaPartialUpdate" };
+        //      settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Finans", Action = "GridFaturaPartialDelete" };
+        //      settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        //      settings.SettingsBehavior.ConfirmDelete = true;
+
+        //settings.CommandColumn.Visible = true;
+        //      settings.CommandColumn.ShowNewButton = true;
+        //      settings.CommandColumn.ShowDeleteButton = true;
+        //      settings.CommandColumn.ShowEditButton = true;
+
+        settings.KeyFieldName = "Id";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+        settings.ClientSideEvents.RowClick = "OnRowClick";
+
+        //settings.Columns.Add("Id");
+        settings.Columns.Add("FisNo");
+        settings.Columns.Add("Tarih");
+        settings.Columns.Add("Islemci");
+        settings.Columns.Add("Musteri");
+        settings.Columns.Add("SatisTutari");
+        settings.Columns.Add("AlimTutari");
+        settings.Columns.Add("KrediKarti");
+        settings.Columns.Add("Nakit");
+    });
+    if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+	}
+@grid.Bind(Model).GetHtml()

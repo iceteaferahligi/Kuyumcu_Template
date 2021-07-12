@@ -1,0 +1,596 @@
+﻿@model Kuyumcu.Models.Toptancilar
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+    $(document).ready(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+        });
+    </script>
+    <script>
+        $("#tarih").datepicker().datepicker("setDate", new Date());
+        var iscilik = 0;
+        var things = [];
+        $(document).ready(function () {
+            $("#urunBarkod").on("keyup", function (e) {
+                var key = e.which;
+
+                if (key == 13) // the enter key ascii code
+                {
+                    var value = document.getElementById("urunBarkod").value;
+
+                    $(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Finans/BorcEmanetIslemleri1",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "Json",
+                            data: JSON.stringify({
+                                barkod: value
+                            }),
+                            success: function (data) {
+                                if (data == "failed")
+                                    alert("Bu Ürün Veritabanında Bulunamadı!");
+                                else {
+                                    var array = data.split(", ", 10);
+
+                                    document.getElementById("adet").value = (parseFloat(document.getElementById("adet").value.replace(",", ".")) + 1);
+                                    document.getElementById("adet").value = (parseFloat(document.getElementById("adet").value).toFixed(3)).replace(".", ",");
+
+                                    document.getElementById("gram").value = (parseFloat(document.getElementById("gram").value.replace(",", ".")) + parseFloat(array[1].replace(",", ".")));
+                                    document.getElementById("gram").value = (parseFloat(document.getElementById("gram").value).toFixed(3)).replace(".", ",");
+
+
+                                    document.getElementById("odeme").value = (parseFloat(document.getElementById("odeme").value.replace(",", ".")) + parseFloat(array[5].replace(",", ".")));
+                                    document.getElementById("odeme").value = (parseFloat(document.getElementById("odeme").value).toFixed(3)).replace(".", ",");
+
+
+                                    document.getElementById("topgirisIscilik").value = (parseFloat(document.getElementById("topgirisIscilik").value.replace(",", ".")) + parseFloat(array[3].replace(",", ".")));
+                                    iscilik = iscilik + (parseFloat(document.getElementById("topgirisIscilik").value.replace(",", ".")));
+                                    document.getElementById("topgirisIscilik").value = (parseFloat(document.getElementById("topgirisIscilik").value).toFixed(3)).replace(".", ",");
+
+                                    document.getElementById("toplam").value = (parseFloat(document.getElementById("odeme").value.replace(",", ".")) + parseFloat(document.getElementById("topgirisIscilik").value.replace(",", ".")));
+                                    document.getElementById("toplam").value = (parseFloat(document.getElementById("toplam").value).toFixed(3)).replace(".", ",");
+
+                                    addField(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9]);
+                                }
+                            }
+                        });
+                    });
+                    document.getElementById("urunBarkod").value = "";
+                }
+            });
+        });
+
+        let i = 0;
+
+        function addField(bir, iki, uc, dort, bes, alti, yedi, sekiz, dokuz, on) {
+            let myTable = document.getElementById("barkodluUrunTablosu");
+            let currentRow = myTable.insertRow(-1);
+
+            myTable.setAttribute("class", "barkodluUrunTablosu");
+
+            var barkodNo = document.createElement("input");
+            barkodNo.setAttribute("id", "barkodNo" + i);
+            barkodNo.value = bir;
+
+            var miktar = document.createElement("input");
+            miktar.setAttribute("id", "miktar" + i);
+            miktar.value = iki;
+
+            var iscilikCM = document.createElement("input");
+            iscilikCM.setAttribute("id", "iscilikCM" + i);
+            iscilikCM.value = uc;
+
+            var girisIscilik = document.createElement("input");
+            girisIscilik.setAttribute("id", "girisIscilik" + i);
+            girisIscilik.value = dort;
+
+            var iscilikGr = document.createElement("input");
+            iscilikGr.setAttribute("id", "iscilikGr" + i);
+            iscilikGr.value = bes;
+
+            var hasNet = document.createElement("input");
+            hasNet.setAttribute("id", "hasNet" + i);
+            hasNet.value = alti;
+
+            var maliyet = document.createElement("input");
+            maliyet.setAttribute("id", "maliyet" + i);
+            maliyet.value = yedi;
+
+            var turu = document.createElement("input");
+            turu.setAttribute("id", "turu" + i);
+            turu.value = sekiz;
+
+            var satisTutari = document.createElement("input");
+            satisTutari.setAttribute("id", "satisTutari" + i);
+            satisTutari.value = dokuz;
+
+            var toptanci = document.createElement("input");
+            toptanci.setAttribute("id", "toptanci" + i);
+            toptanci.value = on;
+
+
+            var currentCell = currentRow.insertCell(-1);
+
+            currentCell.appendChild(barkodNo);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(miktar);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(iscilikCM);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(girisIscilik);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(iscilikGr);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(hasNet);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(maliyet);
+
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(turu);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(satisTutari);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(toptanci);
+
+            // currentCell = currentRow.insertCell(-1);
+            // currentCell.appendChild(alyansIscilikGR);
+
+            // currentCell = currentRow.insertCell(-1);
+            // currentCell.appendChild(birimFiyatı);
+            //
+            // currentCell = currentRow.insertCell(-1);
+            // currentCell.appendChild(satisTutari);
+            //
+            // currentCell = currentRow.insertCell(-1);
+            // currentCell.appendChild(iptalEtBox);
+
+            i = i + 1;
+        }
+        function getbakiye() {
+            var value = document.getElementById("toptanciAdi").value;
+            var value1 = document.getElementById("subeno").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/ToptanciAlim1",
+                data: { ToptanciAdi: value, subeno: value1 },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 8);
+                    for (var i = 0; i < 8; i++) {
+                        if (parseFloat(array[i]) < 0) {
+                            var num = 0 - parseFloat(array[i].replace(',', '.'));
+                            document.getElementById("Alacak" + i).value = num;
+                            document.getElementById("Alacak" + i).value = document.getElementById("Alacak" + i).value.replace('.', ',');
+                            document.getElementById("Borc" + i).value = 0;
+                        }
+                        else if (parseFloat(array[i]) > 0) {
+                            document.getElementById("Alacak" + i).value = 0;
+                            document.getElementById("Borc" + i).value = array[i].replace('.', ',');
+                        }
+                        else {
+                            document.getElementById("Alacak" + i).value = 0;
+                            document.getElementById("Borc" + i).value = 0;
+                        }
+                    }
+                }
+            });
+        }
+
+        function getToptancilar() {
+            var value = document.getElementById("subeno").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/ToptanciAlim3",
+                data: { magaza: value },
+                success: function (data) {
+                    var select = document.getElementById("toptanciAdi");
+                    $(toptanciAdi).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+        function result() {
+            ekle();
+            var m = JSON.stringify({
+                'toptancilar': things
+            });
+
+            things = [];
+            $(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Finans/BorcEmanetIslemleri2",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: m,
+                    success: function (data) {
+
+                        alert("İşlem Başarılı!");
+
+                        window.location.reload(true);
+                    }
+                });
+            });
+        }
+
+        function ekle() {
+            for (var k = 0; k < i; k++) {
+                k = k.toString();
+                try {
+                    things.push({
+                        barkodNo: document.getElementById('barkodNo' + k).value,
+                        miktar: document.getElementById('miktar' + k).value.replace('.', ','),
+                        iscilikCM: document.getElementById('iscilikCM' + k).value.replace('.', ','),
+                        girisIscilik: document.getElementById('girisIscilik' + k).value.replace('.', ','),
+                        iscilikGr: document.getElementById('iscilikGr' + k).value.replace('.', ','),
+                        hasNet: document.getElementById('hasNet' + k).value.replace('.', ','),
+                        maliyet: document.getElementById('maliyet' + k).value.replace('.', ','),
+                        turu: document.getElementById('turu' + k).value,
+                        satisTutari: document.getElementById('satisTutari' + k).value.replace('.', ','),
+                        toptancii: document.getElementById('toptanci' + k).value.replace('.', ','),
+
+                        ToptanciiAdi: document.getElementById('toptanciAdi').value.replace('.', ','),
+                        Islemci: document.getElementById('islemYapanPersonel').value,
+                        //IscilikCM: iscilik.replace('.', ','),
+                        Aciklama: document.getElementById('aciklama').value,
+                        BrutHasNet: document.getElementById('odeme').value.replace('.', ','),
+                        TopIscilik: document.getElementById('topgirisIscilik').value.replace('.', ','),
+                        ToplamHas: document.getElementById('toplam').value,
+                        IscilikZarar: document.getElementById('iscilikZarar').value.replace('.', ',')
+
+                    });
+                } catch {
+                    continue;
+                }
+
+            }
+
+        }
+        function getzarar() {
+
+            iscilik = (iscilik - parseFloat(document.getElementById("topgirisIscilik").value.replace(',', '.'))).toFixed(3);
+            document.getElementById("iscilikZarar").value = iscilik.replace('.', ',');
+
+
+            document.getElementById("toplam").value = (parseFloat(document.getElementById("odeme").value.replace(",", ".")) + parseFloat(document.getElementById("topgirisIscilik").value.replace(",", ".")));
+            document.getElementById("toplam").value = (parseFloat(document.getElementById("toplam").value).toFixed(3)).replace(".", ",");
+        }
+
+    </script>
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 80%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+
+        thead th {
+            text-align: center;
+        }
+
+        #barkodluUrunTablosu {
+            margin-top: 10px;
+            width: 100%;
+            alignment: center;
+        }
+
+        .barkodluUrunTablosu {
+            border: 2px solid darkslategrey;
+            text-align: center;
+        }
+
+        #barkodluUrunTablosu input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+        <div id="Araclar" class="collapsed">
+            <a href="Toptanci" button class="btn btn-dark kuyumcuAraclari">TOPTANCI</a>
+            <a href="ToptanciAlim" button class="btn btn-dark kuyumcuAraclari">TOPTANCI ALIM</a>
+            <a href="ToptanciyaOdeme" button class="btn btn-dark kuyumcuAraclari">TOPTANCIYA ÖDEME</a>
+            <a href="ToptanciBorcAlacakCevrimi" button class="btn btn-dark kuyumcuAraclari">
+                TOPTANCI BORÇ ve ALACAK
+                ÇEVRİMİ
+            </a>
+            <a href="ToptanciBorcAktarimi" button class="btn btn-dark kuyumcuAraclari">TOPTANCI BORÇ AKTARIMI</a>
+            <a href="BaglamaIslemleri" button class="btn btn-dark kuyumcuAraclari">BAĞLAMA İŞLEMLERİ</a>
+            <a href="ToptanciIade" button class="btn btn-dark kuyumcuAraclari">TOPTANCI IADE</a>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--TARİH-->
+                    <div>
+                        <label class="urunLabel" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.Hareket.Tarih, new { @class = "datepicker", id = "Tarih", type = "text" })
+                    </div>
+
+                    <div>
+                        <label class="urunLabel" for="tarih">Mağaza No</label>
+
+                        @Html.TextBoxFor(x => x.Hareket.SubeNo, new { @class = "inputField",id="subeno",type = "text", @Value= "NO1",@readonly = "readonly", onchange="getToptancilar()"})
+                    </div>
+
+                    <div>
+                        <label class="urunLabel" for="toptanciAdi">Toptancı Adı</label>
+                        @Html.DropDownListFor(x => x.toptanci.ToptanciAdi, new SelectList(Model.liste).ToList(),
+              "Seçiniz", new
+              {
+                  @Class = "comboBox",
+                  @id = "toptanciAdi",
+                  style = "width:80%",
+                  onchange = "getbakiye()"
+              })
+                    </div>
+
+
+
+                    <div>
+                        <label class="urunLabel" for="islemYapanPersonel">İşlem Yapan Personel</label>
+                        @Html.DropDownListFor(x => x.Hareket.Islemci, new SelectList(Model.Personel).ToList(),
+              "Seçiniz", new
+              {
+                  @Class = "comboBox",
+                  @id = "islemYapanPersonel",
+                  style = "width:80%",
+              })
+                    </div>
+                    <!--AÇIKLAMA-->
+                    <div>
+                        <label class="urunLabel" for="islemYapanPersonel">Açıklama</label>
+                        @Html.TextBoxFor(x => x.Hareket.Aciklama, new { @class = "inputField", type = "text", id = "aciklama" })
+                    </div>
+                </div>
+                <!--        TOPTANCI AKTARIM 1-->
+                <div class="col-md-6">
+                    <table id="borcAlacakTablosu">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>BORÇ</th>
+                                <th>ALACAK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>HAS</th>
+                                <td>
+                                    <input name="hasBorc" type="text" id="Borc0">
+                                </td>
+                                <td>
+                                    <input name="hasAlacak" type="text" id="Alacak0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>TL</th>
+                                <td>
+                                    <input name="tlBorc" type="text" id="Borc1">
+                                </td>
+                                <td>
+                                    <input name="tlAlacak" type="text" id="Alacak1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EURO</th>
+                                <td>
+                                    <input name="euroBorc" type="text" id="Borc2">
+                                </td>
+                                <td>
+                                    <input name="euroAlacak" type="text" id="Alacak2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>USD</th>
+                                <td>
+                                    <input name="usdBorc" type="text" id="Borc3">
+                                </td>
+                                <td>
+                                    <input name="usdAlacak" type="text" id="Alacak3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CHF</th>
+                                <td>
+                                    <input name="chfBorc" type="text" id="Borc4">
+                                </td>
+                                <td>
+                                    <input name="chfAlacak" type="text" id="Alacak4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>STRL</th>
+                                <td>
+                                    <input name="strlBorc" type="text" id="Borc5">
+                                </td>
+                                <td>
+                                    <input name="strlAlacak" type="text" id="Alacak5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>ÇEYREK</th>
+                                <td>
+                                    <input name="ceyrekBorc" type="text" id="Borc6">
+                                </td>
+                                <td>
+                                    <input name="ceyrekAlacak" type="text" id="Alacak6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>22 AYAR</th>
+                                <td>
+                                    <input name="22ayarBorc" type="text" id="Borc7">
+                                </td>
+                                <td>
+                                    <input name="22ayarAlacak" type="text" id="Alacak7">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label class="urunLabel" for="urunBarkod" style="text-align: center">ÜRÜN</label>
+                    <input type="text" class="inputField" style="width:100%" id="urunBarkod" name="urunBarkod">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <!--İşlemler Tablosu (GEÇMİŞ)-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    <!--            TABLOYU BURAYA KOYABİLİRSİN-->
+                    <table id="barkodluUrunTablosu" class="barkodluUrunTablosu">
+                        <thead class="barkodluUrunTablosu">
+                        <th>BARKOD</th>
+                        <th>MİKTAR</th>
+                        <th>İŞÇİLİK CM</th>
+                        <th>GİRİŞ İŞÇİLİK</th>
+                        <th>İŞÇİLİK GR</th>
+                        <th>HASNET</th>
+                        <th>MALİYET</th>
+                        <th>TÜRÜ</th>
+                        <th>SATIŞ TUTARI</th>
+                        <th>TOPTANCI</th>
+                        </thead>
+
+                    </table>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <!--ADET-->
+                        <div class="col-md-6">
+                            <label class="urunLabel" for="adet">Adet</label>
+                            <input type="text" class="inputField" style="width:100%" id="adet" value="0"
+                                   name="adet">
+                        </div>
+                        <!--GRAM-->
+                        <div class="col-md-6">
+                            <label class="urunLabel" for="gram">Gram</label>
+                            <input type="text" class="inputField" style="width:100%" id="gram" value="0"
+                                   name="gram">
+                        </div>
+                    </div>
+                        
+                        <div>
+                            <label class="urunLabel" for="odeme">Ödeme</label>
+                            @Html.TextBoxFor(x => x.Hareket.BrutHasNet, new { @class = "inputField", type = "text", id = "odeme", @Value = "0", style = "width:100%" })
+                        </div>
+                       
+                        <div>
+                            <label class="urunLabel" for="girisIscilik">Giriş İşçilik</label>
+                            @Html.TextBoxFor(x => x.Hareket.TopIscilik, new { @class = "inputField", type = "text", id = "topgirisIscilik", onchange = "getzarar()", @Value = "0", style = "width:100%" })
+                        </div>
+                        
+                        <div>
+                            <label class="urunLabel" for="toplam">Toplam</label>
+                            @Html.TextBoxFor(x => x.Hareket.ToplamHas, new { @class = "inputField", type = "text", id = "toplam", @Value = "0", style = "width:100%" })
+                        </div>
+                        
+                        <div>
+                            <label class="urunLabel" for="iscilikZarar">İşçilik Zarar</label>
+                            @Html.TextBoxFor(x => x.Hareket.ToplamHas, new { @class = "inputField", type = "text", id = "iscilikZarar", @Value = "0", style = "width:100%" })
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-success" onclick="result()">KAYDET</button>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+
+                </div>
+            </div>
+        </div>
+
+                    }
+</body>
+</html>

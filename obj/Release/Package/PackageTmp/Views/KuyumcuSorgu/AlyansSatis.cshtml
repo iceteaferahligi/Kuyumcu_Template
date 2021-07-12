@@ -1,0 +1,499 @@
+﻿@model Kuyumcu.Models.Kuyumcu.StokKart
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script type="text/javascript">
+    let i = 0;
+    let toplamTutar = 0;
+
+    function addField() {
+
+        $(document).ready(function () {
+
+            var onTable = false;
+
+            var id = document.getElementById("search").value;
+
+            for (var j = 0; j < document.getElementById("alyansSatisTablosu").rows.length; j++) {
+                if (id == document.getElementById("stokid" + j).innerHTML) {
+                    alert("Ürün tabloda var");
+                    onTable = true;
+                    break;
+                }
+            }
+
+            if (!onTable) {
+
+                $(function () {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "AlyansGetir",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: JSON.stringify({
+                            alyansBarkod: id
+                        }),
+                        success: function (data) {
+                            if (data == "failed") {
+                                alert("Barkod bulunamadı");
+                            }
+                            else {
+                                let myTable = document.getElementById("alyansSatisTablosu");
+                                let currentRow = myTable.insertRow(-1);
+
+                                var array = data.split(", ", 11);
+
+                                //var musteri = document.createElement("input");
+                                //musteri.setAttribute("id", "musteri" + i);
+
+                                //var personel = document.createElement("input");
+                                //personel.setAttribute("id", "personel" + i);
+
+                                var alyansIsim = document.createElement("input");
+                                alyansIsim.setAttribute("id", "alyansIsim" + i);
+
+                                var alyansOzellik1 = document.createElement("input");
+                                alyansOzellik1.setAttribute("id", "alyansOzellik1" + i);
+
+                                var alyansOzellik2 = document.createElement("input");
+                                alyansOzellik2.setAttribute("id", "alyansOzellik2" + i);
+
+                                var alyansOzellik3 = document.createElement("input");
+                                alyansOzellik3.setAttribute("id", "alyansOzellik3" + i);
+
+                                var alyansOzellik4 = document.createElement("input");
+                                alyansOzellik4.setAttribute("id", "alyansOzellik4" + i);
+
+                                var alyansMiktar = document.createElement("input");
+                                alyansMiktar.setAttribute("id", "alyansMiktar" + i);
+
+                                var alyansMilyem = document.createElement("input");
+                                alyansMilyem.setAttribute("id", "alyansMilyem" + i);
+
+                                var alyansIscilikCM = document.createElement("input");
+                                alyansIscilikCM.setAttribute("id", "alyansIscilikCM" + i);
+
+                                var alyansIscilikGR = document.createElement("input");
+                                alyansIscilikGR.setAttribute("id", "alyansIscilikGR" + i);
+
+                                var fiyat = document.createElement("input");
+                                fiyat.setAttribute("id", "fiyat" + i);
+
+                                var stokid = document.createElement("input");
+                                stokid.setAttribute("id", "stokid" + i);
+
+
+                                var currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansIsim);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansOzellik1);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansOzellik2);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansOzellik3);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansOzellik4);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansMiktar);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansMilyem);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansIscilikCM);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(alyansIscilikGR);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(fiyat);
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(stokid);
+
+                                document.getElementById("alyansIsim" + i).value = array[0];
+                                document.getElementById("alyansOzellik1" + i).value = array[1];
+                                document.getElementById("alyansOzellik2" + i).value = array[2];
+                                document.getElementById("alyansOzellik3" + i).value = array[3];
+                                document.getElementById("alyansOzellik4" + i).value = array[4];
+                                document.getElementById("alyansMiktar" + i).value = array[5];
+                                document.getElementById("alyansMilyem" + i).value = array[6];
+                                document.getElementById("alyansIscilikCM" + i).value = array[7];
+                                document.getElementById("alyansIscilikGR" + i).value = array[8];
+                                document.getElementById("fiyat" + i).value = array[9];
+                                document.getElementById("stokid" + i).value = array[10];
+
+                                var iptalEtBox = document.createElement("input");
+                                iptalEtBox.setAttribute("type", "button");
+                                iptalEtBox.setAttribute("value", "İptal");
+                                iptalEtBox.setAttribute("onclick", "deleteRow(this);");
+                                iptalEtBox.setAttribute("id", "button");
+                                iptalEtBox.setAttribute("class", "btn btn-outline-danger");
+
+                                currentCell = currentRow.insertCell(-1);
+                                currentCell.appendChild(iptalEtBox);
+
+
+
+                                toplamTutar += parseInt(array[9]);
+
+                                document.getElementById("toplamTutar").value = toplamTutar;
+                                i++;
+
+                            }
+                        }
+                    });
+                });
+            }
+
+        });
+    }
+
+    function onayla() {
+
+        $(document).ready(function () {
+
+            var stokKartlar = new Array(document.getElementById("alyansSatisTablosu").rows.length);
+
+            var musteri = document.getElementById("musteriId").value;
+
+            var personel = document.getElementById("personelId").value;
+
+            if (i > 0 && musteri != null && personel != null) {
+
+                for (var j = 0; j < document.getElementById("alyansSatisTablosu").rows.length; j++) {
+                    stokKartlar[j] = document.getElementById("stokid" + j).innerHTML;
+                }
+
+
+                $(function () {
+
+                    var conf = confirm("Onaylıyor musunuz?")
+
+                    if (conf) {
+
+                        $.ajax({
+                            type: "POST",
+                            traditional: true,
+                            url: "AlyansSatis",
+                            data: {
+                                hareketler: stokKartlar,
+                                musteriId: musteri,
+                                personelId: personel
+                            },
+                            success: function () {
+                                var tbody = document.getElementById("alyansSatisTablosu").childNodes[0];
+                                tbody.parentNode.removeChild(tbody);
+                                document.getElementById("toplamTutar").value = 0;
+                                document.getElementById("personelId").value = "";
+                                document.getElementById("musteriId").value = "";
+                                document.getElementById("personelSearch").value = "";
+                                document.getElementById("musteriSearch").value = "";
+                                document.getElementById("search").value = "";
+                            }
+                        });
+                    }
+
+                });
+            }
+
+        });
+    }
+
+    function deleteRow(btn) {
+
+        var row = btn.parentNode.parentNode;
+        toplamTutar -= parseInt(row.childNodes[9].childNodes[0].innerHTML);
+        row.parentNode.removeChild(row);
+        document.getElementById("toplamTutar").value = toplamTutar;
+    }
+
+    function searchPersonel() {
+
+        var personelId = document.getElementById("personelSearch").value;
+
+        $(document).ready(function () {
+
+            $(function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "PersonelAra",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: JSON.stringify({
+                        personelnumara: personelId
+                    }),
+                    success: function (personelAdSoyad) {
+                        document.getElementById("personelId").value = personelAdSoyad;
+                    }
+                });
+            });
+        });
+    }
+
+    function searchMusteri() {
+
+        var musteriId = document.getElementById("musteriSearch").value;
+
+        $(document).ready(function () {
+
+            $(function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "musteriAra",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: JSON.stringify({
+                        musteriNumara: musteriId
+                    }),
+                    success: function (musteriAdSoyad) {
+                        document.getElementById("musteriId").value = musteriAdSoyad;
+                    }
+                });
+            });
+        });
+    }
+
+</script>
+<style>
+
+    #alyansSatisTablosu {
+        margin-left: 20px;
+        margin-top: 30px;
+        width: auto;
+        
+    }
+
+    .alyansSatisTablosu {
+        border: 2px solid darkslategrey;
+        text-align: center;
+    }
+    .alyansSatisTablosu input {
+        border: 2px solid darkslategrey;
+        text-align: center;
+        width:100%;
+    }
+
+    .fixedNavbar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .footer {
+        position: fixed;
+        right: 0;
+        bottom: 10px;
+        width: 200%;
+        text-align: center;
+    }
+
+    #Araclar {
+        margin: 8px;
+    }
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .searchBar {
+        width: 30%;
+        margin: 15px;
+    }
+
+    #bar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    #bar.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    #musteriBar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    #musteriBar.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        /*border-left: none;*/ /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    #personelBar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    #personelBar.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    .footerTutar {
+        position: static;
+        /*right: 0;*/
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+</style>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark araclarMenu">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark araclarMenu">ALYANS SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark araclarMenu">ALYANS SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark araclarMenu">ALYANS TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark araclarMenu">BUGÜN</a>
+    </div>
+
+    <div style="display: inline-flex">
+        <div id="bar" class="searchBar" style="display:flex">
+            <input @*type="text"*@ id="search" placeholder="Ürün barkodunu giriniz.." name="search">
+            <button class="btn-m btn-success" onclick="addField()" type="button">
+                <i class="fa fa-xs fa-plus-square"></i>
+            </button>
+        </div>
+        <div id="musteriBar" class="searchBar" style="display:flex">
+            <input @*type="text"*@ id="musteriSearch" placeholder="Musteri barkodunu giriniz" name="musteriSearch" />
+            <button class="btn-m btn-success" onclick="searchMusteri()" type="button">
+                <i class="fa fa-xs fa-plus-square"></i>
+            </button>
+        </div>
+        <div id="personelBar" class="searchBar" style="display:flex">
+            <input @*type="text"*@ id="personelSearch" placeholder="Personel barkodunu giriniz" name="personelSearch" />
+            <button class="btn-m btn-success" onclick="searchPersonel()" type="button">
+                <i class="fa fa-xs fa-plus-square"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+    <div style="display: inline-flex">
+        <div id="musteriIdBar" style="display:flex">
+            <input type="text" id="musteriId" />
+        </div>
+        <div id="personelIdBar" style="display:flex">
+            <input type="text" id="personelId" />
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="display: inline;margin-top:25px;">
+                <table width="100%" id="alyansSatisTablosu" class="alyansSatisTablosu"></table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerTutar" align="center">
+        <input type="text" id="toplamTutar" placeholder="Toplam Tutar" name="toplamTutar"
+               style="background:ghostwhite; width:15%;text-align:center;">
+        <div>
+            <text id="tahsilat" disabled></text>
+        </div>
+        <button type="button " class="btn-m btn-success" onclick="onayla()">
+            <i class="fa fa-fw fa-shopping-cart"></i>Onayla
+        </button>
+
+    </div>
+</body>
+</html>

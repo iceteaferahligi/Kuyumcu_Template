@@ -1,0 +1,385 @@
+﻿@model Kuyumcu.Models.OzelBanka
+
+@{
+
+}
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        function degistir() {
+            if (document.getElementById("islemTuru").value == "Kasadan Bankaya Para Aktarımı") {
+                document.getElementById("musteriIsmi").disabled = true;
+                document.getElementById("giderKalemleri").disabled = true;
+                document.getElementById("gelirIslemKasasi").disabled = false;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+            else if (document.getElementById("islemTuru").value == "Müşteri Hesabından hesabımıza Havale") {
+                document.getElementById("musteriIsmi").disabled = false;
+                document.getElementById("gelirIslemKasasi").disabled = true;
+                document.getElementById("giderKalemleri").disabled = true;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+            else if (document.getElementById("islemTuru").value == "Bankadan Gidere Ödeme") {
+                document.getElementById("gelirIslemKasasi").disabled = true;
+                document.getElementById("musteriIsmi").disabled = true;
+                document.getElementById("giderKalemleri").disabled = false;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+            else if (document.getElementById("islemTuru").value == "Bankadan Cariye Ödeme") {
+                document.getElementById("gelirIslemKasasi").disabled = true;
+                document.getElementById("musteriIsmi").disabled = false;
+                document.getElementById("giderKalemleri").disabled = true;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+            else if (document.getElementById("islemTuru").value == "Bankadan Toptancıya Ödeme") {
+                document.getElementById("gelirIslemKasasi").disabled = true;
+                document.getElementById("musteriIsmi").disabled = false;
+                document.getElementById("giderKalemleri").disabled = true;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+            else if (document.getElementById("islemTuru").value == "Bankadan Üreticiye Ödeme") {
+                document.getElementById("gelirIslemKasasi").disabled = true;
+                document.getElementById("musteriIsmi").disabled = false;
+                document.getElementById("giderKalemleri").disabled = true;
+                document.getElementById("islemTuru").disabled = false;
+                document.getElementById("gelirIslemPersonel").disabled = false;
+                document.getElementById("bankaAciklama").disabled = false;
+                document.getElementById("bankaAdi").disabled = false;
+                document.getElementById("bankaHesapNumarasi").disabled = false;
+                document.getElementById("hesapdovizTuru").disabled = false;
+                document.getElementById("islemTutar").disabled = false;
+            }
+        }
+
+        function getTur() {
+            var value2 = document.getElementById("subeAdi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BankadanOdeme2",
+                data: { SubeNo: value2 },
+                success: function (data) {
+                    var select = document.getElementById("hesapdovizTuru");
+                    $(hesapdovizTuru).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+        function gethesapNo() {
+            var value = document.getElementById("bankaAdi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BankadanOdeme1",
+                data: { BankaAdi: value },
+                success: function (data) {
+                    var select = document.getElementById("hesapdovizTuru");
+                    $(hesapdovizTuru).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+                }
+            });
+        }
+        function gethesapno2() {
+            var value = document.getElementById("subeAdi").value;
+            var value1 = document.getElementById("hesapdovizTuru").value;
+            var value2 = document.getElementById("bankaAdi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BankadanOdeme3",
+                data: { subeadi: value, dovizturu: value1, bankaAdi: value2 },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    document.getElementById("bankaHesapNumarasi").value = data;
+                   
+                }
+            });
+        }
+    </script>
+
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            width: 100%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+        .pairRow {
+            display: inline-flex;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        #bankabakiyepartial table {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="Onay" button class="btn btn-dark araclarMenu">FATURA EKRANI</a>
+        <a href="BankaTanim" button class="btn btn-dark araclarMenu">BANKA TANIM</a>
+        <a href="KomisyonTanim" button class="btn btn-dark araclarMenu">KOMİSYON TANIM</a>
+        <a href="Gelir_Gider" button class="btn btn-dark araclarMenu">GELİR-GİDER</a>
+        <a href="Kasa" button class="btn btn-dark araclarMenu">KASA</a>
+        <a href="BankaIslemleri" button class="btn btn-dark araclarMenu">BANKA İŞLEMLERİ</a>
+        <a href="BankadanOdeme" button class="btn btn-dark araclarMenu">BANKADAN ÖDEME</a>
+        <a href="ToptanciAlim" button class="btn btn-dark araclarMenu">TOPTANCI ALIM</a>
+        <a href="ToptanciyaOdeme" button class="btn btn-dark araclarMenu">TOPTANCIYA ÖDEME</a>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--TARİH-->
+                    <div>
+                        <label class="urunLabel" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.Hareket1.Tarih, new { @class = "inputField", id = "tarih", name = "gelirTL", type = "date" })
+                    </div>
+                    <!--İŞLEM TÜRÜ-->
+                    <div>
+                        <label class="urunLabel" for="islemTuru">İşlem Türü</label>
+
+                        @Html.DropDownListFor(x => x.Hareket1.HareketTipi, new List<SelectListItem>
+                         {
+                             new SelectListItem { Text = "Kasadan Bankaya Para Aktarımı", Value = "Kasadan Bankaya Para Aktarımı"},
+                             new SelectListItem { Text = "Müşteri Hesabından hesabımıza Havale", Value = "Müşteri Hesabından hesabımıza Havale"},
+                             new SelectListItem { Text = "Bankadan Gidere Ödeme", Value = "Bankadan Gidere Ödeme"},
+                             new SelectListItem { Text = "Bankadan Cariye Ödeme", Value = "Bankadan Cariye Ödeme"},
+                             new SelectListItem { Text = "Bankadan Toptanciya Ödeme", Value = "Bankadan Toptanciya Ödeme"},
+                             new SelectListItem { Text = "Bankadan Üreticiye Ödeme", Value = "Bankadan Üreticiye Ödeme"}
+                         }, "Seçiniz",
+                         new
+                         {
+                              @id = "islemTuru",
+                              @class = "comboBox",
+                              onchange = "degistir()"
+                         })
+
+                    </div>
+                    <!--İŞLEM KASASI-->
+                    <div>
+                        <label class="urunLabel" for="islemKasasi">İşlem Kasası</label>
+                        @Html.DropDownListFor(x => x.Hareket1.StokId, new SelectList(Model.KasaAdi).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "gelirIslemKasasi",
+
+                         })
+                    </div>
+                    <!--            ŞUBE NO-->
+                    <div>
+                        <label class="urunLabel" for="subeAdi">Şube Adı</label>
+                        @Html.DropDownListFor(x => x.Hareket1.SubeNo, new List<SelectListItem>
+                         {
+                             new SelectListItem { Text = "NO1", Value = "NO1"},
+                             new SelectListItem { Text = "NO9", Value = "NO9"}
+
+
+                         }, "Seçiniz",
+                         new
+                         {
+                             @id = "subeAdi",
+                             @class = "comboBox",
+                             onchange = "getTur()"
+                         })
+                    </div>
+                    <!--Gider Kalemleri-->
+                    <div>
+                        <label class="urunLabel" for="giderKalemleri">Gider Kalemleri</label>
+
+                        @Html.DropDownListFor(x => x.Hareket1.HareketTuru, new SelectList(Model.GiderAc).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "giderKalemleri",
+                         })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!--Personel-->
+                    <div>
+                        <label class="urunLabel" for="gelirIslemPersonel">İşlem Yapan Personel</label>
+
+                        @Html.DropDownListFor(x => x.Hareket1.Islemci, new SelectList(Model.Personel).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "gelirIslemPersonel",
+                         })
+                    </div>
+
+                    <!--Müşteri İsmi-->
+                    <div>
+                        <label class="urunLabel" for="musteriIsmi">Müşteri İsmi</label>
+                        @Html.DropDownListFor(x => x.Hareket1.MusteriAdi, new SelectList(Model.Musteriler).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "musteriIsmi",
+                         })
+                    </div>
+                    <!--            BANKA AÇIKLAMA-->
+                    <div>
+                        <label class="urunLabel" for="bankaAciklama">Açıklama</label>
+                        @Html.TextBoxFor(x => x.Hareket1.Aciklama, new { @class = "inputField", id = "bankaAciklama", name = "bankaAciklama" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!--            BANKA ADI-->
+                    <div>
+                        <label class="urunLabel" for="bankaAdi">Banka Adı</label>
+                        @Html.DropDownListFor(x => x.Hareket1.StokId, new SelectList(Model.Bankalar).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "bankaAdi",
+                             onchange = "gethesapNo()"
+                         })
+                    </div>
+                    <!--            BANKA ŞUBE ADI-->
+                    <div>
+                        <label class="urunLabel" for="bankaSubeAdi">Döviz Türü</label>
+                        @Html.DropDownListFor(x => x.Bank.HesapDovizTuru, new SelectList(Model.DovizTuru).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "hesapdovizTuru",
+                             onchange = "gethesapno2()"
+                         })
+                    </div>
+                    <!--            BANKA HESAP NUMARASI ve DÖVİZ TÜRÜ-->
+                    <div class="pairRow">
+                        <div>
+                            <label for="bankaHesapNumarasi">Hesap Numarası</label>
+                            @Html.TextBoxFor(x => x.Bank.HesapNumarasi, new { @class = "inputField", id = "bankaHesapNumarasi", name = "bankaHesapNumarasi" })
+                            <!--<select class="comboBox" id="ozellik2">-->
+                            <!--<option></option>-->
+                            <!--</select>-->
+                        </div>
+
+                    </div>
+                    <!--            Tutar-->
+                    <div>
+                        <label class="urunLabel" for="islemTutar">Tutar</label>
+                        @Html.TextBoxFor(x => x.Toplam, new { @class = "inputField", id = "islemTutar", name = "islemTutar" })
+
+                    </div>
+                    <input name="submit" class="btn btn-success" type="submit" id="submit" value="KAYDET" />
+                </div>
+            </div>
+        </div>
+        <div id="bankabakiyepartial">
+            @Html.DevExpress().GetStyleSheets(
+                new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+            )
+            @Html.DevExpress().GetScripts(
+                new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                new Script { ExtensionSuite = ExtensionSuite.Editors },
+                new Script { ExtensionSuite = ExtensionSuite.GridView }
+            )
+            @Html.Action("GridBankaBakiyePartial")
+
+        </div>
+
+    }
+</body>
+</html>

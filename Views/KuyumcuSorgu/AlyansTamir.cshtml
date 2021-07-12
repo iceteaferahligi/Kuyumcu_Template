@@ -1,0 +1,471 @@
+﻿@model Kuyumcu.Models.tamirazozel
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css">
+    <script src="~/Scripts/alertify.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+    
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+
+
+
+    <style>
+        .comboBox {
+            /*width: 170px;*/
+            width: 42%;
+            text-align: center;
+            height: 32px;
+        }
+
+        .ui-autocomplete {
+            overflow: auto;
+            max-height: 100px;
+        }
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .midsoftLogo {
+            width: 5%;
+            height: 50px;
+            /*float:right;*/
+            padding-top: 3px;
+            position: absolute;
+            right: 25px;
+        }
+
+
+        #tableMusteriBilgi td, #tableMusteriBilgi th {
+            border: 2px solid #ddd;
+            padding: 15px;
+        }
+
+        #tableMusteriBilgi tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #tableMusteriBilgi tr:hover {
+            background-color: darkseagreen;
+        }
+
+        #tableMusteriBilgi th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 42%;
+        }
+
+
+        .alyansLabel {
+            /*width: 92px;*/
+            text-align: left;
+            width: 140px;
+            margin: 8px;
+            font-weight: bold;
+        }
+
+
+        .searchBar {
+            /*width: 30%;*/
+            margin: 15px;
+        }
+
+        #bar.searchBar input[type=text] {
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 30%;
+            background: #f1f1f1;
+        }
+
+        #bar.searchBar button {
+            float: left;
+            /*width: 14%;*/
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+        .alyansStyle {
+            text-align: center;
+            /*border-right: 5px ridge;*/
+        }
+
+        .layoutStyle {
+            text-align: center;
+            border-right: 5px ridge;
+            border-left: 5px ridge;
+        }
+
+        .butonLayout {
+            margin-top: 2%;
+            text-align: center;
+            padding: 2%;
+            border-top: 5px groove;
+        }
+
+        .tblEmployee {
+            font-family: verdana, arial, sans - serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        .tamirTableTH {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        .tamirTableTD {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+    </style>
+    <script>
+
+         $(document).ready(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+
+        $(document).ready(function () {
+            $('#edit').click(function () {
+                $('.fieldSetDisable').removeAttr("disabled")
+            });
+        });
+        $(document).ready(function () {
+            $('#save').click(function () {
+                $('.fieldSetDisable').attr("disabled", "true")
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+
+        var things;
+        var g = 0;
+        var i = 0;
+
+
+        function PrintTamir(data) {
+            window.open(data, "PrintingFrame");
+
+        }
+
+        function result() {
+            $(document).ready(function () {
+
+                things = ({
+
+                    MusteriAdi: document.getElementById('musteriAdi').value,
+                    islemci: document.getElementById('islemYapanPersonel').value,
+                    aciklama: document.getElementById('tamirAciklama').value,
+                    ayar: document.getElementById('ayar').value.replace('.', ','),
+                    agirlik: document.getElementById('agirlik').value,
+                    ucret: document.getElementById('ucret').value,
+                    TelNo: document.getElementById('TelNo').value,
+                    subeno: document.getElementById('subeno').value,
+                    tarih: document.getElementById('tarih').value,
+                    adress1: document.getElementById('adres1').value,
+                    adress2: document.getElementById('adres2').value,
+                    mail: document.getElementById('mail').value,
+
+
+                });
+                // console.log(things);
+                var m = JSON.stringify({
+                    'model': things
+                })
+                //  console.log(m);
+
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/KuyumcuSorgu/AlyansTamir",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: m,
+                        success: function (data) {
+                            // console.log("this far!");
+                            alert("İşlem Başarılı!");
+                            PrintTamir(data);
+                            window.location.reload(true);
+
+                        },
+                        error: function (error) {
+                            console.log("HATA");
+                            alert("Hata Oluştu Lütfen Alanları Doldurun!");
+                        }
+
+
+                    });
+                });
+
+            });
+        }
+
+        //$(function () {
+        //    $("#musteriAdi").autocomplete({
+        //        minLength: 2,
+        //        source: function (request, response) {
+
+        //            $.ajax({
+        //                url: '/Kuyumcu/AutoComplete/',
+        //                data: "{ 'prefix': '" + request.term + "'}",
+        //                dataType: "json",
+        //                type: "POST",
+        //                contentType: "application/json; charset=utf-8",
+        //                success: function (data) {
+        //                    response($.map(data, function (item) {
+
+        //                        return item;
+        //                    }))
+        //                },
+        //                error: function (response) {
+        //                    alert(response.responseText);
+        //                },
+        //                failure: function (response) {
+        //                    alert(response.responseText);
+        //                }
+        //            });
+        //        },
+        //        select: function (e, i) {
+        //            $("#hfCustomer").val(i.item.val);
+        //            $("#TelNo").val(i.item.telefon);
+        //            $("#mail").val(i.item.email);
+        //            $("#adres1").val(i.item.adress1);
+        //            $("#adres2").val(i.item.adress2);
+        //        },
+
+        //    }).focus(function () {
+        //        $(this).autocomplete("search");
+        //    });
+        //});
+        
+    </script>
+</head>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark kuyumcuAraclari">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark kuyumcuAraclari">BUGÜN</a>
+        <a href="/KuyumcuSorgu/Pozisyonlar" button class="btn btn-dark kuyumcuAraclari">POZİSYONLAR</a>
+        <a href="/KuyumcuSorgu/Sayim" button class="btn btn-dark kuyumcuAraclari">SAYIM</a>
+    </div>
+    <div>
+        @*<div id="bar" class="searchBar" style="display:flex">
+                <input type="text" placeholder="Müşteri Adını Giriniz.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>*@
+    </div>
+    @using (Html.BeginForm("AlyansTamir", "KuyumcuSorgu", FormMethod.Post))
+    {
+        @*<script>
+             if (@ViewBag.message!= null) {
+            if (@ViewBag.message== "1") {
+
+                alertify.success("Müşteri Adı Boş Olamaz");
+
+            }
+            else if (@ViewBag.message== "2") {
+
+                alertify.warning("İşlemci Seçiniz!!");
+            }
+            else {
+
+                alertify.error("Başarısız");
+            }
+        }
+        </script>*@
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 alyansStyle">
+                    <!--TARİH-->
+                    <div>
+                        <label class="alyansLabel" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.tamir.tarih, new { @class = "datepicker", type = "text", id = "tarih",style = "text-align:center;border-style:inset; background-color: whitesmoke; width: 42%;",
+                                       @Value = DateTime.Today.ToString("dd/MM/yyyy") })
+                    </div>
+                    <!--AD SOYAD-->
+                    <div>
+                        <label class="alyansLabel" for="adSoyad">Ad Soyad</label>
+                        @Html.TextBoxFor(x => x.tamir.MusteriAdi, new { @class = "inputField", type = "text", id = "musteriAdi" })
+                        <input type="hidden" id="hfCustomer" name="CustomerId" />
+                    </div>
+                    <!--TEL NO-->
+                    <div>
+                        <label class="alyansLabel" for="telNo">Tel No</label>
+                        @Html.TextBoxFor(x => x.tamir.TelNo, new { @class = "inputField", type = "text", id = "TelNo" })
+                    </div>
+
+                    <!--E MAİL-->
+                    <div>
+                        <label class="alyansLabel" for="eMail">E Mail</label>
+                        @Html.TextBoxFor(x => x.tamir.mail, new { @class = "inputField", type = "text", id = "mail" })
+                    </div>
+                    <!--Adres1-->
+                    <div>
+                        <label class="alyansLabel" for="adres1">Adres 1</label>
+                        @Html.TextBoxFor(x => x.tamir.adres1, new { @class = "inputField", type = "text", id = "adres1" })
+                    </div>
+                    <!--Adres2-->
+                    <div>
+                        <label class="alyansLabel" for="adres2">Adres 2</label>
+                        @Html.TextBoxFor(x => x.tamir.adres2, new { @class = "inputField", type = "text", id = "adres2" })
+                    </div>
+
+                </div>
+                <div class="col-4 layoutStyle">
+                    <!--AYAR-->
+                    <div>
+                        <label class="alyansLabel" for="alyansAyar">Ayar</label>
+                        @Html.TextBoxFor(x => x.tamir.ayar, new { @class = "inputField", type = "text", id = "ayar" })
+                    </div>
+                    <!--AĞIRLIK-->
+                    <div>
+                        <label class="alyansLabel" for="alyansAgirlik">Ağırlık</label>
+                        @Html.TextBoxFor(x => x.tamir.agirlik, new { @class = "inputField", type = "text", id = "agirlik" })
+                    </div>
+                    <!--SİPARİŞ NOTU-->
+                    <div>
+                        <label class="alyansLabel" for="tamirAciklama" style="text-align: center">Açıklama</label>
+                        @Html.TextAreaFor(x => x.tamir.aciklama, new { id = "tamirAciklama", style = "width:100%", rows = "5", cols = "45" })
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!--MAĞAZA-->
+                    <div>
+                        <label class="alyansLabel" for="ucret">Sube No</label>
+                        @Html.TextBoxFor(x => x.tamir.subeno, new { @class = "inputField", id="subeno", type="text", @Value="NO1", @readonly = "readonly"})
+                        
+
+                    </div>
+                    <!--ÜCRET-->
+                    <div>
+                        <label class="alyansLabel" for="ucret">Ücret</label>
+                        @Html.TextBoxFor(x => x.tamir.ucret, new { @class = "inputField", type = "text", id = "ucret" })
+
+                    </div>
+                    <!--TESLİM ALAN-->
+                    <div>
+                        <label class="alyansLabel" for="teslimAlan">Teslim Alan</label>
+                        @Html.DropDownListFor(x => x.tamir.islemci, new SelectList(Model.personel).ToList(),
+                          "Seçiniz", new
+                          {
+
+                              @Class = "comboBox",
+                              @id = "islemYapanPersonel"
+                              //style = "width:50%",
+
+                          })
+                    </div>
+                    <!--BUTONLAR-->
+                    @*<div class="container-fluid butonLayout">*@
+                    <br><br>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-3">
+                            <button type="button" id="btnJsonResult" class="" style="color:white;background-color:#394F85;"
+                                    onclick="result()">
+                                Kaydet & Yazdır
+                            </button>
+
+                            <iframe name="PrintingFrame" style="position:absolute; left: -10000px; top: -10000px;"></iframe>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        @*</div>*@
+
+      
+        <div class="container-fluid">
+            @*<table id="tableTamir">
+        </table>*@
+            @{ Html.EnableClientValidation(false); }
+            @Html.DevExpress().GetStyleSheets(
+                new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+            )
+            @Html.DevExpress().GetScripts(
+                new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                new Script { ExtensionSuite = ExtensionSuite.Editors },
+                new Script { ExtensionSuite = ExtensionSuite.GridView }
+            )
+            <div style="margin:40px;">
+                @Html.Action("AlyansTamirPartial")
+            </div>
+
+        </div>
+
+    }
+</body>
+</html>

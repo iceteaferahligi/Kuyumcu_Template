@@ -1,0 +1,315 @@
+﻿@model Kuyumcu.Models.BEhareket
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+   
+    <script>
+    $(document).ready(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+        });
+    </script>
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+
+        thead th {
+            text-align: center;
+        }
+
+        .tabStyle {
+            text-align: center;
+            justify-content: center;
+            /*border: 3px groove;*/
+        }
+
+        .finansLabel {
+            text-align: center;
+            font-weight: bold;
+            margin: 3px;
+        }
+
+        .pairRow {
+            display: inline-flex;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        function OnRowClick(Value) {
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BEM",
+                data: { k: Value },
+                success: function (data) {
+
+                    data = JSON.parse(data);
+                    document.getElementById("detay").value = data;
+                    document.getElementById("cariHesapKodu").value = Value;
+                    $.ajax({
+                        dataType: "html",
+                        type: "POST",
+                        url: "/Finans/BEM1",
+                        data: { k: Value },
+                        success: function (data) {
+                            data = JSON.parse(data);
+                            document.getElementById("MusteriAdi").value = data;
+                        }
+                    });
+
+                }
+            });
+        }
+        function HandleRowDoubleClick(s, e) {
+            s.GetRowValues(e.visibleIndex, 'id', OnRowClick)
+        }
+
+        function getextra() {
+            if (document.getElementById("islemTuru").value == "BORÇ-EMANET ÖDEME" || document.getElementById("islemTuru").value == "BORÇ-EMANET TAHSİL") {
+                document.getElementById("emanetCinsi2").hidden = true;
+                document.getElementById("miktar2").hidden = true;
+                document.getElementById("ec2").hidden = true;
+                document.getElementById("m2").hidden = true;
+
+                if (document.getElementById("islemTuru").value == "BORÇ-EMANET ÖDEME") {
+                    document.getElementById("ec").innerHTML = "Emanet Cinsi";
+                }
+                else if (document.getElementById("islemTuru").value == "BORÇ-EMANET TAHSİL") {
+                    document.getElementById("ec").innerHTML = "Borç Cinsi";
+                }
+
+            }
+            else if (document.getElementById("islemTuru").value == "BORÇ DÖNÜŞÜM" || document.getElementById("islemTuru").value == "EMANET DÖNÜŞÜM") {
+                document.getElementById("emanetCinsi2").hidden = false;
+                document.getElementById("miktar2").hidden = false;
+                document.getElementById("ec2").hidden = false;
+                document.getElementById("m2").hidden = false;
+                if (document.getElementById("islemTuru").value == "BORÇ DÖNÜŞÜM") {
+                    document.getElementById("ec").innerHTML = "Borç Cinsi";
+                    document.getElementById("ec2").innerHTML = "Dönüşüm Cinsi";
+                }
+                else if (document.getElementById("islemTuru").value == "EMANET DÖNÜŞÜM") {
+                    document.getElementById("ec").innerHTML = "Emanet Cinsi";
+                    document.getElementById("ec2").innerHTML = "Dönüşüm Cinsi";
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="navbar" style="background-color:#394F85">
+            <a class="navbar-brand">
+                <img src="~/Images/logoson.png"
+                     style="width: 125px;height:38px;">
+            </a>
+            <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+            <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+            <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+            <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+            <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+            <a href="/Finans" button class="btn btn-light">FİNANS</a>
+            <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+            <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+            <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+        </div>
+
+
+        <div id="Araclar" class="collapsed">
+            <a href="Onay" button class="btn btn-dark kuyumcuAraclari">FATURA EKRANI</a>
+            <a href="BankaTanim" button class="btn btn-dark kuyumcuAraclari">BANKA TANIM</a>
+            <a href="KomisyonTanim" button class="btn btn-dark kuyumcuAraclari">KOMİSYON TANIM</a>
+            <a href="Gelir_Gider" button class="btn btn-dark kuyumcuAraclari">GELİR-GİDER</a>
+            <a href="Kasa" button class="btn btn-dark kuyumcuAraclari">KASA</a>
+            <a href="BankaIslemleri" button class="btn btn-dark kuyumcuAraclari">BANKA İŞLEMLERİ</a>
+            <a href="BankadanOdeme" button class="btn btn-dark kuyumcuAraclari">BANKADAN ÖDEME</a>          
+            <a href="BorcEmanetIslemleri" button class="btn btn-dark kuyumcuAraclari">BORÇ-EMANET İŞLEMLERİ</a>
+            <a href ="BorcEmanetDetay" button class="btn btn-dark kuyumcuAraclari">BORÇ-EMANET DETAY</a>
+            <a href="KKTahsilat" button class="btn btn-dark kuyumcuAraclari">KREDİ KARTI TAHSİLAT</a>
+        </div>
+        <div class="container-fluid">
+            @{ Html.EnableClientValidation(false); }
+            <div class="row">
+                <!--TABLO1-->
+                <div class="col-md-5">
+                    @Html.DevExpress().GetStyleSheets(
+                     new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                     new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                     new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+                     )
+                    @Html.DevExpress().GetScripts(
+                     new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                     new Script { ExtensionSuite = ExtensionSuite.Editors },
+                     new Script { ExtensionSuite = ExtensionSuite.GridView }
+                     )
+                    @Html.Action("BEMGridViewPartial")
+                </div>
+
+                <!--TABLO2-->
+                <div class="col-md-3">
+                    <textarea class="inputField" rows="20" id="detay" name="detay"></textarea>
+                </div>
+
+
+                <!--BORÇ EMANET BİLGİLERİ-->
+                <div class="col-md-4">
+                    <!--TARİH-->
+                    <div>
+                        <label class="urunLabel" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.hareket.Tarih, new { @class = "datepicker", id = "Tarih", type = "text" })
+
+                    </div>
+                    <div class="pairRow" style="width:100%">
+                        <!--Personel-->
+                        <div style="width:100%">
+                            <label for="islemYapanPersonel">İşlem Yapan Personel</label>
+                            @Html.DropDownListFor(x => x.hareket.Islemci, new SelectList(Model.Personel).ToList(),
+                             "Seçiniz", new
+                             {
+                                 @Class = "comboBox",
+                                 @id = "islemYapanPersonel",
+
+                             })
+                        </div>
+                        <!--İŞLEM TÜRÜ-->
+                        <div style="width:100%">
+                            <label for="islemTuru">İşlem</label>
+                            @Html.DropDownListFor(x => x.hareket.HareketTipi, new List<SelectListItem>
+                               {
+                               new SelectListItem { Text = "ÖDEME", Value = "BORÇ-EMANET ÖDEME"},
+                               new SelectListItem { Text = "TAHSİL", Value = "BORÇ-EMANET TAHSİL"},
+                               new SelectListItem { Text = "BORÇ DÖNÜŞÜM", Value = "BORÇ DÖNÜŞÜM"},
+                               new SelectListItem { Text = "EMANET DÖNÜŞÜM", Value = "EMANET DÖNÜŞÜM"},
+                               }, "Seçiniz", new
+                               {
+                                   @Class = "comboBox",
+                                   id = "islemTuru",
+                                   onchange = "getextra()"
+                               })
+                        </div>
+                    </div>
+                    <div class="pairRow">
+                        <div>
+                            <label for="cariHesapKodu">Cari Hesap Kodu</label>
+                            <input type="text" class="inputField" id="cariHesapKodu"
+                                   name="cariHesapKodu">
+                        </div>
+                        <div>
+                            <label for="musteriIsmi">Müşteri İsmi</label>
+                            @Html.TextBoxFor(x => x.hareket.MusteriAdi, new { @class = "inputField", type = "text", name = "MusteriAdi", id = "MusteriAdi" })
+
+                        </div>
+                    </div>
+                    <div class="tabStyle">
+                        <table>
+                            <tr>
+                                @*<th><label class="finansLabel" for="hasBakiye">Has Bakiye</label></th>*@
+                                <th><label class="finansLabel" for="emanetCinsi" id="ec">Emanet Cinsi</label></th>
+                                <th><label class="finansLabel" for="miktar" id="mik">Miktar</label></th>
+                                @*<th><label class="finansLabel" for="hasKarsilik">Has Karşılığı</label></th>*@
+                            </tr>
+                            <tr>
+                                @*<td>
+                                        <input type="text" class="inputField" style="width:100%" id="hasBakiye" name="hasBakiye">
+                                    </td>*@
+                                <td>
+                                    @Html.DropDownListFor(x => x.hareket.StokId, new SelectList(Model.Sarrafiye).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "comboBox",
+                                         @id = "emanetCinsi",
+                                         @style = "width:100%"
+                                     })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.hareket.Miktar, new { @style = "width:100%", @class = "inputField", type = "text", id = "miktar" })
+
+                                </td>
+                                <td>
+                                    @*<select class="comboBox" id="hasKarsilik">
+                                            <option></option>
+                                        </select>*@
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="pairRow" style="width:100%">
+                        <div style="width:100%">
+                            <label class="finansLabel" for="emanetCinsi2" id="ec2">Dönüşüm Cinsi</label>
+                            @Html.DropDownListFor(x => x.Temphareket.StokId, new SelectList(Model.Sarrafiye).ToList(),
+                             "Seçiniz", new
+                             {
+                                 @Class = "comboBox",
+                                 @id = "emanetCinsi2"
+
+                             })
+                        </div>
+                        <div style="width:100%">
+                            <label class="finansLabel" for="miktar2" id="m2">Miktar</label>
+                            @Html.TextBoxFor(x => x.Temphareket.Miktar, new { @style = "width:100%", @class = "inputField", type = "text", id = "miktar2" })
+
+                        </div>
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="aciklama">Açıklama</label>
+                        @Html.TextBoxFor(x => x.hareket.Aciklama, new { @style = "width:100%", @class = "inputField", type = "text", id = "aciklama" })
+
+                    </div>
+                    <div style="text-align: center;margin:10px;">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-save"></i>KAYDET</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,51 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridViewBAC";
+        settings.CallbackRouteValues = new { Controller = "Finans", Action = "GridViewBACPartial" };
+
+        @*	settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Finans", Action = "GridViewBACPartialAddNew" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Finans", Action = "GridViewBACPartialUpdate" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Finans", Action = "GridViewBACPartialDelete" };
+            settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            settings.SettingsBehavior.ConfirmDelete = true;*@
+
+        @*		settings.CommandColumn.Visible = true;
+            settings.CommandColumn.ShowNewButton = true;
+            settings.CommandColumn.ShowDeleteButton = true;
+            settings.CommandColumn.ShowEditButton = true;*@
+
+        settings.KeyFieldName = "FisNo";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Tarih";
+            column.ColumnType = MVCxGridViewColumnType.DateEdit;
+            var colSettings = column.PropertiesEdit as DateEditProperties;
+            colSettings.DisplayFormatString = "dd/MM/yyyy hh:mm:ss";
+            colSettings.DisplayFormatInEditMode = true;
+        });
+        settings.Columns.Add("FisNo");
+        settings.Columns.Add("ToptanciiAdi").Caption = "Toptancilar";
+        settings.Columns.Add("StokId").Caption = "Dönüþen";
+        settings.Columns.Add("Miktar").Caption = "Dönüþen Miktar";
+        settings.Columns.Add("StokAdi").Caption = "Dönüþüm";
+        settings.Columns.Add("Donusum").Caption = "Dönüþüm Miktarý";
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

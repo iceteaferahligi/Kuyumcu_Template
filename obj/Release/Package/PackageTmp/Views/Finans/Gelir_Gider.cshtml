@@ -1,0 +1,375 @@
+﻿@model Kuyumcu.Models.OzelBanka
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <script>
+        function getTur() {
+            var value = document.getElementById("gelirIslemKasasi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/Gelir_Gider1",
+                data: { KasaAdi: value },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    document.getElementById("gelirTuru").value = data;
+
+                }
+            });
+        }
+        function getTur1() {
+            var value = document.getElementById("giderIslemKasasi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/Gelir_Gider1",
+                data: { KasaAdi: value },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    document.getElementById("giderTuru").value = data;
+                }
+            });
+        }
+
+
+    </script>
+
+
+    <style>
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        .tabStyle {
+            text-align: center;
+            justify-content: center;
+            /*border: 3px groove;*/
+        }
+
+        .finansLabel {
+            text-align: center;
+            font-weight: bold;
+            margin: 3px;
+        }
+
+        .finansInput {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            margin-bottom: 12px;
+        }
+
+        .finansCombobox {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            margin-bottom: 12px;
+            height: 30px;
+            width: 100%;
+        }
+
+        .butonLayout {
+            margin-top: 2%;
+            text-align: center;
+            padding: 2%;
+            border-top: 5px groove;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="Onay" button class="btn btn-dark araclarMenu">FATURA EKRANI</a>
+        <a href="BankaTanim" button class="btn btn-dark araclarMenu">BANKA TANIM</a>
+        <a href="KomisyonTanim" button class="btn btn-dark araclarMenu">KOMİSYON TANIM</a>
+        <a href="Gelir_Gider" button class="btn btn-dark araclarMenu">GELİR-GİDER</a>
+        <a href="Kasa" button class="btn btn-dark araclarMenu">KASA</a>
+        <a href="BankaIslemleri" button class="btn btn-dark araclarMenu">BANKA İŞLEMLERİ</a>
+        <a href="BankadanOdeme" button class="btn btn-dark araclarMenu">BANKADAN ÖDEME</a>
+        <a href="ToptanciAlim" button class="btn btn-dark araclarMenu">TOPTANCI ALIM</a>
+        <a href="ToptanciyaOdeme" button class="btn btn-dark araclarMenu">TOPTANCIYA ÖDEME</a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="container-fluid">
+            <ul class="nav nav-tabs nav-justified" style="justify-content: center;">
+                <!--        <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">-->
+                <li>
+                    <a class="nav-item nav-link active" id="nav-finansGelir-tab" data-toggle="tab" href="#nav-finansGelir"
+                       role="tab"
+                       aria-controls="nav-finansGelir" aria-selected="true">Gelirler</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" id="nav-finansGider-tab" data-toggle="tab" href="#nav-finansGider" role="tab"
+                       aria-controls="nav-finansGider" aria-selected="false">Giderler</a>
+                </li>
+
+                <!--</div>-->
+            </ul>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-finansGelir" role="tabpanel"
+                     aria-labelledby="nav-finansGider-tab">
+
+
+                    @Html.DevExpress().GetStyleSheets( 
+                        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+                    )
+                    @Html.DevExpress().GetScripts( 
+                        new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                        new Script { ExtensionSuite = ExtensionSuite.Editors },
+                        new Script { ExtensionSuite = ExtensionSuite.GridView }
+                    )
+
+
+
+                    @Html.Action("GridViewPartial")
+
+
+                    <!--                Döviz-->
+                    <div class="row tabStyle">
+
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="gelirTL">TL</label></th>
+                                <th><label class="finansLabel" for="gelirIslemPersonel">İşlem Yapan Personel</label></th>
+                                <th><label class="finansLabel" for="gelirIslemKasasi">İşlem Kasası</label></th>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    @Html.TextBoxFor(x => x.TL, new { @class = "finansInput", id = "gelirTL", name = "gelirTL", disabled = "true" })
+                                </td>
+                                <td>
+
+                                    @Html.DropDownListFor(x => x.Hareket1.Islemci, new SelectList(Model.Personel).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "finansCombobox",
+                                         @id = "gelirIslemPersonel"
+
+                                     })
+                                </td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket1.StokId, new SelectList(Model.KasaAdi).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "finansCombobox",
+                                         @id = "gelirIslemKasasi",
+                                         onchange="getTur()"
+                                     })
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!--            Gelir Bilgiler-->
+                    <div class="row tabStyle">
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="gelirFisNo">Fiş No</label></th>
+                                <th><label class="finansLabel" for="gelirTarih">Tarih</label></th>
+                                <th><label class="finansLabel" for="gelirTutar">Tutar</label></th>
+                                <th><label class="finansLabel" for="gelirTuru">Türü</label></th>
+                                <th><label class="finansLabel" for="gelirKalemleri">Gelir Kalemleri</label></th>
+                            </tr>
+                            <tr>
+
+                                <td>@Html.TextBoxFor(x => x.Fisno, new { @class = "finansInput", id = "gelirFisNo", name = "gelirTL", @readonly = "readonly" })</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.Hareket1.Tarih, new { @class = "finansInput", id = "gelirtarih", name = "gelirtarih", type = "date" })
+                                </td>
+                                <td>@Html.TextBoxFor(x => x.Hareket1.Miktar, new { @class = "finansInput", id = "gelirtutar", name = "gelirTutar" })</td>
+                                <td>@Html.TextBoxFor(x => x.Hareket1.StokAdi, new { @class = "finansInput", id = "gelirTuru", name = "gelirTuru", @readonly = "readonly" })</td>
+
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket1.Turu, new SelectList(Model.GelirAc).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "finansCombobox",
+                                         @id = "gelirKalemleri",
+                                     })
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row tabStyle">
+
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="gelirAdiSoyadi">Ödemeyi Yapan</label></th>
+                            </tr>
+                            <tr>
+
+                                <td>@Html.TextBoxFor(x => x.Hareket1.MusteriAdi, new { @class = "finansInput", id = "MusteriAdi", name = "MusteriAdi" })</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+
+                    <div class="row tabStyle butonLayout">
+                        <div class="col-md-3">
+                            <input name="submit" class="btn btn-success" type="submit" id="ekle" value="GELİR EKLE" />
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>SİL</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="nav-finansGider" role="tabpanel" aria-labelledby="nav-finansGider-tab">
+                    
+                @Html.Action("GridGiderPartial")
+
+                    <div class="row tabStyle">
+
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="giderTL">Tutar</label></th>
+                                <th><label class="finansLabel" for="giderIslemPersonel">İşlem Yapan Personel</label></th>
+                                <th><label class="finansLabel" for="islemKasasi">İşlem Kasası</label></th>
+                            </tr>
+                            <tr>
+
+                                <td>@Html.TextBoxFor(x => x.Hareket2.Miktar, new { @class = "finansInput", id = "gidertutar", name = "gidertutar" })</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket2.Islemci, new SelectList(Model.Personel).ToList(),
+                                    "Seçiniz", new
+                                    {
+                                        @Class = "finansCombobox",
+                                        @id = "giderIslemPersonel"
+
+                                    })
+                                </td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket2.StokId, new SelectList(Model.KasaAdi).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "finansCombobox",
+                                         @id = "giderIslemKasasi",
+                                         onchange="getTur1()"
+                                     })
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <!--            Gider Bilgiler-->
+                    <div class="row tabStyle">
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="giderFisNo">Fiş No</label></th>
+                                <th><label class="finansLabel" for="giderTarih">Tarih</label></th>
+                                <th><label class="finansLabel" for="giderTuru">Türü</label></th>
+                                <th><label class="finansLabel" for="giderKalemleri">Gider Kalemleri</label></th>
+                            </tr>
+                            <tr>
+
+                                <td>@Html.TextBoxFor(x => x.Fisno, new { @class = "finansInput", id = "giderFisNo", name = "giderFisNo", @readonly = "readonly" })</td>
+                                <td>@Html.TextBoxFor(x => x.Hareket2.Tarih, new { @class = "finansInput", id = "gidertarih", name = "gidertarih", type = "date" })</td>
+                                <td>@Html.TextBoxFor(x => x.Hareket2.StokAdi, new { @class = "finansInput", id = "giderTuru", name = "giderTuru", @readonly = "readonly" })</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket2.Turu, new SelectList(Model.GiderAc).ToList(),
+                                    "Seçiniz", new
+                                    {
+                                        @Class = "finansCombobox",
+                                        @id = "giderKalemleri",
+                                    })
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row tabStyle">
+
+                        <table>
+                            <tr>
+                                <th><label class="finansLabel" for="giderAdiSoyadi">Alici Adı Soyadı</label></th>
+
+                            </tr>
+                            <tr>
+
+                                <td>@Html.TextBoxFor(x => x.Hareket2.MusteriAdi, new { @class = "finansInput", id = "GiderMusteriAdi", name = "GiderMusteriAdi" })</td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="row tabStyle butonLayout">
+                        <div class="col-md-3">
+                            <input name="submit" class="btn btn-success" type="submit" id="ekle" value="GİDER EKLE" />
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>SİL</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--   Gelirler Tablosu-->
+
+            </div>
+        </div>
+    }
+
+
+
+</body>
+</html>

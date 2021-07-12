@@ -1,0 +1,431 @@
+﻿@model Kuyumcu.Models.Personel_Takip.personelEkle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    <style>
+
+
+
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+
+
+        .midsoftLogo {
+            width: 5%;
+            height: 50px;
+            /*float:right;*/
+            padding-top: 3px;
+            position: absolute;
+            right: 25px;
+        }
+
+
+
+        .searchBar {
+            /*width: 30%;*/
+            margin: 15px;
+        }
+
+
+
+        #bar.searchBar input[type=text] {
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 30%;
+            background: #f1f1f1;
+        }
+
+
+
+        #bar.searchBar button {
+            float: left;
+            /*width: 14%;*/
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+
+
+        .form-container {
+            width: 100%;
+            border-style: groove;
+            margin-top: 5px;
+        }
+
+
+
+        .col-form-label {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+
+
+        .legendStyle {
+            margin-left: 14px;
+        }
+
+
+
+        .datePicker {
+            padding-left: 55px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+    <div id="Araclar" class="collapsed">
+        <a href="PersonelEkle" button class="btn btn-dark araclarMenu">PERSONEL EKLE</a>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <div id="bar" class="searchBar" style="display:flex">
+                @*<input type="text" placeholder="Personel Adını Giriniz.." name="search">*@
+                @Html.TextBoxFor(x => x.AdiSoyadi2, new { @class = "inputField", type = "text", name = "PersonelAdsoyad", placeholder = "Personel Adını Giriniz.." })
+                @*<button type="submit"><i class="fa fa-search"></i></button>*@
+                <input name="submit" class="btn btn-primary" type="submit" id="Search" value="ARA" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-row">
+                    <div class="form-container">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="legendStyle">Personel Bilgileri</legend>
+                                <!--Ad/Soyad-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="EsAdi">Ad Soyad</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.AdiSoyadi, new { @class = "inputField", type = "text", id = "Ad" })
+
+                                    </div>
+                                </div>
+                                <!--Doğum Tarihi-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="DogumTarihi">Doğum Tarihi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.DogumTarihi, new { @class = "inputField datePicker", type = "date", id = "DogumTarihi" })
+
+                                    </div>
+                                </div>
+                                <!--Eş Adı-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="EsAdi">Eş Adı</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.EsAdi, new { @class = "inputField", type = "text", id = "EsAdi" })
+
+                                    </div>
+                                </div>
+                                <!--Eş Doğum Tarihi-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="EsDogumTarihi">Eş Doğum Tarihi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.EsDogumTarihi, new { @class = "inputField datePicker", type = "date", id = "EsDogumTarihi" })
+                                    </div>
+                                </div>
+                                <!--Telefon Numarası-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="telefonNo">Telefon Numarası</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.TelNo, new { @class = "inputField", type = "text", id = "telefonNo" })
+
+                                    </div>
+                                </div>
+                                <!--Eş Telefonu-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="personelEsTelefonu">Eş Telefonu</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.EsTelefon, new { @class = "inputField", type = "text", id = "personelEsTelefonu" })
+
+                                    </div>
+                                </div>
+                                <!--E-Mail-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Email">E-Mail</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Email, new { @class = "inputField", type = "text", id = "personelEmail" })
+
+                                    </div>
+                                </div>
+                                <!--Cinsiyet-->
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Cinsiyet">Cinsiyet</label>
+                                    </div>
+                                    <div class="col-md-8" style="text-align: center">
+                                        @Html.DropDownListFor(x => x.Cinsiyet, new List<SelectListItem>
+                                         {
+                                             new SelectListItem { Text = "ERKEK", Value = "ERKEK"},
+                                             new SelectListItem { Text = "KADIN", Value = "KADIN"},
+                                         }, "Seçiniz", new
+                                         {
+                                            @style = "margin-top:7px"
+                                         })
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-row">
+                    <div class="form-container">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="legendStyle">Adres Bilgileri</legend>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Adres1">Adres 1</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Adres1, new { @class = "inputField", type = "text", id = "Adres1" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Adres2">Adres 2</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Adres2, new { @class = "inputField", type = "text", id = "Adres2" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Semt">Semt</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Semt, new { @class = "inputField", type = "text", id = "semt" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Il">İl</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Il, new { @class = "inputField", type = "text", id = "Il" })
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Ilce">İlçe</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Ilce, new { @class = "inputField", type = "text", id = "Ilce" })
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="PostaKodu">Posta Kodu</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.PostaKodu, new { @class = "inputField", type = "text", id = "PostaKodu" })
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <fieldset style="width: 100%;margin-top: 10px">
+                        <div class="form-container">
+                            <div class="form-row">
+                                <div class="col-form-label col-md-4">
+                                    <label for="personelSubeNo">Şube No</label>
+                                </div>
+                                <div class="col-md-8" style="text-align: center">
+                                    @Html.DropDownListFor(x => x.SubeNo, new List<SelectListItem>
+                                    {
+                                         new SelectListItem { Text = "NO1", Value = "NO1"},
+                                         new SelectListItem { Text = "NO9", Value = "NO9"},
+                                    }, "Seçiniz", new
+                                    {
+                                         @style = "margin-top:7px"
+                                    })
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-row">
+                    <div class="form-container">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="legendStyle">İş Bilgileri</legend>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="VergiDairesi">Sigorta No</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.SigortaNo, new { @class = "inputField", type = "text", id = "SigortaNo" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="iseGirisTarihi">İşe Giriş Tarihi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.GirisTarihi, new { @class = "inputField datePicker", type = "date", id = "iseGirisTarihi" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="maas">Maaş</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Maas, new { @class = "inputField", type = "text", id = "maas" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="prim">Prim</label>
+                                    </div>
+                                    <div class="col-md-8">
+
+                                        @Html.TextBoxFor(x => x.Prim, new { @class = "inputField", type = "text", id = "prim" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="Departman">Departman</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Departman, new { @class = "inputField", type = "text", id = "personelDepartman" })
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-form-label col-md-4">
+                                        <label for="isGorevi">Görevi</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.Gorevi, new { @class = "inputField", type = "text", id = "isGorevi" })
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="form-row">
+                    <div class="form-container">
+                        <div class="form-group">
+                            <!--<form>-->
+                            <div class="col-form-label">
+                                <label for="personelNotu">Personel Notu</label>
+                            </div>
+                            <div>
+                                @Html.TextAreaFor(x => x.Not, new { style = "width:100%", rows = "5", id = "personelNotu", name = "personelNotu" })
+                            </div>
+                        </div>
+                        <div style="text-align: center">
+                            <input name="submit" class="btn btn-success" type="submit" id="submit" value="KAYDET" />
+                            <input name="submit" class="btn btn-danger " type="submit" id="submit" value="GÜNCELLE" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+    }
+</body>
+</html>

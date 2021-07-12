@@ -1,0 +1,1114 @@
+﻿@model Kuyumcu.Models.UrunDonusum
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="~/Content/jquery.webcam.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        let i = 5;
+
+        function ozellikEkle() {
+            if (i < 11) {
+                let divCont = document.createElement("div");
+
+                let ozlLabel = document.createElement("label");
+                // ozlLabel.setAttribute("type", "label");
+                ozlLabel.setAttribute("class", "urunLabel");
+                ozlLabel.setAttribute("label", "ozellik");
+                ozlLabel.setAttribute("for", "ozellik" + i);
+                ozlLabel.innerHTML = "Özellik " + i;
+
+                let element = document.createElement("input");
+
+                element.setAttribute("type", "text");
+                element.setAttribute("name", "ozellik" + i);
+                element.setAttribute("id", "ozellik" + i);
+                element.setAttribute("class", "inputField");
+
+
+                let foo = document.getElementById("fooBar");
+
+                //Append the element in page (in span).
+                divCont.appendChild(ozlLabel);
+                divCont.appendChild(element);
+                // divCont.appendChild("<br>");
+
+                foo.appendChild(divCont);
+                i += 1;
+            } else {
+                window.alert("Daha fazla özellik ekleyemezsiniz.");
+            }
+        }
+        function ekle() {
+
+            for (var y = 5; y < i; y++) {
+                document.getElementById("Oz" + y).value = document.getElementById("ozellik" + y).value;
+            }
+
+
+        }
+        $(document).ready(function () {
+            $(window).keydown(function (event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+
+  
+
+        function GetGram() {
+            var value = document.getElementById("HUhurda").value
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/urunDonusum1",
+                data: { Cins: value },
+                success: function (data) {
+                    document.getElementById("HUfiiliStok").value = data;
+                }
+            });
+        }
+        function MiktarDegis() {
+            var value = document.getElementById("HUmiktar").value.replace(',', '.');
+            document.getElementById("HUfiiliStok").value = (document.getElementById("HUfiiliStok").value - value).toFixed(3).replace('.', ',');
+            document.getElementById("miktar").value = document.getElementById("HUmiktar").value;
+        }
+
+        //function getSelectedItem() {
+        //    var value = document.getElementById("toptanci").value;
+        //    $.ajax({
+        //        dataType: "html",
+        //        type: "POST",
+        //        url: "/Kuyumcu/UrunEkle2",
+        //        data: { temp: value },
+        //        success: function (data) {
+
+        //            var foo = document.getElementById("bakiyeBar");
+        //            foo.setAttribute("value", data);
+        //            foo.disabled = true;
+        //        }
+        //    });
+        //}
+
+        function getCinsItem() {
+            var value = document.getElementById("urunCinsi").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle1",
+                data: { k: value },
+                success: function (data) {
+                    var select = document.getElementById("urunGrubu");
+                    $(urunGrubu).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+            if (document.getElementById('urunCinsi').value == 'PIRLANTA') {
+
+                document.getElementById('Ozellik1').disabled = true;
+                document.getElementById('Ozellik1').hidden = true;
+                document.getElementById('Ozellik2').disabled = true;
+                document.getElementById('Ozellik2').hidden = true;
+                document.getElementById('Ozellik4').disabled = true;
+                document.getElementById('Ozellik4').hidden = true;
+
+                document.getElementById('Oz1').disabled = false;
+                document.getElementById('Oz1').hidden = false;
+                document.getElementById('Oz2').disabled = false;
+                document.getElementById('Oz2').hidden = false;
+                document.getElementById('Oz4').disabled = false;
+                document.getElementById('Oz4').hidden = false;
+            }
+            else {
+                document.getElementById('Ozellik1').disabled = false;
+                document.getElementById('Ozellik1').hidden = false;
+                document.getElementById('Ozellik2').disabled = false;
+                document.getElementById('Ozellik2').hidden = false;
+                document.getElementById('Ozellik4').disabled = false;
+                document.getElementById('Ozellik4').hidden = false;
+
+                document.getElementById('Oz1').disabled = true;
+                document.getElementById('Oz1').hidden = true;
+                document.getElementById('Oz2').disabled = true;
+                document.getElementById('Oz2').hidden = true;
+                document.getElementById('Oz4').disabled = true;
+                document.getElementById('Oz4').hidden = true;
+
+                document.getElementById('hesaplama').disabled = false;
+                document.getElementById('milyem').disabled = false;
+                document.getElementById('iscilikCm').disabled = false;
+                document.getElementById('iscilikCmG').disabled= false;
+                document.getElementById('iscilikGr').disabled = false;
+                document.getElementById('hasnet').disabled = false;
+                document.getElementById('birimFiyat').disabled = false;
+
+               if (document.getElementById('urunCinsi').value == 'SAAT') {
+                document.getElementById('etiketFiyati').style = "visible";
+                document.getElementById('etiketLabel').style = "visible";
+                document.getElementById('hesaplama').disabled = true;
+                document.getElementById('milyem').disabled = true;
+                document.getElementById('iscilikCm').disabled = true;
+                document.getElementById('iscilikCmG').disabled= true;
+                document.getElementById('iscilikGr').disabled = true;
+                document.getElementById('hasnet').disabled = true;
+                document.getElementById('birimFiyat').disabled = true;
+                document.getElementById("turu").value = "TL";
+
+                }
+                else {
+                document.getElementById('etiketFiyati').style = "display:none";
+                document.getElementById('etiketLabel').style = "display:none";
+                document.getElementById("turu").value = "TL";
+                }
+            }
+        }
+
+        function getUrunAlt() {
+            var value = document.getElementById("urunGrubu").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle3",
+                data: { k: value },
+                success: function (data) {
+                    var select = document.getElementById("urunAltGrubu");
+                    $(urunAltGrubu).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+
+        function getUrunozellik1() {
+            var value = document.getElementById("urunGrubu").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle5",
+                data: { k: value },
+                success: function (data) {
+                    var select = document.getElementById("Ozellik1");
+                    $(Ozellik1).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+        function getUrunozellik2() {
+            var value = document.getElementById("urunGrubu").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle6",
+                data: { k: value },
+                success: function (data) {
+                    var select = document.getElementById("Ozellik2");
+                    $(Ozellik2).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+        function getUrunozellik3() {
+            var value = document.getElementById("urunGrubu").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle7",
+                data: { k: value },
+                success: function (data) {
+                    var select = document.getElementById("Ozellik3");
+                    $(Ozellik3).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+
+        function getUrunName() {
+            var value = document.getElementById("urunCinsi").value;
+            var value1 = document.getElementById("urunGrubu").value;
+            var value2 = document.getElementById("urunAltGrubu").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunEkle4",
+                data: { a: value, b: value1, c: value2 },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 3);
+                    var element = document.getElementById("urunIsim");
+                    document.getElementById("urunIsim").style.color = "#ff0000";
+                    element.innerText = array[0];
+                    document.getElementById("stokKodu").value = value2 + array[1];
+                    document.getElementById("milyem").value = array[2];
+                }
+            });
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imageID')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function ButtonName(obj) {
+
+            if (obj.name == "UH") {
+                document.getElementById("ekle").value = "ÜRÜN > HURDA";
+                document.getElementById("labelLayout container-fluid").hidden = false;
+                document.getElementById("col-12 container-fluid").hidden = false;
+            }
+            else if (obj.name == "TFÇ") {
+                document.getElementById("ekle").value = "TAŞ FİRESİ ÇIKIŞI";
+                document.getElementById("labelLayout container-fluid").hidden = false;
+                document.getElementById("col-12 container-fluid").hidden = false;
+            }
+            else if (obj.name == "SH") {
+                document.getElementById("ekle").value = "SARRAFİYE > HURDA";
+                document.getElementById("labelLayout container-fluid").hidden = true;
+                document.getElementById("col-12 container-fluid").hidden = true;
+                document.getElementById("barkodBasButton").hidden = true;
+                
+
+            }
+            else if (obj.name == "SD") {
+                document.getElementById("ekle").value = "SARRAFİYE DÖNÜŞÜM";
+                document.getElementById("labelLayout container-fluid").hidden = false;
+                document.getElementById("col-12 container-fluid").hidden = false;
+            }
+            else {
+                document.getElementById("ekle").value = "HURDA > ÜRÜN";
+                document.getElementById("labelLayout container-fluid").hidden = false;
+                document.getElementById("col-12 container-fluid").hidden = false;
+            }
+        }
+        function getUrun() {
+
+            var value = document.getElementById("UHurunBarkod").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/UrunDonusum2",
+                data: { id: value },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 24);
+                    document.getElementById("stokKodu").value = array[0];
+                    document.getElementById("urunCinsi").value = array[1];
+                    document.getElementById("urunGrubu").value = array[2];
+                    document.getElementById("urunAltGrubu").value = array[3];
+                    document.getElementById("hesaplama").value = array[4];
+                    document.getElementById("sertifikaNo").value = array[5];
+                    document.getElementById("miktar").value = array[6];
+                    document.getElementById("UHmiktar").value = array[6];
+                    document.getElementById("milyem").value = array[7];
+                    document.getElementById("iscilikCm").value = array[8];
+                    document.getElementById("UHiscilik").value = array[8];
+                    document.getElementById("iscilikGr").value = array[9];
+                    document.getElementById("hasnet").value = array[10];
+                    document.getElementById("birimFiyat").value = array[11];
+                    document.getElementById("maliyet").value = array[12];
+                    document.getElementById("turu").value = array[13];
+                    document.getElementById("karyuzde").value = array[14];
+                    document.getElementById("satisTutari").value = array[15];
+                    document.getElementById("toptanci").value = array[16];
+                    document.getElementById("Ozellik1").value = array[17];
+                    document.getElementById("Ozellik2").value = array[18];
+                    document.getElementById("Ozellik3").value = array[19];
+                    document.getElementById("Ozellik4").value = array[20];
+                    document.getElementById("rafOmru").value = array[22];
+                    document.getElementById("urunImage").value = array[23];
+
+
+                }
+            });
+        }
+
+        function miktarGetir() {
+
+            document.getElementById("UHmiktar").value = (document.getElementById("miktar").value.replace(',', '.') - document.getElementById("UHfire").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        }
+
+        function Mikdegis() {
+            document.getElementById("SHmevcut").value = (document.getElementById("SHmevcut").value.replace(',', '.') - document.getElementById("SHcikisMiktar").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        }
+
+        function MevcutGetir() {
+            var value = document.getElementById("SHSarrafiye").value
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Kuyumcu/urunDonusum3",
+                data: { Cins: value },
+                success: function (data) {
+                    document.getElementById("SHmevcut").value = data;
+                }
+            });
+        }
+
+        function getGr() {
+            document.getElementById("iscilikGr").value = (document.getElementById("miktar").value.replace(',', '.') * document.getElementById("iscilikCm").value.replace(',', '.')).toFixed(3).replace('.', ',');
+            if (document.getElementById("hesaplama").value == "GRAM") {
+                document.getElementById("birimFiyat").value = ((parseFloat(document.getElementById("milyem").value.replace(',', '.')) + parseFloat(document.getElementById("iscilikCm").value.replace(',', '.'))) * document.getElementById("miktar").value.replace(',', '.')).toFixed(3).replace('.', ',');
+            }
+            else if (document.getElementById("hesaplama").value == "ADET") {
+                document.getElementById("birimFiyat").value = ((parseFloat(document.getElementById("milyem").value.replace(',', '.')) * parseFloat(document.getElementById("miktar").value.replace(',', '.'))) + parseFloat(document.getElementById("iscilikCm").value.replace(',', '.'))).toFixed(3).replace('.', ',');
+
+            }
+            document.getElementById("hasnet").value = (parseFloat(document.getElementById("milyem").value.replace(',', '.')) * parseFloat(document.getElementById("miktar").value.replace(',', '.'))).toFixed(3).replace('.', ',');
+        }
+        function getBirim() {
+            if (document.getElementById("hesaplama").value == "GRAM") {
+                document.getElementById("maliyet").value = ((parseFloat(document.getElementById("milyem").value.replace(',', '.')) + parseFloat(document.getElementById("iscilikCmG").value.replace(',', '.'))) * document.getElementById("miktar").value.replace(',', '.')).toFixed(3).replace('.', ',');
+            }
+            else if (document.getElementById("hesaplama").value == "ADET") {
+                document.getElementById("maliyet").value = ((parseFloat(document.getElementById("milyem").value.replace(',', '.')) * parseFloat(document.getElementById("miktar").value.replace(',', '.'))) + parseFloat(document.getElementById("iscilikCmG").value.replace(',', '.'))).toFixed(3).replace('.', ',');
+            }
+        }
+        function getFiyat() {
+            
+             if (document.getElementById('urunCinsi').value == 'PIRLANTA' || document.getElementById('urunCinsi').value == 'SAAT') {
+
+                document.getElementById("satisTutari").value = (((parseFloat(document.getElementById("karyuzde").value.replace(',', '.')) * parseFloat(document.getElementById("maliyet").value.replace(',', '.'))) / 100) + parseFloat(document.getElementById("maliyet").value.replace(',', '.'))).toFixed(3).replace('.', ',');
+             }
+             else {
+                document.getElementById("satisTutari").value = (((parseFloat(document.getElementById("karyuzde").value.replace(',', '.')) * parseFloat(document.getElementById("birimFiyat").value.replace(',', '.'))) / 100) + parseFloat(document.getElementById("birimFiyat").value.replace(',', '.'))).toFixed(3).replace('.', ',');
+             }
+
+        }
+        $(document).ready(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+        });
+    
+
+        $(function () {
+            jQuery("#webcam").webcam({
+                width: 312,
+                height: 180,
+                mode: "save",
+                swffile: '/Content/jscam.swf',
+                debug: function (type, status) {
+                    $('#camStatus').append(type + ": " + status + '<br /><br />');
+                },
+                onSave: function (data, ab) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/Kuyumcu/GetCapture',
+                        data: '',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "text",
+                        success: function (r) {
+                            $("#imgCapture").css("visibility", "visible");
+                            $("#imgCapture").attr("src", r);
+                            $(document).ready(function () {
+                                $("#urunImage").val(r);
+                            });
+                        },
+                        failure: function (response) {
+                            alert(response.d);
+                        }
+                    });
+                },
+                onCapture: function () {
+                    webcam.save('/Kuyumcu/Capture');
+                }
+            });
+        });
+        function Capture() {
+            webcam.capture();
+        }
+        function deletefoto() {
+
+             $(function () {
+                $('#silButton').on('click', function () {
+
+                    $("#imgCapture").css("visibility", "hidden");
+                   // $("#urunImage").css("visibility", "hidden");
+                   
+                });
+
+            });
+
+        }
+
+        if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+
+            window.location.reload(true);
+
+        }
+    </script>
+</head>
+
+<script type="text/javascript">
+        $(function () {
+            $("#toptanci").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Kuyumcu/AutoComplete1/',
+                        data: "{ 'prefix': '" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return item;
+                            }))
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                },
+                select: function (e, i) {
+                    $("#hfCustomer1").val(i.item.val);
+                },
+                minLength: 0
+            }).focus(function () {
+                $(this).autocomplete("search");
+            });
+        });
+</script>
+
+
+
+<style>
+
+    .ui-autocomplete {
+        overflow: auto;
+        max-height: 100px;
+    }
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .inputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 42%;
+    }
+
+    .labelLayout {
+        /*display: flex;*/
+        display: inline-flex;
+        /*margin-top: 3px;*/
+    }
+
+    .urunLabel {
+        text-align: left;
+        width: 92px;
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    .tabStyle {
+        text-align: center;
+        justify-content: center;
+        border: 3px groove;
+    }
+
+    .hurdaLabel {
+        text-align: center;
+        font-weight: bold;
+        margin: 3px;
+    }
+
+    .hurdaInput {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        margin-bottom: 12px;
+    }
+
+    .hurdaCombobox {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        margin-bottom: 12px;
+        height: 30px;
+        width: 100%;
+    }
+
+    a {
+        color: #27a1ff;
+        /*background-color: ghostwhite;*/
+    }
+
+    .stokGirisBilgi {
+        margin: 10px;
+        text-align: center;
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    .stokInputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 100%;
+    }
+
+    .comboBox {
+        /*width: 170px;*/
+        width: 42%;
+        text-align: center;
+        height: 32px;
+    }
+
+    .imageBorder {
+        border-width: 1px;
+        width: 320px;
+        height: 180px;
+        border-color: Black;
+        /*margin-right: 5px;*/
+    }
+
+    .imageStyle {
+        /*display: flex;*/
+        margin-left: auto;
+    }
+</style>
+<body>
+    <!--navbar-->
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png" style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+        <a href="Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+        <a href="UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+        <a href="OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+        <a href="UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+        <a href="FaturaGiris" button class="btn btn-dark araclarMenu">FATURA GİRİŞ</a>
+        <a href="StokListesi" button class="btn btn-dark araclarMenu">STOK LİSTESİ</a>
+    </div>
+    <!--Kuyumcu Menüsü-->
+
+    <div class="container-fluid">
+        <ul class="nav nav-tabs nav-justified" style="justify-content: center;">
+            <!--        <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">-->
+            <li>
+                <a class="nav-item nav-link active" id="nav-hurdaUrun-tab" data-toggle="tab" href="#nav-hurdaUrun"
+                   role="tab"
+                   aria-controls="nav-hurdaUrun" aria-selected="true" name="HU" onclick="ButtonName(this)">Hurda > Ürün</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" id="nav-urunHurda-tab" data-toggle="tab" href="#nav-urunHurda" role="tab"
+                   aria-controls="nav-urunHurda" aria-selected="false" name="UH" onclick="ButtonName(this)">Ürün > Hurda</a>
+            </li>
+            @*<li>
+                    <a class="nav-item nav-link" id="nav-tasFiresi-tab" data-toggle="tab" href="#nav-tasFiresi" role="tab"
+                       aria-controls="nav-tasFiresi" aria-selected="false" name="TFÇ" onclick="ButtonName(this)">Taş Firesi Çıkışı</a>
+                </li>*@
+            <li>
+                <a class="nav-item nav-link" id="nav-sarrafiyeHurda-tab" data-toggle="tab" href="#nav-sarrafiyeHurda"
+                   role="tab"
+                   aria-controls="nav-sarrafiyeHurda" aria-selected="false" name="SH" onclick="ButtonName(this)">Sarrafiye > Hurda</a>
+            </li>
+            @*<li>
+                    <a class="nav-item nav-link" id="nav-sarrafiyeDonusum-tab" data-toggle="tab" href="#nav-sarrafiyeDonusum"
+                       role="tab"
+                       aria-controls="nav-sarrafiyeDonusum" aria-selected="false" name="SD" onclick="ButtonName(this)">Sarrafiye Dönüşüm</a>
+                </li>*@
+            <!--</div>-->
+        </ul>
+        <div>
+            @using (Html.BeginForm())
+            {
+
+                <div class="tab-content" id="nav-tabContent">
+                    <!--    HURDA - ÜRÜN -->
+                    <div class="tab-pane fade show active" id="nav-hurdaUrun" role="tabpanel" aria-labelledby="nav-hurdaUrun-tab">
+
+                        <div class="row tabStyle form-group">
+                            <table>
+                                <tr>
+                                    <th><label class="hurdaLabel" for="HUhurda">Hurda</label></th>
+                                    <th><label class="hurdaLabel" for="HUfiiliStok">Fiili Stok</label></th>
+                                    <th><label class="hurdaLabel" for="HUmiktar">Miktar</label></th>
+                                    <th><label class="hurdaLabel" for="HUislemSubesi">İşlem Şubesi</label></th>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.Barkodsuz.StokCinsi, new SelectList(Model.HurdaCinsler).ToList(),
+                                         "Seçiniz", new
+                                         {
+                                             @Class = "hurdaCombobox",
+                                             @id = "HUhurda",
+                                             onchange = "GetGram()"
+                                         })
+                                    </td>
+                                    <td>@Html.TextBoxFor(x => x.Barkodsuz.Miktar, new { @class = "hurdaInput", id = "HUfiiliStok", name = "HUfiiliStok" })</td>
+                                    <td>@Html.TextBoxFor(x => x.HUmiktar, new { @class = "hurdaInput", id = "HUmiktar", name = "HUmiktar", onchange = "MiktarDegis()" })</td>
+                                    <td>
+
+                                        @Html.TextBoxFor(x => x.Barkodlu.MagazaNo, new { @class = "hurdaInput", id="HUislemSubesi", type="text", @Value="NO1", @readonly = "readonly"})
+
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!--    ÜRÜN - HURDA-->
+                    <div class="tab-pane fade" id="nav-urunHurda" role="tabpanel" aria-labelledby="nav-urunHurda-tab">
+                        <div class="row tabStyle">
+
+                            <table>
+                                <tr>
+                                    <th><label class="hurdaLabel" for="UHurunBarkod">Ürün Barkod</label></th>
+                                    <th><label class="hurdaLabel" for="UHiscilik">İşçilik</label></th>
+                                    @*<th><label class="hurdaLabel" for="UHfire">Fire</label></th>*@
+                                    <th><label class="hurdaLabel" for="UHmiktar">Miktar</label></th>
+                                    <th><label class="hurdaLabel" for="UHhurda">Hurda</label></th>
+                                </tr>
+                                <tr>
+                                    <td>@Html.TextBoxFor(x => x.Barkodlu1.id, new { type = "text", @class = "hurdaInput", id = "UHurunBarkod", name = "UHurunBarkod", onchange = "getUrun();" })</td>
+                                    <td>@Html.TextBoxFor(x => x.Barkodlu1.IscilikGr, new { type = "text", @class = "hurdaInput", id = "UHiscilik" })</td>
+                                    @*<td>@Html.TextBoxFor(x => x.Barkodlu1.Fire, new { type = "text", @class = "hurdaInput", id = "UHfire", name = "UHfire", onchange="miktarGetir()" })</td>*@
+                                    <td>@Html.TextBoxFor(x => x.Barkodlu1.Miktar, new { type = "text", @class = "hurdaInput", id = "UHmiktar", name = "UHmiktar" })</td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.Barkodsuz1.StokCinsi, new SelectList(Model.HurdaCinsler).ToList(),
+                                         "Seçiniz", new
+                                         {
+                                             @Class = "hurdaCombobox",
+                                             @id = "UHhurda",
+                                         })
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!--    TAŞ FİRESİ ÇIKIŞI-->
+                    @*<div class="tab-pane fade" id="nav-tasFiresi" role="tabpanel" aria-labelledby="nav-tasFiresi-tab">
+                            <div class="row tabStyle" style="text-align: center;">
+                                <table>
+                                    <tr>
+                                        <th><label class="hurdaLabel" for="TFhurda">Hurda</label></th>
+                                        <th><label class="hurdaLabel" for="TFfiiliStok">Fiili Stok</label></th>
+                                        <th><label class="hurdaLabel" for="TFmiktar">Miktar</label></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select class="hurdaCombobox" id="TFhurda">
+                                                <option></option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text" class="hurdaInput" id="TFfiiliStok" name="TFfiiliStok"></td>
+                                        <td><input type="text" class="hurdaInput" id="TFmiktar" name="TFmiktar"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>*@
+
+                    <!--    Sarrafiye Hurda-->
+                    <div class="tab-pane fade" id="nav-sarrafiyeHurda" role="tabpanel" aria-labelledby="nav-sarrafiyeHurda-tab">
+                        <div class="row tabStyle">
+
+                            <table>
+                                <tr>
+                                    <th><label class="hurdaLabel" for="SHsarrafiye">Sarrafiye</label></th>
+                                    <th><label class="hurdaLabel" for="SHmevcut">Mevcut</label></th>
+                                    <th><label class="hurdaLabel" for="SHcikisMiktar">Çıkış Miktarı</label></th>
+                                    <th><label class="hurdaLabel" for="SHgirisMiktar">Giriş Miktarı</label></th>
+                                    <th><label class="hurdaLabel" for="SHhurda">Hurda</label></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.Barkodsuz2.StokCinsi, new SelectList(Model.Sarrafiye).ToList(),
+                                         "Seçiniz", new
+                                         {
+                                             @Class = "hurdaCombobox",
+                                             @id = "SHSarrafiye",
+                                             onchange = "MevcutGetir()"
+                                         })
+                                    </td>
+                                    <td>@Html.TextBoxFor(x => x.Barkodsuz2.Miktar, new { type = "text", @class = "hurdaInput", id = "SHmevcut", name = "SHmevcut" })</td>
+                                    <td>@Html.TextBoxFor(x => x.SHcikisMiktar, new { type = "text", @class = "hurdaInput", id = "SHcikisMiktar", name = "SHcikisMiktar", onchange = "Mikdegis()" })</td>
+                                    <td>@Html.TextBoxFor(x => x.SHgirisMiktar, new { type = "text", @class = "hurdaInput", id = "SHgirisMiktar", name = "SHgirisMiktar" })</td>
+
+                                    <td>
+                                        @Html.DropDownListFor(x => x.Barkodsuz3.StokCinsi, new SelectList(Model.HurdaCinsler).ToList(),
+                                         "Seçiniz", new
+                                         {
+                                             @Class = "hurdaCombobox",
+                                             @id = "UHhurda",
+                                         })
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!--   Sarrafiye Dönüşüm-->
+                    @*<div class="tab-pane fade" id="nav-sarrafiyeDonusum" role="tabpanel" aria-labelledby="nav-sarrafiyeDonusum-tab"></div>*@
+                </div>
+
+
+
+
+                <div class="labelLayout container-fluid" id="labelLayout container-fluid" style="margin-top: 30px">
+                    <div class="col-6" style="display: grid">
+                        <div class="row" style="display: inline-flex">
+                            <!--Fiş No / Toptancı / Bakiye-->
+                            <div class="col-6">
+
+                                <div>
+                                    <label class="urunLabel" for="rafOmru">Tarih</label>
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Tarih, new { @class = "datepicker", id = "Tarih", type = "text" })
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="rafOmru">Şube</label>
+                                    @Html.TextBoxFor(x => x.Barkodlu2.MagazaNo, new { @class = "inputField", type="text", id="subeno", @Value="NO1", @readonly = "NO1"})
+                                   
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="toptanci">Toptancı</label>
+                                    @Html.TextBoxFor(x => x.Barkodlu2.ToptanciAdi, new { @class = "inputField", type = "text", id = "toptanci" })
+                                    <input type="hidden" id="hfCustomer" name="CustomerId" />
+                                    <button id="toptanciEkle" type="button" class="btn-m btn-success">
+                                        <i class="fa fa-xs fa-plus-square"></i>
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <label class="urunLabel" for="urunCinsi">Cinsi</label>
+                                    <!--<input list="cins" type="text" class="inputField" id="urunCinsi" name="urunCinsi">-->
+                                    @Html.DropDownListFor(x => x.Barkodlu2.StokCinsi, new SelectList(Model.Cinsler).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                        @Class = "comboBox",
+                                        @id = "urunCinsi",
+                                        onchange = "getCinsItem()"
+                                     })
+                                    <button id="urunCinsiEkle" type="button" class="btn-m btn-success">
+                                        <i class="fa fa-xs fa-plus-square"></i>
+                                    </button>
+                                </div>
+                                <!--Ürün Grubu-->
+                                <div>
+                                    <label class="urunLabel" for="urunGrubu">Grubu</label>
+                                    <!--<input type="text" class="inputField" id="urunGrubu" name="urunGrubu">-->
+                                    @Html.DropDownListFor(x => x.Barkodlu2.StokGrubu, new SelectList(Model.Gruplar).ToList(),
+                                      "Seçiniz", new
+                                       {
+                                            @Class = "comboBox",
+                                            @id = "urunGrubu",
+                                            onchange = "getUrunAlt(), getUrunozellik1(), getUrunozellik2()"
+                                       })
+                                </div>
+                                <!--Ürün Alt Grubu-->
+                                <div>
+                                    <label class="urunLabel" for="urunAltGrubu">Alt Grubu</label>
+                                    <!--<input type="text" class="inputField" id="urunAltGrubu" name="urunAltGrubu">-->
+                                    @Html.DropDownListFor(x => x.Barkodlu2.StokAltGrubu, new SelectList(Model.AltGruplar).ToList(),
+                                    "Seçiniz", new
+                                    {
+                                       @Class = "comboBox",
+                                       @id = "urunAltGrubu",
+                                       onchange = "getUrunName()"
+                                    })
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="urunAltGrubu">İsim</label>
+                                    <label class="urunIsim" for="urunAltGrubu" id="urunIsim"></label>
+
+                                </div>
+                            </div>
+
+                            <!--Ürün Özellikleri-->
+                            <div class="col-6" style="text-align: center">
+                                <div>
+                                    <label class="urunLabel" for="ozellik1">Özellik 1</label>
+                                    <!--                    <input type="text" class="inputField" id="ozellik1" name="ozellik1">-->
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Ozellik1, new SelectList(Model.Ozellik1).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "comboBox",
+                                         @id = "Ozellik1"
+                                     })
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Ozellik1, new { @class = "inputField", type = "text", id = "Oz1", hidden = "true", disabled = "true" })
+
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="ozellik2">Özellik 2</label>
+                                    <!--                    <input type="text" class="inputField" id="ozellik2" name="ozellik2">-->
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Ozellik2, new SelectList(Model.Ozellik2).ToList(),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "comboBox",
+                                         @id = "Ozellik2"
+                                     })
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Ozellik2, new { @class = "inputField", type = "text", id = "Oz2", hidden = "true", disabled = "true" })
+
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="ozellik3">Özellik 3</label>
+                                    <!--                    <input type="text" class="inputField" id="ozellik3" name="ozellik3">-->
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Ozellik3, new { @class = "inputField", type = "text", id = "Ozellik3" })
+
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="ozellik4">Özellik 4</label>
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Ozellik4, new List<SelectListItem>
+                                    {
+                                       new SelectListItem { Text = "KONSİNYE", Value = "KONSİNYE"},
+                                       new SelectListItem { Text = "FANTAZİ", Value = "FANTAZİ"},
+                                       new SelectListItem { Text = "BAY", Value = "BAY"},
+                                       new SelectListItem { Text = "BAYAN", Value = "BAYAN"},
+                                    }, "Seçiniz", new
+                                    {
+                                        id = "Ozellik4",
+                                        @Class = "comboBox",
+                                        @Style = "Width:36%"
+
+                                    })
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Ozellik4, new { @class = "inputField", type = "text", id = "Oz4", hidden = "true", disabled = "true" })
+
+
+
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik5, new { @class = "inputField", type = "hidden", id = "Oz5" })
+
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik6, new { @class = "inputField", type = "hidden", id = "Oz6" })
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik7, new { @class = "inputField", type = "hidden", id = "Oz7" })
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik8, new { @class = "inputField", type = "hidden", id = "Oz8" })
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik9, new { @class = "inputField", type = "hidden", id = "Oz9" })
+                                    @Html.HiddenFor(x => x.Barkodlu2.Ozellik10, new { @class = "inputField", type = "hidden", id = "Oz10" })
+                                    <button id="urunOzellikEkle" type="button" class="btn-m btn-success" onclick="ozellikEkle()">
+                                        <i class="fa fa-xs fa-plus-square"></i>
+                                    </button>
+
+                                </div>
+                                <div id="fooBar"></div>
+                                <div>
+                                    <label class="urunLabel" for="rafOmru">Raf Ömrü</label>
+                                    @*@Html.TextBoxFor(x => x.Barkodlu2.RafOmru, new { @class = "inputField", type = "date", id = "rafOmru" })*@
+                                    @Html.TextBoxFor(x => x.RafOmru, new { @class = "inputField", type = "text", id = "rafOmru" })
+
+                                </div>
+                                <div>
+                                    <label class="urunLabel" for="sertifikaNo">Sertifika</label>
+                                    @Html.TextBoxFor(x => x.Barkodlu2.Sertifika, new { @class = "inputField", type = "text", id = "sertifikaNo" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Image Selection Part-->
+                    <div class="col-3">
+                        @*<div class="imageStyle">
+                                <img src="~/Images/default.png" class="imageBorder" id="webcam" />
+                            </div>*@
+                        <div id="webcam"></div>
+                        @*<a href="/Camera/Index" name="submit" id="submit" class="btn btn-dark" value="resimSec" target="_blank">
+                                <i class="fa fa-upload"></i>
+                            </a>*@
+                        <input type="button" value="ÇEK" onclick="Capture();" />
+                        <input type="button" value="SİL" id="silButton" onclick="deletefoto();" />
+                        @*<span id="camStatus"></span>*@
+                    </div>
+                    <div class="col-3">
+                        <div class="imageStyle">
+                            @*<img src="~/Images/default.png" class="imageBorder" id="imageID" />*@
+                            <img id="imgCapture" style="visibility: hidden; width: 266px;height: 150px" src="@Model.Barkodlu2.Image" />
+                        </div>
+                        @*<a href="/Camera/Index" name="submit" id="submit" class="btn btn-dark" value="resimSec" target="_blank">
+                                <i class="fa fa-upload"></i>
+                            </a>*@
+
+                        @Html.TextBoxFor(x => x.Barkodlu2.Image, new { @class = "stokInputField", type = "inputField", id = "urunImage", style = "width:273px"})
+                    </div>
+                </div>
+
+                <div class="col-12 container-fluid" id ="col-12 container-fluid" style="display: flex">
+                    <table class="stokGirisBilgi">
+                        <thead>
+                            <tr>
+                                <th>Stok Kodu</th>
+                                <th>Miktar</th>
+                                <th>İşçilik Hesaplama</th>
+                                <th>Milyem</th>
+                                <th>İşçilik Cm</th>
+                                <th>İşçilik CmG</th>
+                                <th>İşçilik Gr</th>
+                                <th>Hasnet</th>
+                                <th>Birim Fiyat</th>
+                                <th>Maliyet</th>
+                                <th>Türü</th>
+                                <th>Kar(%)</th>
+                                <th>Satış Tutarı</th>
+                                <th id="etiketLabel">Etiket Fiyatı</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.StokId, new { @class = "stokInputField", type = "text", id = "stokKodu" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.Miktar, new { @class = "stokInputField", type = "text", id = "miktar" })</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Hesaplama, new List<SelectListItem>
+                                    {
+                                      new SelectListItem { Text = "ADET", Value = "ADET"},
+                                      new SelectListItem { Text = "GRAM", Value = "GRAM"},
+                                    }, "Seçiniz", new
+                                    {
+                                       @Class = "comboBox",
+                                       style = "width:100px; height:25px",
+                                       id = "hesaplama"
+                                    })
+                                </td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Milyem, new SelectList(Model.Milyemler.ToList()),
+                                     "Seçiniz", new
+                                     {
+                                         @Class = "comboBox",
+                                         style = "width:100px; height:25px",
+                                         id = "milyem"
+                                     })
+                                </td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.IscilikCm, new { @class = "stokInputField", type = "text", id = "iscilikCm", onchange = "getGr()" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.IscilikCmG, new { @class = "stokInputField", type = "text", id = "iscilikCmG", onchange = "getBirim()" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.IscilikGr, new { @class = "stokInputField", type = "text", id = "iscilikGr" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.HasNet, new { @class = "stokInputField", type = "text", id = "hasnet" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.BirimFiyat, new { @class = "stokInputField", type = "text", id = "birimFiyat" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.Maliyet, new { @class = "stokInputField", type = "text", id = "maliyet" })</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Barkodlu2.Turu, new List<SelectListItem>
+                                   {
+                                     new SelectListItem { Text = "HAS", Value = "HAS"},
+                                     new SelectListItem { Text = "PIRLANTA", Value = "PIRLANTA"},
+                                     new SelectListItem { Text = "SAAT", Value = "SAAT"},
+                                   }, "Seçiniz", new
+                                   {
+                                      @Class = "comboBox",
+                                      style = "width:100px; height:25px",
+                                      id = "turu"
+                                   })
+                                </td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.Kar, new { @class = "stokInputField", type = "text", id = "karyuzde", onkeydown = "getFiyat()" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.SatisTutari, new { @class = "stokInputField", type = "text", id = "satisTutari" })</td>
+                                <td>@Html.TextBoxFor(x => x.Barkodlu2.EtiketFiyat, new { @class = "stokInputField", type = "text", id = "etiketFiyati" }) </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+
+
+
+
+                <div style="text-align: center;margin-top: 15px;">
+                    <input name="submit" class="btn btn-success" type="submit" id="ekle" value="HURDA > ÜRÜN" onclick="ekle()" />
+
+                    <input name="submit" class="btn btn-primary" type="submit" id="barkodBasButton" value="BARKOD BAS" />
+                </div>
+            }
+        </div>
+</body>
+</html>
+
+
+
+
+

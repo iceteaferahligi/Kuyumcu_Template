@@ -1,0 +1,1436 @@
+﻿@model Kuyumcu.Models.OzelModel
+
+@{
+
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+<script type="text/javascript">
+
+
+    function Print(data) {
+            window.open(data, "PrintingFrame");
+        }
+
+
+
+    var toplam = parseFloat("0");
+    var i = 0;
+    var things = [];
+    var sil = [];
+    var l = 0;
+    var y = 0;
+    var m = false;
+    var a = 0;
+    var son = 0;
+    var p = 0;
+    var g = 0;
+    var sifre = "123456";
+    var HNo;
+
+    function addField(sender, value, str, ad, fiyat, miktar) {
+
+        $(document).ready(function () {
+            var myTable = document.getElementById("islemTablosu");
+            var currentRow = myTable.insertRow(-1);
+
+            myTable.setAttribute("class", "islemTablosu");
+
+            var hiddenbox = document.createElement("input");
+            hiddenbox.setAttribute("id", "hiddenbox" + i);
+            hiddenbox.value = fiyat;
+            hiddenbox.hidden = true;
+
+            var hiddenbox2 = document.createElement("input");
+            hiddenbox2.setAttribute("id", "hiddenbox2" + i);
+            hiddenbox2.value = value;
+            hiddenbox2.hidden = true;
+
+            //var Fisbox = document.createElement("input");
+            //Fisbox.setAttribute("id", "getFisId");
+            //Fisbox.value = Fisbox.id;
+            //Fisbox.hidden = true;
+
+            var imagebox = document.createElement("img");
+            imagebox.setAttribute("src", "../Images/onay.png");
+            imagebox.setAttribute("id", "img" + i);
+            imagebox.setAttribute("class", "imageb");
+
+
+            var musteriAdiBox = document.createElement("input");
+            musteriAdiBox.setAttribute("id", "musteriAdi" + i);
+            musteriAdiBox.setAttribute("placeholder", "Müşterinin adını giriniz");
+
+
+            var urunAdiBox = document.createElement("text");
+            urunAdiBox.setAttribute("id", "urunAdi" + i);
+            if (sender == "deneme") {
+                urunAdiBox.innerHTML = ad;
+
+            } else {
+                urunAdiBox.innerHTML = sender.name;
+
+            }
+            var adetBox = document.createElement("input");
+            adetBox.setAttribute("id", "adet" + i);
+            adetBox.setAttribute("type", "number");
+            adetBox.setAttribute("style", "width: 100px");
+            adetBox.setAttribute("placeholder", "Adet");
+            if (sender == "deneme") {
+                adetBox.value = miktar.replace(',', '.');
+            }
+            else {
+                //adetBox.value = Number.parseFloat(getValue().replace(',', '.'));
+                adetBox.value = 0;
+                
+            }
+            adetBox.setAttribute("onchange", "adetchanged(this)");
+            if (sender.value == "Kredi Karti") {
+                adetBox.disabled = true;
+            }
+
+            var birimFiyatBox = document.createElement("input");
+            birimFiyatBox.setAttribute("id", "birimFiyat" + i);
+            birimFiyatBox.setAttribute("style", "width: 100px");
+            birimFiyatBox.setAttribute("placeholder", "Birim Fiyatı");
+            birimFiyatBox.value = value;
+            birimFiyatBox.setAttribute("onchange", "birimchanged(this)");
+            if (sender.name == "Kredi Karti") {
+                birimFiyatBox.disabled = true;
+            }
+
+
+            var satisTutariBox = document.createElement("input");
+            satisTutariBox.setAttribute("id", "satisTutari" + i);
+            satisTutariBox.setAttribute("placeholder", "Satış Tutarı");
+            if (sender == "deneme") {
+                satisTutariBox.value = fiyat.replace('.', ',');
+            } else {
+                satisTutariBox.value = (Number.parseFloat(birimFiyatBox.value.replace(',', '.') * adetBox.value.replace(',', '.')).toFixed(3)).replace('.', ',');
+            }
+
+            var hareketTuruBox = document.createElement("select");
+            hareketTuruBox.setAttribute("id", "hareketTuru" + i);
+            hareketTuruBox.setAttribute("style", "width: 100%");
+            hareketTuruBox.setAttribute("class", "combo1");
+            satisTutariBox.disabled = true;
+            if (sender.name == "Kredi Karti") {
+                satisTutariBox.disabled = false;
+            }
+
+
+            if (str == "alis") {
+
+                var opt = document.createElement('option');
+                opt.value = "GİRİŞ";
+                opt.innerHTML = "GİRİŞ";
+                hareketTuruBox.appendChild(opt);
+
+            } else if (str == "satis") {
+
+                var opt = document.createElement('option');
+                opt.value = "ÇIKIŞ";
+                opt.innerHTML = "ÇIKIŞ";
+                hareketTuruBox.appendChild(opt);
+
+                var opt = document.createElement('option');
+                opt.value = "  BORÇ";
+                opt.innerHTML = "  BORÇ";
+                hareketTuruBox.appendChild(opt);
+
+                var opt = document.createElement('option');
+                opt.value = "EMANET";
+                opt.innerHTML = "EMANET";
+                hareketTuruBox.appendChild(opt);
+
+            }
+            if (sender != "deneme") {
+                let btnClass = sender.getAttribute("class");
+                if (btnClass.includes("btnAlis")) {
+                    hareketTuruBox.selectedIndex = 0;
+                } else {
+                    hareketTuruBox.selectedIndex = 0;
+                }
+            } else {
+                hareketTuruBox.selectedIndex = 0;
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = dd + '.' + mm + '.' + yyyy;
+
+            var tarihBox = document.createElement("input");
+            tarihBox.setAttribute("id", "tarih" + i);
+            tarihBox.setAttribute("placeholder", "Tarih");
+            tarihBox.value = today + '    ' + time;
+            tarihBox.disabled = true;
+
+
+            var iptalEtBox = document.createElement("input");
+            iptalEtBox.setAttribute("type", "button");
+            iptalEtBox.setAttribute("value", "İptal");
+            iptalEtBox.setAttribute("id", "" + i);
+            iptalEtBox.setAttribute("onclick", "temp(), deleteRow(this);");
+            iptalEtBox.setAttribute("class", "btn btn-outline-danger");
+
+            var currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(hiddenbox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(hiddenbox2);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(imagebox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(musteriAdiBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(urunAdiBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(adetBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(birimFiyatBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(satisTutariBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(hareketTuruBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(tarihBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(iptalEtBox);
+
+
+            i = i + 1;
+
+            for (k = l; k < i; k++) {
+                k = k.toString();
+                if (document.getElementById('hareketTuru' + k).value == "GİRİŞ") {
+                    toplam = toplam - Number.parseFloat(document.getElementById('satisTutari' + k).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                } else if (document.getElementById('hareketTuru' + k).value == "BORÇ") {
+                    toplam = toplam + Number.parseFloat(document.getElementById('satisTutari' + k).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                } else if (document.getElementById('hareketTuru' + k).value == "ÇIKIŞ") {
+                    toplam = toplam + Number.parseFloat(document.getElementById('satisTutari' + k).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                } else if (document.getElementById('hareketTuru' + k).value == "EMANET") {
+                    toplam = toplam + Number.parseFloat(document.getElementById('satisTutari' + k).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                }
+            }
+            l = l + 1;
+        });
+    }
+
+    function temp() {
+        m = true;
+    }
+
+    function result() {
+        $(document).ready(function () {
+            value = document.getElementById('tutar').value;
+            var value3 = document.getElementById('bankalar').value;
+            var value2 = parseFloat(value);
+            try {
+                value1 = document.getElementById('1001').innerHTML;
+            } catch {
+                value1 = "Girilmedi";
+            }
+            
+            if (document.getElementById("musteriAdi0").value == "") {
+                alert("Müşteri Adı Girilmeden İşlem Yapılamaz");
+                for (var u = p; u < i; u++) {
+                    try {
+                        var element = document.getElementById(u);
+                        var row = element.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+                    } catch {
+                    }
+                }
+                window.location.href = '@Url.Action("HizliAlimSatim", "Kuyumcu")';
+            }
+            else {
+                ekle();
+                var m = JSON.stringify({
+                    'model': things, 'toplam': value2, 'personel': value1, 'KrediKarti': value3
+                });
+                things = [];
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Kuyumcu/HizliAlimSatim",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: m,
+                        success: function (data) {
+
+                            if (data.includes("/Kuyumcu/Print") == false) { 
+                                g = g - i;
+
+                            } else {
+                                alert("İşlem Başarılı!");
+                                Print(data);
+                                document.getElementById('tutar').value = 0;
+                                toplam = 0;
+                                degistir();
+
+                                for (var u = p; u < i; u++) {
+                                    try {
+                                        var element = document.getElementById(u);
+                                        var row = element.parentNode.parentNode;
+                                        row.parentNode.removeChild(row);
+                                    } catch {
+                                    }
+                                }
+                                p = i;
+                                document.getElementById('numberbox').value = "";
+                                document.getElementById('tutar').value = 0;
+                                document.getElementById('txtJsonSearch').value = "";
+                                i = 0;
+                                l = 0;
+                                g = 0;
+
+                                //window.location.reload(true);
+                            }
+                        }
+
+                    });
+                });
+            }
+
+        });
+    }
+
+    function jsonSearch() {
+        $(document).ready(function () {
+            name = document.getElementById('txtJsonSearch').value;
+            $(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Kuyumcu/HizliAlimSatim1",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: JSON.stringify({
+                        AdSoyad: name
+                    }),
+                    success: function (data) {
+                        if (data == "failed")
+                            alert("Bu Müşteri Veritabanında Bulunamadı!")
+                        else {
+                            for (var s = 0; s < i; s++) {
+                                document.getElementById("musteriAdi" + s).value = data;
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteRow(btn) {
+        $(document).ready(function () {
+            y = btn.id;
+            sil.push(y.toString());
+            if (document.getElementById('hareketTuru' + y).value == "GİRİŞ") {
+                if (document.getElementById('urunAdi' + y).innerHTML == "Kredi Karti") {
+                    toplam = toplam + Number.parseFloat(document.getElementById("adet" + y).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                } else {
+
+                    toplam = toplam + Number.parseFloat(document.getElementById('satisTutari' + y).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+
+                }
+            } else if (document.getElementById('hareketTuru' + y).value == "ÇIKIŞ") {
+                toplam = toplam - Number.parseFloat(document.getElementById('satisTutari' + y).value.replace(',', '.'));
+                var u = toplam.toFixed(3);
+                document.getElementById('tutar').value = u.toString();
+                degistir();
+            }
+            //alert(toplam);
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            things.splice(parseInt(y), 1);
+        });
+    }
+
+    function getValue() {
+        //var deger = prompt("Adet Giriniz. : ");
+        //return deger;
+        document.getElementById('numberbox').value = "";
+        document.getElementById('numberbox').focus();
+
+    }
+
+    function ekle() {
+        for (k = g; k < i; k++) {
+            k = k.toString();
+            try {
+                things.push({
+                    MusteriAdSoyad: document.getElementById('musteriAdi' + k).value,
+                    StokAdi: document.getElementById('urunAdi' + k).innerHTML,
+                    Tarih: document.getElementById('tarih' + k).value,
+                    Miktar: document.getElementById('adet' + k).value.replace('.', ','),
+                    BirimFiyati: document.getElementById('birimFiyat' + k).value,
+                    HareketTuru: document.getElementById('hareketTuru' + k).value,
+                    SatisTutari: document.getElementById('satisTutari' + k).value.replace('.', ',')
+
+                });
+            } catch {
+                continue;
+            }
+            
+        }
+        g = i;
+    }
+
+    function barkodGetir() {
+        $(document).ready(function () {
+            value = document.getElementById('barkodOkut').value;
+            $(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Kuyumcu/HizliAlimSatim2",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: JSON.stringify({
+                        barkod: value
+                    }),
+                    success: function (data) {
+                        if (data == "failed")
+                            alert("Bu Ürün Veritabanında Bulunamadı!");
+                        else {
+                            var array = data.split(", ", 4);
+                            addField("deneme", array[1], "satis", array[0], array[2], array[3]);
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    function adetchanged(y) {
+        $(document).ready(function () {
+
+            var array = y.id.split("adet", 2);
+
+            a = Number.parseFloat(document.getElementById('satisTutari' + array[1]).value.replace(',', '.'));
+            document.getElementById('satisTutari' + array[1]).value = (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('adet' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+            son = Number.parseFloat(document.getElementById('satisTutari' + array[1]).value.replace(',', '.'))
+
+
+            if (document.getElementById('hareketTuru' + array[1]).value == "GİRİŞ") {
+
+                var o = Number.parseFloat(document.getElementById('tutar').value.replace(',', '.')) - (son - a);
+                document.getElementById('tutar').value = o.toFixed(3);
+                degistir();
+                toplam = o
+            } else {
+                var o = Number.parseFloat(document.getElementById('tutar').value.replace(',', '.')) + (son - a);
+                document.getElementById('tutar').value = o.toFixed(3);
+                degistir();
+                toplam = o
+            }
+            if (document.getElementById('urunAdi' + array[1]).innerHTML == "Kredi Karti") {
+                getKomisyon();
+            }
+
+        });
+    }
+
+
+    function birimchanged(y) {
+        $(document).ready(function () {
+            var array = y.id.split("birimFiyat", 2);
+            a = Number.parseFloat(document.getElementById('satisTutari' + array[1]).value.replace(',', '.'));
+            var alissatis1 = Number.parseFloat(document.getElementById('hiddenbox2' + array[1]).value.replace(',', '.'));
+            var alissatis2 = Number.parseFloat(document.getElementById('hiddenbox' + array[1]).value.replace(',', '.'));
+            8
+            document.getElementById('satisTutari' + array[1]).value = (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('adet' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+            son = Number.parseFloat(document.getElementById('satisTutari' + array[1]).value.replace(',', '.'))
+
+
+            if (document.getElementById('hareketTuru' + array[1]).value == "GİRİŞ") {
+
+                var o = Number.parseFloat(document.getElementById('tutar').value.replace(',', '.')) - (son - a);
+                document.getElementById('tutar').value = o.toFixed(3);
+                degistir();
+                toplam = o;
+                if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) > alissatis2) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/carpi.png");
+                } else if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) < alissatis2 && Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) > alissatis1) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/unlem.png");
+                } else if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) <= alissatis1) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/onay.png");
+                }
+
+            } else {
+                var o = Number.parseFloat(document.getElementById('tutar').value.replace(',', '.')) + (son - a);
+                document.getElementById('tutar').value = o.toFixed(3);
+                degistir();
+                toplam = o;
+                if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) < alissatis2) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/carpi.png");
+                } else if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) > alissatis2 && Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) < alissatis1) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/unlem.png");
+                } else if (Number.parseFloat(document.getElementById('birimFiyat' + array[1]).value.replace(',', '.')) >= alissatis1) {
+                    document.getElementById('img' + array[1]).setAttribute("src", "../Images/onay.png");
+                }
+            }
+        });
+    }
+
+    function degistir() {
+        document.getElementById("tahsilat").innerHTML = "ÖDEYİNİZ.";
+        if (document.getElementById('tutar').value == 0) {
+            document.getElementById("tahsilat").innerHTML = "";
+        } else if (document.getElementById('tutar').value < 0) {
+            document.getElementById("tahsilat").innerHTML = "ÖDEYİNİZ.";
+        } else {
+            document.getElementById("tahsilat").innerHTML = "TAHSİL EDİNİZ.";
+        }
+    }
+
+    function personelGiris(id) {
+        $(document).ready(function () {
+            id = document.getElementById('personelSearch').value;
+            $(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Kuyumcu/HizliAlimSatim3",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    data: JSON.stringify({
+                        barkod: id
+                    }),
+                    success: function (data) {
+                        if (data == "failed")
+                            alert("Bu Personel Veritabanında Bulunamadı!")
+                        else {
+                            document.getElementById("personelSearch").hidden = true;
+                            document.getElementById("btnPerSearch").hidden = true;
+                            var PersonelAdi = document.createElement("text");
+                            PersonelAdi.setAttribute("id", "1001");
+                            PersonelAdi.setAttribute("style", "margin-right: 5px");
+                            PersonelAdi.innerHTML = data;
+                            var Cikis = document.createElement("input");
+                            Cikis.setAttribute("type", "button");
+                            Cikis.setAttribute("value", "Çıkış");
+                            Cikis.setAttribute("id", "1002");
+                            Cikis.setAttribute("class", "btn btn-danger");
+                            Cikis.setAttribute("onclick", "Cikisyap();");
+
+                            foo.appendChild(PersonelAdi);
+                            foo.appendChild(Cikis);
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    function Cikisyap() {
+        //var row = btn.parentNode;
+        //row.parentNode.removeChild(row);
+        var element1 = document.getElementById("1001");
+        var element2 = document.getElementById("1002");
+        element1.parentNode.removeChild(element1);
+        element2.parentNode.removeChild(element2);
+        document.getElementById("personelSearch").hidden = false;
+        document.getElementById("personelSearch").value = "";
+        document.getElementById("btnPerSearch").hidden = false;
+    }
+
+
+    function getKomisyon() {
+        var banka = document.getElementById("bankalar").value;
+        var hesapno = document.getElementById("hesaplar").value;
+        var taksit = document.getElementById("krediKartiTaksit").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/HizliAlimSatim4",
+            data: { bankaadi: banka, SubeNo: hesapno, taksit: taksit },
+            success: function (data) {
+
+                var k = (parseFloat(document.getElementById("adet" + (i - 1)).value.replace(',', '.')) * parseFloat(data.replace(',', '.'))) / 100;
+                document.getElementById('satisTutari' + (i - 1)).value = (k + parseFloat(document.getElementById("adet" + (i - 1)).value.replace(',', '.')));
+                //toplam = toplam - k;
+                //var u = toplam.toFixed(3);
+                //document.getElementById('tutar').value = u.toString();
+                degistir();
+            }
+
+        });
+
+    }
+
+    function getTaksitler() {
+        var banka = document.getElementById("bankalar").value;
+        var hesapno = document.getElementById("hesaplar").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/HizliAlimSatim5",
+            data: { banka: banka, SubeNo: hesapno },
+            success: function (data) {
+                var select = document.getElementById("krediKartiTaksit");
+                $(krediKartiTaksit).empty();
+                data = JSON.parse(data);
+                select.append(new Option("Seçiniz", "Seçiniz"));
+                for (index in data) {
+                    select.append(new Option(data[index], data[index]));
+                }
+
+            }
+        });
+    }
+
+
+    let krediToggleStatus = false;
+
+    function krediToggle() {
+        // document.getElementById('bankaAdi').style.display = 'block';
+        if (krediToggleStatus) {
+
+            $('#krediKartiMenu').hide();
+            krediToggleStatus = false;
+
+        } else {
+            $('#krediKartiMenu').css('display', 'contents');
+            krediToggleStatus = true;
+
+
+        }
+    }
+
+    let dovizToggleStatus = false;
+
+    function dovizToggle() {
+        if (dovizToggleStatus) {
+
+            $('#menu1').hide();
+            $('#menu2').hide();
+            // $('#menu1').css('display', 'inline-table');
+            // alert("menu1 if true");
+            dovizToggleStatus = false;
+
+
+        } else {
+            $('#menu2').hide();
+            $('#menu1').css('display', 'inline-table');
+            // alert("menu1 else false");
+            dovizToggleStatus = true;
+            dovizToggleStatus2 = false;
+
+        }
+    }
+
+    let dovizToggleStatus2 = false;
+
+    function dovizToggle2() {
+        if (dovizToggleStatus2) {
+            $('#menu1').hide();
+            $('#menu2').hide();
+            // alert("girdi mi menu2 if");
+            dovizToggleStatus2 = false;
+
+        } else {
+            $('#menu1').hide();
+            $('#menu2').css('display', 'inline-table');
+            // alert("menu2 else false")
+            dovizToggleStatus2 = true;
+            dovizToggleStatus = false;
+        }
+    }
+
+    function getadetvalue() {
+        document.getElementById('adet' + (i - 1)).value = document.getElementById('numberbox').value;
+        adetchanged(document.getElementById('adet' + (i - 1)));
+    }
+</script>
+<style>
+    #Araclar {
+        margin: 8px;
+    }
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .navSearch input {
+        height: 25px;
+        width: 150px;
+        padding-bottom: 4px;
+    }
+
+
+    .imageb {
+        border-width: 1px;
+        width: 30px;
+        height: 30px;
+        border-color: Black;
+        /*margin-right: 5px;*/
+    }
+
+    .table {
+        /*margin: 20px;*/
+        width: 50%;
+        /*max-width: 50% !important;*/
+        text-align: center;
+        /*border-right-style: solid;*/
+        /*border-color: cadetblue;*/
+        /*background-color: whitesmoke;*/
+        border-collapse: collapse;
+        border-spacing: 10px;
+        display: inline-table;
+    }
+
+
+    .tbody {
+        display: table-row-group;
+    }
+
+    .tr {
+        display: table-row;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    .td {
+        text-align: center;
+        height: 100%;
+        display: table-cell;
+        /*border: 0px solid darkslategrey;*/
+        padding: 12px;
+    }
+
+    .btnAlis {
+        display: block;
+        /*height: 100%;*/
+        width: 100%;
+        border: #0f6848;
+        background-color: #E6332A;
+        padding: 10px 16px;
+        font-size: 12px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btnSatis {
+        display: block;
+        /*height: 100%;*/
+        width: 100%;
+        border: none;
+        background-color: #739154;
+        padding: 10px 16px;
+        font-size: 12px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .Alis {
+        background-color: white;
+    }
+
+    .Satis {
+        background-color: white;
+    }
+
+    .tableTitle {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-collapse: collapse;
+        border-spacing: 15px;
+        display: table-caption;
+        /*background-color: bisque;*/
+    }
+
+    .searchBar {
+        /*padding: 20px;*/
+        width: 33%;
+        height: 42px;
+    }
+
+    form.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+
+    form.searchBar button {
+        float: left;
+        width: 14%;
+        width: 20%;
+        padding: 5px;
+        background: #394F85;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    #islemTablosu {
+        margin: auto;
+        width: auto;
+        alignment: center;
+    }
+
+    .islemTablosu {
+        border: 2px solid darkslategrey;
+        text-align: center;
+        /*margin-left: 20px;*/
+    }
+
+
+
+    .tutarOnay {
+        justify-content: center;
+        /*width: 100%;*/
+        text-align: center;
+    }
+
+    #tahsilat {
+        color: #394F85;
+    }
+
+    .navSearch {
+        display: contents;
+    }
+</style>
+<body>
+
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand"><img src="~/Images/logoson.png" style="width: 125px;height:38px;"></a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div id="Araclar" class="collapsed">
+            <a href="HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+            <a href="Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+            <a href="UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+            <a href="OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+            <a href="UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+            <a href="Takas" button class="btn btn-dark araclarMenu">TAKAS</a>
+
+            <form class="searchBar" action="action_page.php" style="display: inline-flex ">
+
+                <div class="navSearch">
+                    @Html.TextBoxFor(x => x.MusteriAdSoyad, new { id = "txtJsonSearch", type = "text", name = "KullaniciAdi", placeholder = " Ad Soyad" })
+
+
+                    <button type="button" id="btnJsonSearch" class="btn-success" onclick=" jsonSearch()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="navSearch">
+                    @Html.TextBoxFor(x => x.StokId, new { id = "barkodOkut", type = "text", name = "BarkodKodu", placeholder = "Ürün Barkod" })
+
+                    <button type="button" id="btnJsonSearch" class="btn-success" onclick="barkodGetir()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="navSearch">
+                    @Html.TextBoxFor(x => x.PersonelId, new { id = "personelSearch", type = "text", name = "Personelid", placeholder = "Personel Kartı" })
+                    <button type="button" id="btnPerSearch" class="btn-success" onclick=" personelGiris()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div id="foo"></div>
+            </form>
+        </div>
+        <div style="text-align: center">
+            <input type="number" placeholder="Adet" style="width:15%;text-align:center;" name="toplamTutar" id="numberbox" onchange="getadetvalue();">
+        </div>
+
+        <div style="display:flex;">
+            <div class="table Alis">
+                <div class="tableTitle">
+                    <P style="background-color: #d1282b;margin: 12px;">ALIŞ</P>
+                </div>
+                <div class="tbody">
+                    <form class="tr">
+                        <div class="td">
+                            <button id="alisCeyrek" class="btn-outline-light btnAlis" type="button" name="ÇEYREK"
+                                    onclick=" addField(this, '@Model.CeyrekA.ToString()', 'alis' , '','@Model.CeyrekS.ToString()', 0 ), getValue()">
+                                ÇEYREK
+                            </button>
+                        </div>
+
+                        <div class="td">
+                            <button id="alisYarim" class="btn-outline-light btnAlis" type="button" name="YARIM"
+                                    onclick="addField(this,'@Model.YarimA.ToString()', 'alis' , '','@Model.YarimS.ToString()', 0), getValue()">
+                                YARIM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button id="alisATATEK" class="btn-outline-light btnAlis" type="button" name="ATATEK"
+                                    onclick="addField(this, '@Model.AtatekA.ToString()', 'alis' , '','@Model.AtatekS.ToString()', 0), getValue()">
+                                ATATEK
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button id="alis25LU" class="btn-outline-light btnAlis" type="button" name="2.5'LU"
+                                    onclick="addField(this, '@Model.IkibucukluA.ToString()', 'alis' , '','@Model.IkibucukluS.ToString()', 0), getValue()">
+                                2.5'LU
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="C.LİRA"
+                                    onclick="addField(this, '@Model.CliraA.ToString()', 'alis' , '','@Model.CliraS.ToString()', 0), getValue()">
+                                C.LİRA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="22 AYAR GRAM"
+                                    onclick="addField(this, '@Model.YirmiIkiGramA.ToString()', 'alis' , '','@Model.YirmiIkiGramS.ToString()', 0), getValue()">
+                                22 AYAR GRAM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="24 AYAR GRAM"
+                                    onclick="addField(this, '@Model.YirmiDortGramA.ToString()', 'alis' , '','@Model.YirmiDortGramS.ToString()', 0), getValue() ">
+                                24 AYAR GRAM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="HAMİT LİRA"
+                                    onclick="addField(this, '@Model.HamitLiraA.ToString()', 'alis' , '','@Model.HamitLiraS.ToString()', 0), getValue() ">
+                                HAMİT LİRA
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="REŞAT BEŞLİ"
+                                    onclick="addField(this, '@Model.ResatBesliA.ToString()', 'alis' , '','@Model.ResatBesliS.ToString()', 0), getValue()">
+                                REŞAT 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="HAMİT BEŞLİ"
+                                    onclick="addField(this, '@Model.HamitBesliA.ToString()', 'alis' , '','@Model.HamitBesliS.ToString()', 0), getValue()">
+                                HAMİT 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="CUMHURİYET BEŞLİ"
+                                    onclick="addField(this, '@Model.CUMBesliA.ToString()', 'alis' , '','@Model.CUMBesliS.ToString()', 0) , getValue()">
+                                CUM 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="REŞAT LİRA"
+                                    onclick="addField(this, '@Model.ResatLiraA.ToString()', 'alis' , '','@Model.ResatBesliS.ToString()', 0) , getValue()">
+                                REŞAT LİRA
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="8 HURDA"
+                                    onclick="addField(this, '@Model.SekhurdaA.ToString()', 'alis' , '','@Model.SekhurdaS.ToString()', 0), getValue() ">
+                                8 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="14 HURDA"
+                                    onclick="addField(this, '@Model.OndorthurdaA.ToString()', 'alis' , '','@Model.OndorthurdaS.ToString()', 0) , getValue()">
+                                14 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="18 HURDA"
+                                    onclick="addField(this, '@Model.OnsekhurdaA.ToString()', 'alis' , '','@Model.OnsekhurdaS.ToString()', 0), getValue() ">
+                                18 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="21 HURDA"
+                                    onclick="addField(this, '@Model.YirbirhurdaA.ToString()', 'alis' , '','@Model.YirbirhurdaS.ToString()', 0), getValue() ">
+                                21 HURDA
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="22 HURDA"
+                                    onclick="addField(this, '@Model.YirmiikihurdaA.ToString()', 'alis' , '','@Model.YirmiikihurdaS.ToString()', 0), getValue()">
+                                22 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="AMERİKAN DOLARI"
+                                    onclick="addField(this, '@Model.DolarA.ToString()', 'alis', '','@Model.DolarS.ToString()', 0), getValue() ">
+                                AMERİKAN DOLARI
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="EURO"
+                                    onclick="addField(this, '@Model.EuroA.ToString()', 'alis', '','@Model.EuroS.ToString()', 0), getValue() ">
+                                EURO
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" name="KARIŞIK DÖVİZ"
+                                    onclick="dovizToggle()">
+                                KARIŞIK DÖVİZ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--end of table1-->
+
+            <div class="table Satis">
+                <div class="tableTitle">
+                    <p style="background-color: #567845;margin: 12px">SATIŞ/EMANET/BORÇ</p>
+                </div>
+                <div class="tbody">
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="ÇEYREK"
+                                    onclick="addField(this, '@Model.CeyrekS.ToString()', 'satis', '', '@Model.CeyrekA.ToString()', 0), getValue() ">
+                                ÇEYREK
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="YARIM"
+                                    onclick="addField(this, '@Model.YarimS.ToString()', 'satis', '', '@Model.YarimA.ToString()', 0), getValue() ">
+                                YARIM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="ATATEK"
+                                    onclick="addField(this, '@Model.AtatekS.ToString()', 'satis', '', '@Model.AtatekA.ToString()', 0), getValue()">
+                                ATATEK
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="2.5'LU"
+                                    onclick="addField(this, '@Model.IkibucukluS.ToString()', 'satis', '', '@Model.IkibucukluA.ToString()', 0), getValue() ">
+                                2.5'LU
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="C.LİRA"
+                                    onclick="addField(this, '@Model.CliraS.ToString()', 'satis', '', '@Model.CliraA.ToString()', 0), getValue() ">
+                                C.LİRA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="22 AYAR GRAM"
+                                    onclick="addField(this, '@Model.YirmiIkiGramS.ToString()', 'satis', '', '@Model.YirmiIkiGramA.ToString()', 0), getValue() ">
+                                22 AYAR GRAM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="24 AYAR GRAM"
+                                    onclick="addField(this, '@Model.YirmiDortGramS.ToString()', 'satis', '', '@Model.YirmiDortGramA.ToString()', 0), getValue() ">
+                                24 AYAR GRAM
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="HAMİT LİRA"
+                                    onclick="addField(this, '@Model.HamitLiraS.ToString()', 'satis', '', '@Model.HamitLiraA.ToString()', 0), getValue() ">
+                                HAMİT LİRA
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="REŞAT BEŞLİ"
+                                    onclick="addField(this, '@Model.ResatBesliS.ToString()', 'satis', '', '@Model.ResatBesliA.ToString()', 0), getValue() ">
+                                REŞAT 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="HAMİT BEŞLİ"
+                                    onclick="addField(this, '@Model.HamitBesliS.ToString()', 'satis', '', '@Model.HamitBesliA.ToString()', 0), getValue() ">
+                                HAMİT 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="CUMHURİYET BEŞLİ"
+                                    onclick="addField(this, '@Model.CUMBesliS.ToString()', 'satis', '', '@Model.CUMBesliA.ToString()', 0), getValue() ">
+                                CUM 5'Lİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="REŞAT LİRA"
+                                    onclick="addField(this, '@Model.ResatLiraS.ToString()', 'satis', '', '@Model.ResatLiraA.ToString()', 0), getValue() ">
+                                REŞAT LİRA
+                            </button>
+                        </div>
+                    </form>
+
+                    <!--      A-S HARFLERİ      DEĞİŞTİRİLECEK-->
+                    <!--      A-S HARFLERİ      DEĞİŞTİRİLECEK-->
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="8 HURDA"
+                                    onclick="addField(this, '@Model.SekhurdaS.ToString()', 'satis' , '','@Model.SekhurdaA.ToString()', 0), getValue() ">
+                                8 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="14 HURDA"
+                                    onclick="addField(this, '@Model.OndorthurdaS.ToString()', 'satis' , '','@Model.OndorthurdaA.ToString()', 0) , getValue()">
+                                14 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="18 HURDA"
+                                    onclick="addField(this, '@Model.OnsekhurdaS.ToString()', 'satis' , '','@Model.OnsekhurdaA.ToString()', 0), getValue() ">
+                                18 HURDA
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="21 HURDA"
+                                    onclick="addField(this, '@Model.YirbirhurdaS.ToString()', 'satis' , '','@Model.YirbirhurdaA.ToString()', 0), getValue() ">
+                                21 HURDA
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="22 HURDA"
+                                    onclick="addField(this, '@Model.YirmiikihurdaS.ToString()', 'satis' , '','@Model.YirmiikihurdaA.ToString()', 0) , getValue();">
+                                22 HURDA
+                            </button>
+                        </div>
+                        <!--      A-S HARFLERİ      DEĞİŞTİRİLECEK-->
+                        <!--      A-S HARFLERİ      DEĞİŞTİRİLECEK-->
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="AMERİKAN DOLARI"
+                                    onclick="addField(this, '@Model.DolarS.ToString()', 'satis', '', '@Model.DolarA.ToString()', 0), getValue() ">
+                                AMERİKAN DOLARI
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="EURO"
+                                    onclick="addField(this, '@Model.EuroS.ToString()', 'satis', '', '@Model.EuroA.ToString()', 0), getValue() ">
+                                EURO
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnSatis" type="button" name="KARIŞIK DÖVİZ"
+                                    onclick="dovizToggle2() ">
+                                KARIŞIK DÖVİZ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="dovizMenu" style="text-align: center;">
+            <div id="menu1" class="table" style="display:none">
+                <div class="tableTitle">
+                    <p style="background-color: #d1282b;margin: 12px">KARIŞIK DÖVİZ ALIŞ</p>
+                </div>
+                <!--        <h6>KARIŞIK DÖVİZ ALIŞ</h6>-->
+                <div class="tbody">
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="İSVİÇRE FRANGI" onclick="addField(this, '@Model.IsvicFranA.ToString()', 'alis' , '','@Model.IsvicFranS.ToString()', 0 ), getValue()">
+                                İSVİÇRE FRANGI
+                                (CHF)
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="İNGİLİZ STERLİNİ" onclick="addField(this, '@Model.SterlinA.ToString()', 'alis' , '','@Model.SterlinS.ToString()', 0 ), getValue()">
+                                STERLİN
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="İSVEÇ KRONU" onclick="addField(this, '@Model.IsvecKronuA.ToString()', 'alis' , '','@Model.IsvecKronuA.ToString()', 0 ), getValue()">
+                                İSVEÇ KRONU
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="NORVEÇ KRONU" onclick="addField(this, '@Model.NorvecKronuA.ToString()', 'alis' , '','@Model.NorvecKronuS.ToString()', 0 ), getValue()">
+                                NORVEÇ KRONU
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="DANİMARKA KRONU" onclick="addField(this, '@Model.DankronA.ToString()', 'alis' , '','@Model.DankronA.ToString()', 0 ), getValue()">
+                                DANİMARKA KRONU
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="JAPON YENİ" onclick="addField(this, '@Model.JaponYeniA.ToString()', 'alis' , '','@Model.JaponYeniS.ToString()', 0 ), getValue()">
+                                JAPON YENİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="KANADA DOLARI" onclick="addField(this, '@Model.KanDolariA.ToString()', 'alis' , '','@Model.KanDolariS.ToString()', 0 ), getValue()">
+                                KANADA DOLARI
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="AVUSTRALYA DOLARI" onclick="addField(this, '@Model.AvusDolariA.ToString()', 'alis' , '','@Model.AvusDolariS.ToString()', 0 ), getValue()">
+                                AVUSTRALYA
+                                DOLARI
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="RUS RUBLESİ" onclick="addField(this, '@Model.RusRubleA.ToString()', 'alis' , '','@Model.RusRubleS.ToString()', 0 ), getValue()">
+                                RUS RUBLESİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnAlis" type="button" name="RİYAL" onclick="addField(this, '@Model.RiyalA.ToString()', 'alis' , '','@Model.RiyalS.ToString()', 0 ), getValue()">
+                                RİYAL
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="menu2" class="table" style="display:none">
+                <div class="tableTitle">
+                    <p style="background-color: #567845;margin: 12px">KARIŞIK DÖVİZ SATIŞ</p>
+                </div>
+                <!--        <h6>KARIŞIK DÖVİZ </h6>-->
+                <div class="tbody">
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="İSVİÇRE FRANGI" onclick="addField(this, '@Model.IsvicFranS.ToString()', 'satis' , '','@Model.IsvicFranA.ToString()', 0 ), getValue()">
+                                İSVİÇRE FRANGI
+                                (CHF)
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="İNGİLİZ STERLİNİ" onclick="addField(this, '@Model.SterlinS', 'satis' , '','@Model.SterlinA.ToString()', 0 ), getValue()">
+                                STERLİN
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="İSVEÇ KRONU" onclick="addField(this, '@Model.IsvecKronuS.ToString()', 'satis' , '','@Model.IsvecKronuS.ToString()', 0 ), getValue()">
+                                İSVEÇ KRONU
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="NORVEÇ KRONU" onclick="addField(this, '@Model.NorvecKronuS.ToString()', 'satis' , '','@Model.NorvecKronuA.ToString()', 0 ), getValue()">
+                                NORVEÇ KRONU
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="DANİMARKA KRONU" onclick="addField(this, '@Model.DankronS.ToString()', 'satis' , '','@Model.DankronA.ToString()', 0 ), getValue()">
+                                DANİMARKA KRONU
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="JAPON YENİ" onclick="addField(this, '@Model.JaponYeniS.ToString()', 'satis' , '','@Model.JaponYeniA.ToString()', 0 ), getValue()">
+                                JAPON YENİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="KANADA DOLARI" onclick="addField(this, '@Model.KanDolariS.ToString()', 'satis' , '','@Model.KanDolariA.ToString()', 0 ), getValue()">
+                                KANADA DOLARI
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="AVUSTRALYA DOLARI" onclick="addField(this, '@Model.AvusDolariS.ToString()', 'satis' , '','@Model.AvusDolariA.ToString()' , 0), getValue()">
+                                AVUSTRALYA
+                                DOLARI
+                            </button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="RUS RUBLESİ" onclick="addField(this, '@Model.RusRubleS.ToString()', 'satis' , '','@Model.RusRubleA.ToString()' , 0), getValue()">
+                                RUS RUBLESİ
+                            </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" name="RİYAL" onclick="addField(this, '@Model.RiyalS.ToString()', 'satis' , '','@Model.RiyalA.ToString()', 0 ), getValue()">
+                                RİYAL
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex">
+            <div style="padding:12px;height:100%">
+                <button class="btn-m btn-info" type="button" style="padding:6px 12px" id="Kredikarti" name="Kredi Karti"
+                        onclick="document.getElementById('bankalar').style.display='block'">
+                    Kredi Kartı
+                </button>
+            </div>
+            <div style="padding:12px">
+                @*<select id="bankaAdi" style="display:none;height:100%;width: 100%"
+                            onchange="document.getElementById('krediKartiTaksit').style.display='block'">
+                        <option></option>
+                        <option>Garanti</option>
+                        <option>Ziraat</option>
+                        <option>İş</option>
+                    </select>*@
+                @Html.DropDownListFor(x => x.Komisyon.BankaAdi, new List<SelectListItem>
+                           {
+                           new SelectListItem { Text = "VAKIFBANK", Value = "VAKIFBANK"},
+                           new SelectListItem { Text = "TEB", Value = "TEB"},
+                           new SelectListItem { Text = "GARANTİ", Value = "GARANTİ"},
+                           new SelectListItem { Text = "DENIZBANK", Value = "DENIZBANK"},
+                           new SelectListItem { Text = "AKBANK", Value = "AKBANK"},
+                           new SelectListItem { Text = "FINANSBANK", Value = "FINANSBANK"},
+                           new SelectListItem { Text = "İŞBANKASI", Value = "İŞBANKASI"},
+                           new SelectListItem { Text = "YAPIKREDİ", Value = "YAPIKREDİ"},
+                           new SelectListItem { Text = "ZİRAAT", Value = "ZİRAAT"}
+                           }, "Seçiniz", new
+                           {
+                               @Class = "comboBox",
+                               id = "bankalar",
+                               @style = "display:none;height:100%;width: 100%",
+                               onchange = "document.getElementById('hesaplar').style.display='block'"
+                           })
+            </div>
+            <div style="padding:12px">
+                @Html.DropDownListFor(x => x.Komisyon.HesapNumarasi, new List<SelectListItem>
+                           {
+                           new SelectListItem { Text = "NO1", Value = "NO1"},
+                           new SelectListItem { Text = "NO9", Value = "NO9"},
+                           }, "Seçiniz", new
+                           {
+                               @Class = "comboBox",
+                               @id = "hesaplar",
+                               style = "display:none;height:100%;width:100%",
+                               onchange = "document.getElementById('krediKartiTaksit').style.display='block', getTaksitler()"
+
+                           })
+
+            </div>
+            <div style="padding:12px">
+
+                @Html.DropDownListFor(x => x.Komisyon.Taksit, new SelectList(Model.Taksitler).ToList(),
+                "Seçiniz", new
+                {
+                    @Class = "comboBox",
+                    id = "krediKartiTaksit",
+                    style = "display:none;height:100%;width:100%",
+                    name = "KREDİ KARTI",
+                    onchange = "addField( document.getElementById('Kredikarti'), 1, 'alis', 1, 0), getValue(), getKomisyon()"
+
+                })
+            </div>
+        </div>
+        <div class="col-md-2 mx-auto tutarOnay" align="center">
+            <input type="text" placeholder="Toplam Tutar" style="width:70%;text-align:center;" name="toplamTutar" id="tutar"
+                   value="0">
+
+            <div>
+                <text id="tahsilat"></text>
+            </div>
+            <button type="button" id="btnJsonResult" class="btn" style="color:white;background-color:#394F85;"
+                    onclick="result()">
+                ONAYLA
+            </button>
+            <iframe name="PrintingFrame" style="position:absolute; left: -10000px; top: -10000px;"></iframe>
+        </div>
+
+
+        <div class="container-fluid" style="text-align: center;">
+
+            <div class="col-md-9 col-sm-11" style="display:inline">
+                <table id="islemTablosu" class="islemTablosu"></table>
+            </div>
+
+        </div>
+
+    }
+
+</body>
+</html>

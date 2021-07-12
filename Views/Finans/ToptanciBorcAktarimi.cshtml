@@ -1,0 +1,534 @@
+﻿@model Kuyumcu.Models.Toptancilar
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+    $(document).ready(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+        });
+    </script>
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 80%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+        .pairRow {
+            display: inline-flex;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .toptanciGirisBilgi {
+            margin-top: 25px;
+            text-align: center;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .toptanciInputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+        thead th {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        function getbakiye1() {
+            var value = document.getElementById("toptanciAdi1").value;
+            var value1 = document.getElementById("subeno").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/ToptanciAlim1",
+                data: { ToptanciAdi: value, subeno: value1 },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 8);
+                    for (var i = 0; i < 8; i++) {
+                        var j = i + 1;
+                        if (parseFloat(array[i]) < 0) {
+
+                            var num = 0 - parseFloat(array[i].replace(',', '.'));
+                            document.getElementById("Alacak" + j).value = num;
+                            document.getElementById("Alacak" + j).value = document.getElementById("Alacak" + j).value.replace('.', ',');
+                            document.getElementById("Borc" + j).value = 0;
+                        }
+                        else if (parseFloat(array[i]) > 0) {
+
+                            document.getElementById("Alacak" + j).value = 0;
+                            document.getElementById("Borc" + j).value = array[i].replace('.', ',');
+                        }
+                        else {
+                            document.getElementById("Alacak" + j).value = 0;
+                            document.getElementById("Borc" + j).value = 0;
+                        }
+                    }
+                }
+            });
+        }
+        function getbakiye2() {
+            var value = document.getElementById("toptanciAdi2").value;
+            var value1 = document.getElementById("subeno").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/ToptanciAlim1",
+                data: { ToptanciAdi: value, subeno: value1 },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 8);
+                    for (var i = 0; i < 8; i++) {
+                        var j = i + 9;
+                        if (parseFloat(array[i]) < 0) {
+
+                            var num = 0 - parseFloat(array[i].replace(',', '.'));
+                            document.getElementById("Alacak" + j).value = num;
+                            document.getElementById("Alacak" + j).value = document.getElementById("Alacak" + j).value.replace('.', ',');
+                            document.getElementById("Borc" + j).value = 0;
+                        }
+                        else if (parseFloat(array[i]) > 0) {
+                            document.getElementById("Alacak" + j).value = 0;
+                            document.getElementById("Borc" + j).value = array[i].replace('.', ',');
+                        }
+                        else {
+                            document.getElementById("Alacak" + j).value = 0;
+                            document.getElementById("Borc" + j).value = 0;
+                        }
+                    }
+                }
+            });
+        }
+
+        function getToptancilar() {
+            var value = document.getElementById("subeno").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/ToptanciAlim3",
+                data: { magaza: value },
+                success: function (data) {
+                    var select = document.getElementById("toptanciAdi1");
+                    $(toptanciAdi1).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                    var select2 = document.getElementById("toptanciAdi2");
+                    $(toptanciAdi2).empty();
+                    select2.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select2.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="Toptanci" button class="btn btn-dark kuyumcuAraclari">TOPTANCI</a>
+        <a href="ToptanciAlim" button class="btn btn-dark kuyumcuAraclari">TOPTANCI ALIM</a>
+        <a href="ToptanciyaOdeme" button class="btn btn-dark kuyumcuAraclari">TOPTANCIYA ÖDEME</a>
+        <a href="ToptanciBorcAlacakCevrimi" button class="btn btn-dark kuyumcuAraclari">
+            TOPTANCI BORÇ ve ALACAK
+            ÇEVRİMİ
+        </a>
+        <a href="ToptanciBorcAktarimi" button class="btn btn-dark kuyumcuAraclari">TOPTANCI BORÇ AKTARIMI</a>
+        <a href="BaglamaIslemleri" button class="btn btn-dark kuyumcuAraclari">BAĞLAMA İŞLEMLERİ</a>
+        <a href="ToptanciIade" button class="btn btn-dark kuyumcuAraclari">TOPTANCI IADE</a>
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--TARİH-->
+                    <div>
+                        <label class="urunLabel" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.Hareket.Tarih, new { @class = "datepicker", id = "Tarih", type = "text" })
+                    </div>
+
+                    <div>
+                        <label class="urunLabel" for="tarih">Mağaza No</label>
+
+                        @Html.TextBoxFor(x => x.Hareket.SubeNo, new { @class = "inputField", id = "subeno", type="text", @Value="NO1", @readonly = "readonly", onchange="getToptancilar()" })
+
+                        
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="islemYapanPersonel">İşlem Yapan Personel</label>
+                        @Html.DropDownListFor(x => x.Hareket.Islemci, new SelectList(Model.Personel).ToList(),
+              "Seçiniz", new
+              {
+                  @Class = "comboBox",
+                  @id = "islemYapanPersonel",
+                  style = "width:80%",
+              })
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="tarih">Açıklama</label>
+                        @Html.TextBoxFor(x => x.Hareket.Aciklama, new { @class = "inputField", type = "text", id = "aciklama" })
+                    </div>
+                </div>
+                <!--        TOPTANCI AKTARIM 1-->
+                <div class="col-md-4">
+                    <table id="borcAlacakTablosu">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>BORÇ</th>
+                                <th>ALACAK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>HAS</th>
+                                <td>
+                                    <input name="hasBorc" type="text" id="Borc1">
+                                </td>
+                                <td>
+                                    <input name="hasAlacak" type="text" id="Alacak1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>TL</th>
+                                <td>
+                                    <input name="tlBorc" type="text" id="Borc2">
+                                </td>
+                                <td>
+                                    <input name="tlAlacak" type="text" id="Alacak2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EURO</th>
+                                <td>
+                                    <input name="euroBorc" type="text" id="Borc3">
+                                </td>
+                                <td>
+                                    <input name="euroAlacak" type="text" id="Alacak3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>USD</th>
+                                <td>
+                                    <input name="usdBorc" type="text" id="Borc4">
+                                </td>
+                                <td>
+                                    <input name="usdAlacak" type="text" id="Alacak4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CHF</th>
+                                <td>
+                                    <input name="chfBorc" type="text" id="Borc5">
+                                </td>
+                                <td>
+                                    <input name="chfAlacak" type="text" id="Alacak5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>STRL</th>
+                                <td>
+                                    <input name="strlBorc" type="text" id="Borc6">
+                                </td>
+                                <td>
+                                    <input name="strlAlacak" type="text" id="Alacak6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>ÇEYREK</th>
+                                <td>
+                                    <input name="ceyrekBorc" type="text" id="Borc7">
+                                </td>
+                                <td>
+                                    <input name="ceyrekAlacak" type="text" id="Alacak7">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>22 AYAR</th>
+                                <td>
+                                    <input name="22ayarBorc" type="text" id="Borc8">
+                                </td>
+                                <td>
+                                    <input name="22ayarAlacak" type="text" id="Alacak8">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--        TOPTANCI AKTARIM 2-->
+                <div class="col-md-4">
+                    <table id="borcAlacakTablosu2">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>BORÇ</th>
+                                <th>ALACAK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>HAS</th>
+                                <td>
+                                    <input name="hasBorc" type="text" id="Borc9">
+                                </td>
+                                <td>
+                                    <input name="hasAlacak" type="text" id="Alacak9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>TL</th>
+                                <td>
+                                    <input name="tlBorc" type="text" id="Borc10">
+                                </td>
+                                <td>
+                                    <input name="tlAlacak" type="text" id="Alacak10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>EURO</th>
+                                <td>
+                                    <input name="euroBorc" type="text" id="Borc11">
+                                </td>
+                                <td>
+                                    <input name="euroAlacak" type="text" id="Alacak11">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>USD</th>
+                                <td>
+                                    <input name="usdBorc" type="text" id="Borc12">
+                                </td>
+                                <td>
+                                    <input name="usdAlacak" type="text" id="Alacak12">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CHF</th>
+                                <td>
+                                    <input name="chfBorc" type="text" id="Borc13">
+                                </td>
+                                <td>
+                                    <input name="chfAlacak" type="text" id="Alacak13">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>STRL</th>
+                                <td>
+                                    <input name="strlBorc" type="text" id="Borc14">
+                                </td>
+                                <td>
+                                    <input name="strlAlacak" type="text" id="Alacak14">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>ÇEYREK</th>
+                                <td>
+                                    <input name="ceyrekBorc" type="text" id="Borc15">
+                                </td>
+                                <td>
+                                    <input name="ceyrekAlacak" type="text" id="Alacak15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>22 AYAR</th>
+                                <td>
+                                    <input name="22ayarBorc" type="text" id="Borc16">
+                                </td>
+                                <td>
+                                    <input name="22ayarAlacak" type="text" id="Alacak16">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4" style="text-align: center;margin-top:45px;">
+                    @*<div class="col-md-12">
+                            <button type="button" class="btn btn-primary">TOPTANCI BORÇ AKTAR</button>
+                        </div>*@
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <label class="urunLabel" for="toptanciAdi1">Toptancı Adı</label>
+                        @Html.DropDownListFor(x => x.toptanci.ToptanciAdi, new SelectList(Model.liste).ToList(),
+                  "Seçiniz", new
+                  {
+                      @Class = "comboBox",
+                      @id = "toptanciAdi1",
+                      style = "width:80%",
+                      onchange = "getbakiye1()"
+                  })
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <label class="urunLabel" for="toptanciAdi2">Toptancı Adı</label>
+                        @Html.DropDownListFor(x => x.toptanci2.ToptanciAdi, new SelectList(Model.liste).ToList(),
+                  "Seçiniz", new
+                  {
+                      @Class = "comboBox",
+                      @id = "toptanciAdi2",
+                      style = "width:80%",
+                      onchange = "getbakiye2()"
+                  })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin-top:20px;display: inline-grid">
+                    <table class="toptanciGirisBilgi">
+                        <thead>
+                            <tr>
+                                <th>İşlem Türü</th>
+                                <th>Hesaplama</th>
+                                <th>Tutar</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket.Turu, new List<SelectListItem>
+                                  {
+                                  new SelectListItem { Text = "HAS", Value = "HAS"},
+                                  new SelectListItem { Text = "TL", Value = "TL"},
+                                  new SelectListItem { Text = "EURO", Value = "EURO"},
+                                  new SelectListItem { Text = "USD", Value = "USD"},
+                                  new SelectListItem { Text = "CHF", Value = "CHF"},
+                                  new SelectListItem { Text = "STRL", Value = "STRL"},
+                                  new SelectListItem { Text = "ÇEYREK", Value = "ÇEYREK"},
+                                  new SelectListItem { Text = "22 AYAR", Value = "22 AYAR"},
+
+                                  }, "Seçiniz", new
+                                  {
+                                      @Class = "comboBox",
+                                      id = "islemturu",
+                                  })
+                                </td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.Hareket.Hesaplama, new List<SelectListItem>
+                                        {
+                                        new SelectListItem { Text = "ADET", Value = "ADET"},
+                                        new SelectListItem { Text = "GRAM", Value = "GRAM"}
+
+                                        }, "Seçiniz", new
+                                        {
+                                            @Class = "comboBox",
+                                            id = "iscilikHesaplama",
+                                        })
+                                </td>
+                                <td>@Html.TextBoxFor(x => x.Hareket.Miktar, new { @class = "inputField", type = "text", id = "miktar" })</td>
+                                <td><input name="submit" class="btn btn-danger " type="submit" id="submit" value="EKLE" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    <!--İşlemler Tablosu (GEÇMİŞ)-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                @*@Html.DevExpress().GetStyleSheets(
+                   new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                   new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                   new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+               )
+                @Html.DevExpress().GetScripts(
+                    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                    new Script { ExtensionSuite = ExtensionSuite.Editors },
+                    new Script { ExtensionSuite = ExtensionSuite.GridView }
+                )*@
+
+                @*@Html.Action("GridViewBAKPartial")*@
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

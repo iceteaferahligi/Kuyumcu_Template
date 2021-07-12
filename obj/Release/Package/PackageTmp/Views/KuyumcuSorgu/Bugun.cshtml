@@ -1,0 +1,900 @@
+﻿@model Kuyumcu.Models.Bugun
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<style>
+    #Araclar {
+        margin: 8px;
+    }
+
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .hareketTablosu {
+        /width: 100%;
+        / display: inline-table;
+        margin-top: 5px;
+        width: max-content;
+        /text-align: center;
+        / border-style: hidden;
+        border-collapse: collapse;
+    }
+
+    .cellSize {
+        width: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark araclarMenu">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark araclarMenu">ALYANS SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark araclarMenu">ALYANS SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark araclarMenu">ALYANS TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark araclarMenu">BUGÜN</a>
+    </div>
+
+</body>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-5 col-sm-6">
+            <table class="hareketTablosu">
+                <H5>HAREKETLER</H5>
+                <thead>
+                    <tr style="text-align: center">
+                        <th></th>
+                        <th>SATIŞ</th>
+                        <th>TL</th>
+                        <th>ALIŞ</th>
+                        <th>TL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>22 FANTAZİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiFantaziS, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiFantaziSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiFantaziA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiFantaziAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>22 BİLEZİK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiBilezikS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiBilezikSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiBilezikA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiBilezikAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>18 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnSekAyarS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnSekAyarSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnSekAyarA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnSekAyarAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>14 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnDortAyarS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnDortAyarSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnDortAyarS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnDortAyarSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>8 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekAyarS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekAyarSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekAyarA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekAyarAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>PIRLANTA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.PirlantaS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.PirlantaSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.PirlantaS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.PirlantaSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>İNCİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.InciS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.InciSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.InciA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.InciAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>SAAT</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.SaatS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SaatSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SaatA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SaatAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ÇEYREK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.CeyrekS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CeyrekSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CeyrekA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CeyrekAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>YARIM</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YarimS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YarimSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YarimA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YarimAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ZİYNET</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.ZiynetS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ZiynetSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ZiynetA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ZiynetAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ATA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.AtaS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.AtaSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.AtaA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.AtaAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>HASNET</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.HasnetTS, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.HasnetTSF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.HasnetTA, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.HasnetTAF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <table class="kasaHareketleri">
+                <H5>KASA HAREKETLERİ</H5>
+                <thead>
+                    <tr style="text-align: center">
+                        <th></th>
+                        <th>DEVİR</th>
+                        <th>GİRİŞ</th>
+                        <th>ÇIKIŞ</th>
+                        <th>MEVCUT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>TL</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DTL, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GTL, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CTL, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MTL, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>USD</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DUSD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GUSD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CUSD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MUSD, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>EURO</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DEURO, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GEURO, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CEURO, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MEURO, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>CHF</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DCHF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GCHF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CCHF, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MCHF, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>STRL</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DSTRL, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GSTRL, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CSTRL, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MSTRL, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RİYAL</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DRY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GRY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CRY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MRY, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>DKK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DDKK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GDKK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CDKK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MDKK, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>SEK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DSEK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GSEK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CSEK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MSEK, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>NOK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DNOK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GNOK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CNOK, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MNOK, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>JPY</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DJPY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GJPY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CJPY, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MJPY, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>KD</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DKD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GKD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CKD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MKD, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>AD</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DAD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GAD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CAD, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MAD, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RB</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DRB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GRB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CRB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MRB, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="col-md-2 col-sm-4">
+            <table class="hareketTablosu">
+                <H5>ELDEKİ ÜRÜN TOPLAMI</H5>
+                <thead>
+                    <tr style="text-align: center">
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>8 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>14 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnDortToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>18 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.OnSekToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>22 AYAR</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YiToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>PIRLANTA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.PirToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>İNCİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.InciToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>SAAT</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.SaatToplam, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5 col-sm-6">
+
+
+
+            <table class="hurdaHareketleri">
+                <H5>HURDA HAREKETLERİ</H5>
+                <thead>
+                    <tr style="text-align: center">
+                        <th></th>
+                        <th>DEVİR</th>
+                        <th>GİRİŞ</th>
+                        <th>ÇIKIŞ</th>
+                        <th>MEVCUT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>8 HURDA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekHDevir, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekHGirisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.SekHCikisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ODHMevcut, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>14 HURDA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.ODHDevir, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ODHGirisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ODHCikisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ODHMevcut, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>18 HURDA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.ONSekHDevir, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ONSekHGirisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ONSekHCikisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.ONSekHMevcut, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>21 HURDA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YBkHDevir, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YBkHGirisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YBkHCikisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YBkHMevcut, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>22 HURDA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.YikHDevir, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YikHGirisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YikHCikisB, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.YikHMevcut, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <table class="sarrafiyeHareketleri">
+                <H5>SARRAFİYE HAREKETLERİ</H5>
+                <thead>
+                    <tr style="text-align: center">
+                        <th></th>
+                        <th>DEVİR</th>
+                        <th>GİRİŞ</th>
+                        <th>ÇIKIŞ</th>
+                        <th>MEVCUT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>ÇEYREK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DCeyrek, new { @class = "cellSize", type = "text" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GCeyrek, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CCeyrek, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MCeyrek, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>YARIM</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DYarim, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GYarim, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CYarim, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MYarim, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ATATEK</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DAtatek, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GAtatek, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CAtatek, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MAtatek, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>2.5'LU</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DIkibuc, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GIkibuc, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CIkibuc, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MIkibuc, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>C.LİRA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DClira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GClira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CClira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MClira, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>HAMİT LİRA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DHlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GHlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CHlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MHlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>22 GRAM</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DYigram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GYigram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CYigram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MYigram, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>24 GRAM</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DYdgram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GYdgram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CYdgram, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MYdgram, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>KÜLÇE</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DKulce, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GKulce, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CKulce, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MKulce, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>R.BEŞLİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DRbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GRbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CRbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MRbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>H.BEŞLİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DHbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GHbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CHbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MHbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>C.BEŞLİ</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DCbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GCbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CCbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MCbesli, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>R.LİRA</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.DRlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.GRlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.CRlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(x => x.MRlira, new { @class = "cellSize", type = "text" })
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+}
+
+</html>

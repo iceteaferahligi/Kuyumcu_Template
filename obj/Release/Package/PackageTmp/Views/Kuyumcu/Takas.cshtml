@@ -1,0 +1,672 @@
+﻿@model Kuyumcu.Models.OzelModel
+
+@{
+
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+
+
+        var toplam = parseFloat("0");
+        var i = 0;
+        var things = [];
+        var sil = [];
+        var l = 0;
+        var y = 0;
+        var m = false;
+        var a = 0;
+        var son = 0;
+        var p = 0;
+        var g = 0;
+        var sifre = "123456";
+        function addField(sender, value, str, ad, fiyat) {
+
+            $(document).ready(function () {
+                var myTable = document.getElementById("islemTablosu");
+                var currentRow = myTable.insertRow(-1);
+
+                myTable.setAttribute("class", "islemTablosu");
+
+                var hiddenbox = document.createElement("input");
+                hiddenbox.setAttribute("id", "hiddenbox" + i);
+                hiddenbox.value = fiyat;
+                hiddenbox.hidden = true;
+
+                var hiddenbox2 = document.createElement("input");
+                hiddenbox2.setAttribute("id", "hiddenbox2" + i);
+                hiddenbox2.value = value;
+                hiddenbox2.hidden = true;
+
+
+
+                var musteriAdiBox = document.createElement("input");
+                musteriAdiBox.setAttribute("id", "musteriAdi" + i);
+                musteriAdiBox.setAttribute("placeholder", "Müşterinin adını giriniz");
+
+
+                var urunAdiBox = document.createElement("text");
+                urunAdiBox.setAttribute("id", "urunAdi" + i);
+                if (sender == "deneme") {
+                    urunAdiBox.innerHTML = ad;
+                }
+                else {
+                    urunAdiBox.innerHTML = sender.innerHTML;
+                }
+                var adetBox = document.createElement("input");
+                adetBox.setAttribute("id", "adet" + i);
+                adetBox.setAttribute("placeholder", "Adet");
+                if (sender == "deneme") {
+                    adetBox.value = 1;
+                }
+                else {
+                    adetBox.value = Number.parseFloat(getValue().replace(',', '.'));
+                }
+                adetBox.setAttribute("onchange", "adetchanged(this)");
+
+                var birimFiyatBox = document.createElement("input");
+                birimFiyatBox.setAttribute("id", "birimFiyat" + i);
+                birimFiyatBox.setAttribute("placeholder", "Birim Fiyatı");
+                birimFiyatBox.value = value;
+                birimFiyatBox.setAttribute("onchange", "birimchanged(this)");
+                birimFiyatBox.disabled = true;
+
+
+                var satisTutariBox = document.createElement("input");
+                satisTutariBox.setAttribute("id", "satisTutari" + i);
+                satisTutariBox.setAttribute("placeholder", "Satış Tutarı");
+                satisTutariBox.value = (Number.parseFloat(birimFiyatBox.value.replace(',', '.') * adetBox.value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                $(document).ready(function () {
+                    $("input").change(function () {
+                    });
+                });
+                satisTutariBox.disabled = true;
+
+                var hareketTuruBox = document.createElement("select");
+                hareketTuruBox.setAttribute("id", "hareketTuru" + i);
+                hareketTuruBox.setAttribute("class", "combo1");
+                satisTutariBox.disabled = true;
+
+
+
+                if (str == "alis") {
+
+                    var opt = document.createElement('option');
+                    opt.value = "GİRİŞ";
+                    opt.innerHTML = "GİRİŞ";
+                    hareketTuruBox.appendChild(opt);
+
+                }
+                else if (str == "satis") {
+
+                    var opt = document.createElement('option');
+                    opt.value = "ÇIKIŞ";
+                    opt.innerHTML = "ÇIKIŞ";
+                    hareketTuruBox.appendChild(opt);
+
+                }
+                if (sender != "deneme") {
+                    let btnClass = sender.getAttribute("class");
+                    if (btnClass.includes("btnAlis")) {
+                        hareketTuruBox.selectedIndex = 0;
+                    }
+                    else {
+                        hareketTuruBox.selectedIndex = 0;
+                    }
+                }
+                else {
+                    hareketTuruBox.selectedIndex = 0;
+                }
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+                today = dd + '.' + mm + '.' + yyyy;
+
+                var tarihBox = document.createElement("input");
+                tarihBox.setAttribute("id", "tarih" + i);
+                tarihBox.setAttribute("placeholder", "Tarih");
+                tarihBox.value = today + '    ' + time;
+                tarihBox.disabled = true;
+
+
+
+
+                var iptalEtBox = document.createElement("input");
+                iptalEtBox.setAttribute("type", "button");
+                iptalEtBox.setAttribute("value", "İptal");
+                iptalEtBox.setAttribute("id", "" + i);
+                iptalEtBox.setAttribute("onclick", "temp(), deleteRow(this);");
+                iptalEtBox.setAttribute("class", "btn btn-outline-danger");
+
+                var currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(hiddenbox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(hiddenbox2);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(musteriAdiBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(urunAdiBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(adetBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(birimFiyatBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(satisTutariBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(hareketTuruBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(tarihBox);
+
+                currentCell = currentRow.insertCell(-1);
+                currentCell.appendChild(iptalEtBox);
+                i = i + 1;
+
+            });
+        }
+
+
+        function result() {
+            $(document).ready(function () {
+                //value = document.getElementById('tutar').value;
+                try {
+                    value1 = document.getElementById('1001').innerHTML;
+                } catch{
+                    alert("Lütfen Oturum Açınız.");
+                    window.location.reload(true);
+                }
+                ekle();
+                var m = JSON.stringify({ 'model': things, 'personel': value1 });
+                things = [];
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Kuyumcu/Takas",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: m,
+                        success: function () {
+                            alert("İşlem Başarılı!");
+
+                            for (var u = p; u < i; u++) {
+                                try {
+                                    var element = document.getElementById(u);
+                                    var row = element.parentNode.parentNode;
+                                    row.parentNode.removeChild(row);
+                                } catch{ }
+                            }
+                            p = i;
+                            window.location.reload(true);
+
+                        }
+                    });
+                });
+
+            });
+        }
+
+        function jsonSearch() {
+            $(document).ready(function () {
+                name = document.getElementById('txtJsonSearch').value;
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Kuyumcu/Takas",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: JSON.stringify({
+                            AdSoyad: name
+                        }),
+                        success: function (data) {
+                            if (data == "failed")
+                                alert("Bu Müşteri Veritabanında Bulunamadı!")
+                            else {
+                                for (var s = 0; s <= i; s++) {
+                                    document.getElementById("musteriAdi" + s).value = data;
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+        }
+
+        function deleteRow(btn) {
+            $(document).ready(function () {
+                y = btn.id;
+                sil.push(y.toString());
+                if (document.getElementById('hareketTuru' + y).value == "GİRİŞ") {
+                    toplam = toplam + Number.parseFloat(document.getElementById('satisTutari' + y).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                }
+                else if (document.getElementById('hareketTuru' + y).value == "ÇIKIŞ") {
+                    toplam = toplam - Number.parseFloat(document.getElementById('satisTutari' + y).value.replace(',', '.'));
+                    var u = toplam.toFixed(3);
+                    document.getElementById('tutar').value = u.toString();
+                    degistir();
+                }
+                //alert(toplam);
+                var row = btn.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+                things.splice(parseInt(y), 1);
+            });
+        }
+
+        function getValue() {
+            var deger = prompt("Adet Giriniz. : ");
+            return deger;
+        }
+
+        function ekle() {
+            for (k = g; k < i; k++) {
+                k = k.toString();
+                try {
+                    things.push({
+                        MusteriAdSoyad: document.getElementById('musteriAdi' + k).value, StokAdi: document.getElementById('urunAdi' + k).innerHTML,
+                        Tarih: document.getElementById('tarih' + k).value, Miktar: document.getElementById('adet' + k).value.replace('.', ','),
+                        BirimFiyati: document.getElementById('birimFiyat' + k).value, HareketTuru: document.getElementById('hareketTuru' + k).value,
+                        SatisTutari: document.getElementById('satisTutari' + k).value
+
+                    });
+                }
+                catch{
+                    continue;
+                }
+            }
+            g = i;
+        }
+
+        function personelGiris(id) {
+            $(document).ready(function () {
+                id = document.getElementById('personelSearch').value;
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Kuyumcu/HizliAlimSatim3",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: JSON.stringify({
+                            barkod: id
+                        }),
+                        success: function (data) {
+                            if (data == "failed")
+                                alert("Bu Personel Veritabanında Bulunamadı!")
+                            else {
+                                document.getElementById("personelSearch").hidden = true;
+                                document.getElementById("btnPerSearch").hidden = true;
+                                var PersonelAdi = document.createElement("text");
+                                PersonelAdi.setAttribute("id", "1001");
+                                PersonelAdi.setAttribute("style", "margin-right: 5px");
+                                PersonelAdi.innerHTML = data;
+                                var Cikis = document.createElement("input");
+                                Cikis.setAttribute("type", "button");
+                                Cikis.setAttribute("value", "Çıkış");
+                                Cikis.setAttribute("id", "1002");
+                                Cikis.setAttribute("class", "btn btn-danger");
+                                Cikis.setAttribute("onclick", "Cikisyap();");
+
+                                foo.appendChild(PersonelAdi);
+                                foo.appendChild(Cikis);
+                            }
+                        }
+                    });
+                });
+            });
+        }
+        function Cikisyap() {
+            //var row = btn.parentNode;
+            //row.parentNode.removeChild(row);
+            var element1 = document.getElementById("1001");
+            var element2 = document.getElementById("1002");
+            element1.parentNode.removeChild(element1);
+            element2.parentNode.removeChild(element2);
+            document.getElementById("personelSearch").hidden = false;
+            document.getElementById("personelSearch").value = "";
+            document.getElementById("btnPerSearch").hidden = false;
+        }
+
+    </script>
+    <style>
+        #Araclar {
+            margin: 8px;
+        }
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .midsoftLogo {
+            width: 5%;
+            height: 50px;
+            /*float:right;*/
+            padding-top: 3px;
+            position: absolute;
+            right: 25px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        .imageb {
+            border-width: 1px;
+            width: 30px;
+            height: 30px;
+            border-color: Black;
+            /*margin-right: 5px;*/
+        }
+
+        .table {
+            /*margin: 20px;*/
+            width: 50%;
+            /*max-width: 50% !important;*/
+            text-align: center;
+            /*border-right-style: solid;*/
+            /*border-color: cadetblue;*/
+            /*background-color: whitesmoke;*/
+            border-collapse: collapse;
+            border-spacing: 10px;
+            display: inline-table;
+        }
+
+
+        .tbody {
+            display: table-row-group;
+        }
+
+        .tr {
+            display: table-row;
+            width: 100%;
+            height: 100%;
+        }
+
+        .combo1 {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+        .td {
+            text-align: center;
+            height: 100%;
+            display: table-cell;
+            /*border: 0px solid darkslategrey;*/
+            padding: 12px;
+        }
+
+        .btnAlis {
+            display: block;
+            /*height: 100%;*/
+            width: 100%;
+            border: #0f6848;
+            background-color: #ef9a9a;
+            padding: 10px 16px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btnSatis {
+            display: block;
+            /*height: 100%;*/
+            width: 100%;
+            border: none;
+            background-color: #03AA7E;
+            padding: 10px 16px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .Alis {
+            background-color: white;
+        }
+
+        .Satis {
+            background-color: white;
+        }
+
+        .tableTitle {
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+            border-collapse: collapse;
+            border-spacing: 10px;
+            display: table-caption;
+            background-color: bisque;
+        }
+
+        .searchBar {
+            padding: 20px;
+            width: 30%;
+        }
+
+        form.searchBar input[type=text] {
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.searchBar button {
+            float: left;
+            width: 14%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+        #islemTablosu {
+            margin-left: 20px;
+            margin-top: 30px;
+            width: auto;
+            alignment: center;
+        }
+
+        .islemTablosu {
+            border: 2px solid darkslategrey;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            right: 0;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="navbar" style="background-color:#394F85">
+    <a class="navbar-brand">
+        <img src="~/Images/logoson.png"
+             style="width: 125px;height:38px;">
+    </a>
+    <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+    <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+    <a href="Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+    <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+    <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+    <a href="/Finans" button class="btn btn-light">FİNANS</a>
+    <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+    <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+</div>
+<div id="Araclar" class="collapsed">
+    <a href="HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+    <a href="Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+    <a href="UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+    <a href="OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+    <a href="UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+    <a href="Takas" button class="btn btn-dark araclarMenu">TAKAS</a>
+</div>
+
+
+
+
+
+<body>
+    @using (Html.BeginForm())
+    {
+        <div style="display:flex;">
+            <div class="table Alis">
+                <div class="tableTitle">
+                    <P style="margin: 12px">TAKAS ALIŞ</P>
+                </div>
+                <div class="tbody">
+                    <form class="tr">
+                        <div class="td">
+
+                            <button id="alisCeyrek" class="btn-outline-light btnAlis" type="button" onclick=" addField(this, '@Model.CeyrekA.ToString()', 'alis' , '','@Model.CeyrekS.ToString()' )">ÇEYREK</button>
+                        </div>
+
+                        <div class="td">
+                            <button id="alisYarim" class="btn-outline-light btnAlis" type="button" onclick="addField(this,'@Model.YarimA.ToString()', 'alis' , '','@Model.YarimS.ToString()')">YARIM</button>
+                        </div>
+                        <div class="td">
+                            <button id="alisATATEK" class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.AtatekA.ToString()', 'alis' , '','@Model.AtatekS.ToString()')">ATATEK</button>
+                        </div>
+                        <div class="td">
+                            <button id="alis25LU" class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.IkibucukluA.ToString()', 'alis' , '','@Model.IkibucukluS.ToString()')">2.5'LU</button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.CliraA.ToString()', 'alis' , '','@Model.CliraS.ToString()')">C.LİRA </button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.YirmiIkiGramA.ToString()', 'alis' , '','@Model.YirmiIkiGramS.ToString()')">22 AYAR GRAM</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.YirmiDortGramA.ToString()', 'alis' , '','@Model.YirmiDortGramS.ToString()') ">24 AYAR GRAM</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-outline-light btnAlis" type="button" onclick="addField(this, '@Model.HamitLiraA.ToString()', 'alis' , '','@Model.HamitLiraS.ToString()') ">HAMİT LİRA</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!--end of table1-->
+
+            <div class="table Satis">
+                <div class="tableTitle">
+                    <p style="margin: 12px">TAKAS SATIŞ</p>
+                </div>
+                <div class="tbody">
+
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.CeyrekS.ToString()', 'satis', '', '@Model.CeyrekA.ToString()') ">ÇEYREK</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.YarimS.ToString()', 'satis', '', '@Model.YarimA.ToString()') ">YARIM</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.AtatekS.ToString()', 'satis', '', '@Model.AtatekA.ToString()')">ATATEK</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.IkibucukluS.ToString()', 'satis', '', '@Model.IkibucukluA.ToString()') ">2.5'LU</button>
+                        </div>
+                    </form>
+                    <form class="tr">
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.CliraS.ToString()', 'satis', '', '@Model.CliraA.ToString()') ">C.LİRA</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.YirmiIkiGramS.ToString()', 'satis', '', '@Model.YirmiIkiGramA.ToString()') ">22 AYAR GRAM</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.YirmiDortGramS.ToString()', 'satis', '', '@Model.YirmiDortGramA.ToString()') ">24 AYAR GRAM</button>
+                        </div>
+                        <div class="td">
+                            <button class="btn-danger btnSatis" type="button" onclick="addField(this, '@Model.HamitLiraS.ToString()', 'satis', '', '@Model.HamitLiraA.ToString()') ">HAMİT LİRA</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form class="searchBar" action="action_page.php" style="display: -webkit-inline-box ">
+                <div>
+                    @*<input type="text" placeholder="Search.." name="search" id="txtJsonSearch">*@
+                    @Html.TextBoxFor(x => x.MusteriAdSoyad, new { id = "txtJsonSearch", type = "text", name = "KullaniciAdi", placeholder = "Müşteri Ad Soyad Giriniz." })
+                    <button type="button" id="btnJsonSearch" class="btn-success" onclick=" jsonSearch()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+                <div>
+                    @*<input type="text" placeholder="Search.." name="search" id="txtJsonSearch">*@
+                    @Html.TextBoxFor(x => x.PersonelId, new { id = "personelSearch", type = "text", name = "Personelid", placeholder = "Personel Kartını Okutunuz" })
+                    <button type="button" id="btnPerSearch" class="btn-success" onclick=" personelGiris()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div id="foo"></div>
+            </form>
+        </div>
+        <div style="text-align: center;">
+            <div class="col-10" style="display: inline">
+                <table id="islemTablosu" class="islemTablosu"></table>
+            </div>
+
+
+            <div class="col-2 footer">
+                @*<input type="text" style="width:70%;text-align:center;" id="tutar" disabled>*@
+                <div><text id="tahsilat"></text></div>
+                <button type="button" id="btnJsonResult" class="btn btn-success" onclick=" result()">
+                    <i class="fa fa-fw fa-shopping-cart"></i>Onayla
+                </button>
+            </div>
+        </div>
+    }
+
+</body>
+</html>

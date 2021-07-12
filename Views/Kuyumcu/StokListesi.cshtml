@@ -1,0 +1,193 @@
+﻿@model Kuyumcu.Models.Kuyumcu.StokKart
+
+@{
+
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+
+    .tabloBaslik {
+        text-align: center;
+        background-color: white;
+    }
+
+    .PLabel {
+        display: block;
+        text-align: left;
+        position: relative;
+        width: 92px;
+        margin-top: 5px;
+        font-weight: bold;
+        vertical-align: top;
+    }
+    /*#mgr {
+
+        position:center;
+        text-align:center;
+    }*/
+
+    .ui-autocomplete {
+        overflow: auto;
+        max-height: 100px;
+    }
+
+    #Araclar {
+        margin: 8px;
+    }
+
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .inputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 42%;
+    }
+
+    .labelLayout {
+        /*display: flex;*/
+        display: inline-flex;
+        /*margin-top: 3px;*/
+    }
+
+    .urunLabel {
+        text-align: left;
+        width: 92px;
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    .searchBar {
+        /*width: 30%;*/
+        margin: 10px;
+    }
+
+    #Bar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    .stokGirisBilgi {
+        margin: 10px;
+        text-align: center;
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    .stokInputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 100%;
+    }
+
+    .comboBox {
+        /*width: 170px;*/
+        width: 42%;
+        text-align: center;
+        height: 32px;
+    }
+
+
+    .imageBorder {
+        border-width: 1px;
+        width: 320px;
+        height: 180px;
+        border-color: Black;
+        /*margin-right: 5px;*/
+    }
+
+    .imageStyle {
+        /*display: flex;*/
+        margin-left: auto;
+    }
+</style>
+<body>
+    <!--navbar-->
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <!--Kuyumcu Menüsü-->
+    <div id="Araclar" class="collapsed">
+        <a href="/Kuyumcu/HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+        <a href="/Kuyumcu/Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+        <a href="/Kuyumcu/UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+        <a href="/Kuyumcu/OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+        <a href="/Kuyumcu/UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+        <a href="/Kuyumcu/FaturaGiris" button class="btn btn-dark araclarMenu">FATURA GİRİŞ</a>
+        <a href="/Kuyumcu/StokListesi" button class="btn btn-dark araclarMenu">STOK LİSTESİ</a>
+    </div>
+
+        @{ Html.EnableClientValidation(false); }
+        @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+        )
+        @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.Editors },
+            new Script { ExtensionSuite = ExtensionSuite.GridView }
+        )
+        <div style="margin:40px;">
+            @Html.Action("StokListesiPartial")
+        </div>
+   
+</body>
+</html>

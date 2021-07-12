@@ -1,0 +1,428 @@
+﻿@model Kuyumcu.Models.BEhareket
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+
+    <script>
+       
+        
+        function OnRowClick(Value) {
+
+            var AdiSoyadi;
+            
+            
+                    $.ajax({
+                        dataType: "html",
+                        type: "POST",
+                        url: "/Finans/BEM1",
+                        data: { k: Value },
+                        success: function (data) {
+                            AdiSoyadi = JSON.parse(data);
+
+                            $.ajax({
+                                dataType: "html",
+                                type: "POST",
+                                url: '@Url.Action("BorcEmanetDetay1")',
+                                data: { AdSoyad : AdiSoyadi },
+                                success: function (data) {
+
+                                    $("#col-md-5").html(data);
+                                    getbakiye(AdiSoyadi);
+                                    
+
+                                }
+                                });
+                           
+                        }
+                    });
+            
+        }
+
+        function HandleRowDoubleClick(s, e) {
+            s.GetRowValues(e.visibleIndex, 'id', OnRowClick)
+        }
+        function getbakiye(AdSoyad) {
+        
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Finans/MusteriBakiyeCek",
+            data: { MusteriAdi: AdSoyad },
+            success: function (data) {
+                data = JSON.parse(data);
+                var array = data.split(", ", 18);
+                for (var i = 0; i < 18; i++) {
+                    if (parseFloat(array[i]) < 0) {
+                        var num = 0 - parseFloat(array[i].replace(',', '.'));
+                        document.getElementById("Borc" + i).value = num;
+                        document.getElementById("Borc" + i).value = document.getElementById("Borc" + i).value.replace('.', ',');
+                        document.getElementById("Alacak" + i).value = 0;
+                    }
+                    else if (parseFloat(array[i]) > 0) {
+                        document.getElementById("Borc" + i).value = 0;
+                        document.getElementById("Alacak" + i).value = array[i].replace('.', ',');
+                    }
+                    else {
+                        document.getElementById("Borc" + i).value = 0;
+                        document.getElementById("Alacak" + i).value = 0;
+                    }
+                }
+            }
+        });
+    }
+        
+
+    </script>
+
+        <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+
+        thead th {
+            text-align: center;
+        }
+
+        .tabStyle {
+            text-align: center;
+            justify-content: center;
+            /*border: 3px groove;*/
+        }
+
+        .finansLabel {
+            text-align: center;
+            font-weight: bold;
+            margin: 3px;
+        }
+
+        .pairRow {
+            display: inline-flex;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        </style>
+    <script>
+
+    </script>
+    </head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        <div class="navbar" style="background-color:#394F85">
+            <a class="navbar-brand">
+                <img src="~/Images/logoson.png"
+                     style="width: 125px;height:38px;">
+            </a>
+            <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+            <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+            <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+            <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+            <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+            <a href="/Finans" button class="btn btn-light">FİNANS</a>
+            <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+            <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+            <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+        </div>
+
+
+        <div id="Araclar" class="collapsed">
+            <a href="Onay" button class="btn btn-dark kuyumcuAraclari">FATURA EKRANI</a>
+            <a href="BankaTanim" button class="btn btn-dark kuyumcuAraclari">BANKA TANIM</a>
+            <a href="KomisyonTanim" button class="btn btn-dark kuyumcuAraclari">KOMİSYON TANIM</a>
+            <a href="Gelir_Gider" button class="btn btn-dark kuyumcuAraclari">GELİR-GİDER</a>
+            <a href="Kasa" button class="btn btn-dark kuyumcuAraclari">KASA</a>
+            <a href="BankaIslemleri" button class="btn btn-dark kuyumcuAraclari">BANKA İŞLEMLERİ</a>
+            <a href="BankadanOdeme" button class="btn btn-dark kuyumcuAraclari">BANKADAN ÖDEME</a>
+            <a href="BorcEmanetIslemleri" button class="btn btn-dark kuyumcuAraclari">BORÇ-EMANET İŞLEMLERİ</a>
+            <a href="BorcEmanetDetay" button class="btn btn-dark kuyumcuAraclari">BORÇ-EMANET DETAY</a>
+            <a href="KKTahsilat" button class="btn btn-dark kuyumcuAraclari">KREDİ KARTI TAHSİLAT</a>
+        </div>
+        <br>
+        <br>
+        <div>
+            <img src="/Images/unlem.png" style="height:18px;width:18px"><label style="color:cornflowerblue">Lütfen detay tablosu için tablodan ismin üstüne tıklayınız.</label>
+        </div>
+
+        <div class="container-fluid">
+            @{ Html.EnableClientValidation(false); }
+            <div class="row">
+                <!--TABLO1-->
+
+                @Html.DevExpress().GetStyleSheets(
+                 new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                 new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                 new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+                 )
+                @Html.DevExpress().GetScripts(
+                 new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                 new Script { ExtensionSuite = ExtensionSuite.Editors },
+                 new Script { ExtensionSuite = ExtensionSuite.GridView }
+                 )
+
+
+                <div class="col-md-5">
+
+                    @Html.Action("BEMGridViewPartial")
+                    <br><br>
+                </div>
+                <!--TABLO 2-->
+
+                <div class="col-md-5">
+
+                    <div class="col-md-8">
+                        <div class="row" style="width:800px">
+                            <div class="col-md-6">
+                                <table id="borcAlacakTablosu">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <th>BORÇ</th>
+                                            <th>ALACAK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>HAS</th>
+                                            <td>
+                                                <input name="hasBorc" id="Borc0" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="hasAlacak" id="Alacak0" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>TL</th>
+                                            <td>
+                                                <input name="tlBorc" id="Borc1" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="tlAlacak" id="Alacak1" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>EURO</th>
+                                            <td>
+                                                <input name="euroBorc" id="Borc2" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="euroAlacak" id="Alacak2" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>USD</th>
+                                            <td>
+                                                <input name="usdBorc" id="Borc3" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="usdAlacak" id="Alacak3" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>STRL</th>
+                                            <td>
+                                                <input name="strlBorc" id="Borc4" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="strlAlacak" id="Alacak4" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>CHF</th>
+                                            <td>
+                                                <input name="chfBorc" id="Borc5" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="chfAlacak" id="Alacak5" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>DKK</th>
+                                            <td>
+                                                <input name="dkkBorc" id="Borc6" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="dkkAlacak" id="Alacak6" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>SEK</th>
+                                            <td>
+                                                <input name="sekBorc" id="Borc7" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="sekAlacak" id="Alacak7" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>KANADA D.</th>
+                                            <td>
+                                                <input name="kdBorc" id="Borc8" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="kdAlacak" id="Alacak8" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>RİYAL</th>
+                                            <td>
+                                                <input name="ryBorc" id="Borc9" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="ryAlacak" id="Alacak9" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table id="borcAlacakTablosu2">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <th>BORÇ</th>
+                                            <th>ALACAK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>YARIM</th>
+                                            <td>
+                                                <input name="yarimBorc" id="Borc10" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="yarimAlacak" id="Alacak10" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>ÇEYREK</th>
+                                            <td>
+                                                <input name="ceyrekBorc" id="Borc11" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="ceyrekAlacak" id="Alacak11" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>ATA</th>
+                                            <td>
+                                                <input name="ataBorc" id="Borc12" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="ataAlacak" id="Alacak12" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>22 AYAR</th>
+                                            <td>
+                                                <input name="22ayarBorc" id="Borc13" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="22ayarAlacak" id="Alacak13" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>2.5LU</th>
+                                            <td>
+                                                <input name="ikibucukBorc" id="Borc14" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="ikibucukAlacak" id="Alacak14" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>24 AYAR GRAM</th>
+                                            <td>
+                                                <input name="yidortgramBorc" id="Borc15" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="yidortgramAlacak" id="Alacak15" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>C.LİRA</th>
+                                            <td>
+                                                <input name="cliraBorc" id="Borc16" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="cliraAlacak" id="Alacak16" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>HAMİT LİRA</th>
+                                            <td>
+                                                <input name="hamitliraBorc" id="Borc17" type="text" style="width:150px">
+                                            </td>
+                                            <td>
+                                                <input name="hamitliraAlacak" id="Alacak17" type="text" style="width:150px">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    @*<br><br>*@
+                    <div class="col-md-5" id="col-md-5">
+
+                    </div>
+                </div>
+
+                
+
+
+
+            </div>
+        </div>
+
+    }
+</body>
+    </html>
+

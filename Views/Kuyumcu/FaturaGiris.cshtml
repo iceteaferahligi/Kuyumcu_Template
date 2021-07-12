@@ -1,0 +1,1373 @@
+﻿@model Kuyumcu.Models.OzelFaturaGiris
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css">
+
+</head>
+<script>
+
+
+
+    var things = [];
+    var things2 = [];
+    var ilksatis = parseFloat("0");
+    var toplam = parseFloat("0");
+    var oncekitur;
+    var kreditoplam = parseFloat("0");
+    var alinantoplam = parseFloat("0");
+    var g = 0;
+    $(document).ready(function () {
+        $("#urunInput").on("keyup", function (e) {
+            var key = e.which;
+
+            if (key == 13) // the enter key ascii code
+            {
+                var value = document.getElementById("urunInput").value;
+
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Kuyumcu/FaturaGiris2",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: JSON.stringify({
+                            barkod: value
+                        }),
+                        success: function (data) {
+                            if (data == "failed")
+                                alert("Bu Ürün Veritabanında Bulunamadı!");
+                            else {
+                                var array = data.split(", ", 5);
+
+                                document.getElementById("satisToplami").value = (parseFloat(document.getElementById("satisToplami").value.replace(",", ".")) + parseFloat(array[4].replace(",", ".")));
+                                document.getElementById("satisToplami").value = (parseFloat(document.getElementById("satisToplami").value).toFixed(3)).replace(".", ",");
+                                
+                                getfark();
+                                getkalanfark();
+                                addField(array[0], array[1], array[2], array[3], array[4]);
+                                var substring = "PR";
+                                if (array[1].includes(substring) == true) {
+                                    document.getElementById("33").innerHTML = "Satiş Fiyatı(USD)";
+                                    document.getElementById("44").innerHTML = "Maliyet(USD)";
+                                    document.getElementById("satilanBirimFiyat" + (i - 1)).disabled = true;
+                                    document.getElementById("satilanMiktar" + (i - 1)).disabled = true;
+                                    ilksatis = parseFloat(array[4].replace(',', '.'));
+                                } else {
+
+                                    document.getElementById("33").innerHTML = "Miktar";
+                                    document.getElementById("44").innerHTML = "BirimFiyat";
+                                }
+                            }
+                        }
+                    });
+                });
+                document.getElementById("urunInput").value = "";
+            }
+        });
+    });
+
+    let i = 0;
+
+    function addField(stokid, stokadi, miktar, birim, satis) {
+        oncekitur = "";
+        let myTable = document.getElementById("satilanUrunTablosu");
+        let currentRow = myTable.insertRow(-1);
+
+        myTable.setAttribute("class", "satilanUrunTablosu");
+
+        var urunKodu = document.createElement("input");
+        urunKodu.setAttribute("id", "urunKodu" + i);
+        urunKodu.value = stokid;
+
+
+        var urunAdi = document.createElement("input");
+        urunAdi.setAttribute("id", "urunAdi" + i);
+        urunAdi.value = stokadi;
+
+        var satilanMiktar = document.createElement("input");
+        satilanMiktar.setAttribute("id", "satilanMiktar" + i);
+        satilanMiktar.setAttribute("name", "satilanMiktar");
+        satilanMiktar.setAttribute("onchange", "adetchanged(this)");
+        satilanMiktar.value = miktar;
+
+        var satilanBirimFiyat = document.createElement("input");
+        satilanBirimFiyat.setAttribute("id", "satilanBirimFiyat" + i);
+        satilanBirimFiyat.setAttribute("name", "satilanBirimFiyat")
+        satilanBirimFiyat.setAttribute("onchange", "birimchanged(this)");
+        satilanBirimFiyat.value = birim;
+
+        var satilanSatisFiyatTL = document.createElement("input");
+        satilanSatisFiyatTL.setAttribute("id", "satilanSatisFiyatTL" + i);
+        satilanSatisFiyatTL.setAttribute("name", "satilanSatisFiyatTL");
+        satilanSatisFiyatTL.setAttribute("onchange", "satischanged(this)");
+        satilanSatisFiyatTL.value = satis;
+
+        var tur = document.createElement("select");
+        tur.setAttribute("id", "satilantur" + i);
+        tur.setAttribute("name", "satilantur");
+        tur.setAttribute("onchange", "turchanged(this)");
+
+        var opt = document.createElement('option');
+        opt.value = "ÇIKIŞ";
+        opt.innerHTML = "ÇIKIŞ";
+        tur.appendChild(opt);
+
+        var opt = document.createElement('option');
+        opt.value = "BORÇ";
+        opt.innerHTML = "BORÇ";
+        tur.appendChild(opt);
+
+        var opt = document.createElement('option');
+        opt.value = "EMANET";
+        opt.innerHTML = "EMANET";
+        tur.appendChild(opt);
+
+
+        var satilanIptalEt = document.createElement("input");
+        satilanIptalEt.setAttribute("type", "button");
+        satilanIptalEt.setAttribute("name", "satilanIptalEt");
+        satilanIptalEt.setAttribute("value", "İptal");
+        satilanIptalEt.setAttribute("id", "" + i);
+        satilanIptalEt.setAttribute("onclick", "temp(), deleteRow(this);");
+        satilanIptalEt.setAttribute("class", "btn btn-outline-danger");
+
+
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(urunKodu);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(urunAdi);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(satilanMiktar);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(satilanBirimFiyat);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(satilanSatisFiyatTL);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(tur);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(satilanIptalEt);
+
+
+        i = i + 1;
+    }
+
+    function turchanged(y) {
+
+        if (y.name == "satilantur") {
+            var array = y.id.split("satilantur", 2);
+            hareketTuru = document.getElementById("satilantur" + array[1]).value;
+        }
+        else {
+            var array = y.id.split("alinantur", 2);
+            hareketTuru = document.getElementById("alinantur" + array[1]).value;
+        }
+
+        if (hareketTuru == "BORÇ" || hareketTuru == "EMANET" || hareketTuru == "ÇIKIŞ") {
+            if (hareketTuru == "BORÇ") {
+                document.getElementById('satisToplami').value = (parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) - parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))).toFixed(3);
+            }
+            else if ((hareketTuru == "EMANET" || hareketTuru == "ÇIKIŞ") && oncekitur == "BORÇ") {
+                document.getElementById('satisToplami').value = (parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) + parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))).toFixed(3);
+            }
+        }
+        else if (hareketTuru == "A BORÇ" || hareketTuru == "A EMANET" || hareketTuru == "GİRİŞ") {
+            if (hareketTuru == 'A EMANET') {
+                if (document.getElementById("malzemeKodu" + array[1]).value == "TÜRK LİRASI") {
+                    document.getElementById('nakit').value = (parseFloat(document.getElementById('nakit').value.replace(',', '.')) - parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))).toFixed(3);
+
+                }
+                else {
+
+                    document.getElementById('alisToplami').value = (parseFloat(document.getElementById('alisToplami').value.replace(',', '.')) - parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))).toFixed(3);
+                }
+            }
+            else if ((hareketTuru == "GİRİŞ" || hareketTuru == "A BORÇ") && oncekitur == "A EMANET") {
+                var array = y.id.split("satilantur", 2);
+                if (document.getElementById("malzemeKodu" + array[1]).value == "TÜRK LİRASI") {
+                    document.getElementById('nakit').value = (parseFloat(document.getElementById('nakit').value.replace(',', '.')) + parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))).toFixed(3);
+
+                } else {
+
+                    var alinanSatisFiyatValue = parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+
+                    var alisTValue = parseFloat(document.getElementById('alisToplami').value.replace(',', '.')) + alinanSatisFiyatValue;
+
+                    if (Number.isNaN(alisTValue) == true) {
+
+                        alisTValue = +alisTValue || 0 ;
+                    }
+                    document.getElementById('alisToplami').value = alisTValue.toFixed(3);
+
+                }
+            }
+        }
+        oncekitur = hareketTuru;
+        getfark();
+        getkalanfark();
+    }
+
+    function satischanged(y) {
+
+        if (y.name == "satilanSatisFiyatTL") {
+            var array = y.id.split("satilanSatisFiyatTL", 2);
+            hareketTuru = document.getElementById("satilantur" + array[1]).value;
+        }
+        else {
+            array = y.id.split("alinanSatisFiyat", 2);
+            hareketTuru = document.getElementById("alinantur" + array[1]).value;
+        }
+
+        if (hareketTuru == "GİRİŞ" || hareketTuru == "A BORÇ") {
+
+            
+            if (document.getElementById("malzemeKodu" + array[1]).value == "KREDİ KARTI") {
+                getkomisyon();
+                ilkfiyat = Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.')) * Number.parseFloat(document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.'));
+                
+                var fark = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.')) - ilkfiyat;
+                toplam = toplam - fark;
+                //document.getElementById('alinanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.') / document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                
+
+                kreditoplam = parseFloat(document.getElementById('krediKarti').value.replace(',', '.'));
+                var o = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                document.getElementById('krediKarti').value = (o).toFixed(3);
+
+            }
+            else if (document.getElementById("malzemeKodu" + array[1]).value == "TÜRK LİRASI") {
+
+                var ilkfiyat = Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.')) * Number.parseFloat(document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.'));
+                var fark = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.')) - ilkfiyat;
+                toplam = toplam - fark;
+                //document.getElementById('alinanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.') / document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                var o = Number.parseFloat(document.getElementById('nakit').value.replace(',', '.')) + (fark);
+                document.getElementById('nakit').value = o.toFixed(3);
+            }
+            else {
+                               
+                var ilkfiyat = Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.')) * Number.parseFloat(document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.'));
+                if (Number.isNaN(ilkfiyat) == true) {
+
+                    ilkfiyat = 0;
+                }
+
+                    var fark = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.')) - ilkfiyat;
+                    toplam = toplam - fark;
+
+                    //document.getElementById('alinanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.') / document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+
+                    
+                    var o = Number.parseFloat(document.getElementById('alisToplami').value.replace(',', '.')) + (fark);
+               
+                    document.getElementById('alisToplami').value = o.toFixed(3);
+                
+            }
+        }
+        else if (hareketTuru == "A EMANET") {
+            //document.getElementById('alinanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.') / document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+
+        }
+        else if (hareketTuru == "BORÇ") {
+            //document.getElementById('satilanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.') / document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+
+        }
+        else if (hareketTuru == "ÇIKIŞ" || hareketTuru == "EMANET") {
+            if (document.getElementById("urunAdi" + array[1]).value.includes("PR") == true) {
+                var fark = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.')) - ilksatis;
+                ilksatis = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'));
+
+                var o = Number.parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) + (fark);
+                //var o = document.getElementById('satilanSatisFiyatTL' + array[1]).value;
+                document.getElementById('satisToplami').value = o.toFixed(3);
+
+            }
+            else {
+
+                var ilkfiyat = Number.parseFloat(document.getElementById('satilanBirimFiyat' + array[1]).value.replace(',', '.')) * Number.parseFloat(document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.'));
+                var fark = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.')) - ilkfiyat;
+                toplam = toplam + fark;
+                //document.getElementById('satilanBirimFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.') / document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                var o = Number.parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) + (fark);
+                //var o = document.getElementById('satilanSatisFiyatTL' + array[1]).value;
+                document.getElementById('satisToplami').value = o.toFixed(3);
+            }
+        }
+        getfark();
+        getkalanfark();
+    }
+
+    function birimchanged(y) {
+        $(document).ready(function () {
+
+            if (y.name == "satilanBirimFiyat") {
+                var array = y.id.split("satilanBirimFiyat", 2);
+                hareketTuru = document.getElementById("satilantur" + array[1]).value;
+            }
+            else {
+                array = y.id.split("alinanBirimFiyat", 2);
+                hareketTuru = document.getElementById("alinantur" + array[1]).value;
+            }
+
+
+
+            if (hareketTuru == "GİRİŞ" || hareketTuru == "A BORÇ") {
+                array = y.id.split("alinanBirimFiyat", 2);
+                if (document.getElementById("malzemeKodu" + array[1]).value == "TÜRK LİRASI") {
+                    a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                    document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                    son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))
+
+                    var o = Number.parseFloat(document.getElementById('nakit').value.replace(',', '.')) + (son1 - a1);
+                    document.getElementById('nakit').value = o.toFixed(3);
+                    toplam = o;
+                }
+                else {
+
+
+
+                    a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                    document.getElementById('alinanSatisFiyat' + array[1]).value = (parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.')) * parseFloat(document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.'))).toFixed(3).replace('.', ',');
+                    son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))
+
+                    var o = Number.parseFloat(document.getElementById('alisToplami').value.replace(',', '.')) + (son1 - a1);
+                    document.getElementById('alisToplami').value = o.toFixed(3);
+                    toplam = o;
+                }
+            }
+            else if (hareketTuru == "A EMANET") {
+                var array = y.id.split("alinanBirimFiyat", 2);
+                a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))
+            }
+            else if (hareketTuru == "BORÇ") {
+                var array = y.id.split("satilanBirimFiyat", 2);
+                a = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'));
+                document.getElementById('satilanSatisFiyatTL' + array[1]).value = (Number.parseFloat(document.getElementById('satilanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                son = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))
+            }
+            else {
+                var array = y.id.split("satilanBirimFiyat", 2);
+                a = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'));
+                document.getElementById('satilanSatisFiyatTL' + array[1]).value = (Number.parseFloat(document.getElementById('satilanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                son = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))
+
+
+                var o = Number.parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) + (son - a);
+                document.getElementById('satisToplami').value = o.toFixed(3);
+                toplam = o;
+
+            }
+            getfark();
+            getkalanfark();
+        });
+    }
+
+
+
+    let j = 0;
+
+    function addFieldAlinan(mkodu, aciklama, miktar, birim, satis) {
+        oncekitur = "";
+        let myTable = document.getElementById("alinanUrunTablosu");
+        let currentRow = myTable.insertRow(-1);
+
+        myTable.setAttribute("class", "alinanUrunTablosu");
+
+        var malzemeKodu = document.createElement("input");
+        malzemeKodu.setAttribute("id", "malzemeKodu" + j);
+        malzemeKodu.value = mkodu;
+
+        var alinanAciklama = document.createElement("input");
+        alinanAciklama.setAttribute("id", "alinanAciklama" + j);
+        alinanAciklama.value = aciklama;
+
+        var alinanMiktar = document.createElement("input");
+        alinanMiktar.setAttribute("id", "alinanMiktar" + j);
+        alinanMiktar.setAttribute("onchange", "adetchanged(this)");
+        alinanMiktar.value = miktar;
+
+        var alinanBirimFiyat = document.createElement("input");
+        alinanBirimFiyat.setAttribute("id", "alinanBirimFiyat" + j);
+        alinanBirimFiyat.setAttribute("onchange", "birimchanged(this)");
+        alinanBirimFiyat.value = birim;
+        
+
+
+        var alinanSatisFiyat = document.createElement("input");
+        alinanSatisFiyat.setAttribute("id", "alinanSatisFiyat" + j);
+        alinanSatisFiyat.setAttribute("onchange", "satischanged(this)");
+        alinanSatisFiyat.value = satis;
+
+        var alinanTur = document.createElement("select");
+        alinanTur.setAttribute("id", "alinantur" + j);
+        alinanTur.setAttribute("onchange", "turchanged(this)");
+
+        if (mkodu == "KREDİ KARTI") {
+            alinanBirimFiyat.disabled = true;
+            
+        }
+
+        var opt = document.createElement('option');
+        opt.value = "GİRİŞ";
+        opt.innerHTML = "GİRİŞ";
+        alinanTur.appendChild(opt);
+
+        var opt = document.createElement('option');
+        opt.value = "A EMANET";
+        opt.innerHTML = "EMANET";
+        alinanTur.appendChild(opt);
+
+        var opt = document.createElement('option');
+        opt.value = "A BORÇ";
+        opt.innerHTML = "BORÇ";
+        alinanTur.appendChild(opt);
+
+        var alinanIptalEt = document.createElement("input");
+        alinanIptalEt.setAttribute("type", "button");
+        alinanIptalEt.setAttribute("value", "İptal");
+        alinanIptalEt.setAttribute("id", "" + j);
+        alinanIptalEt.setAttribute("name", "alinanIptalEt");
+        alinanIptalEt.setAttribute("onclick", "deleteRow(this);");
+        alinanIptalEt.setAttribute("class", "btn btn-outline-danger");
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(malzemeKodu);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanAciklama);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanMiktar);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanBirimFiyat);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanSatisFiyat);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanTur);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alinanIptalEt);
+
+
+
+        j = j + 1;
+
+       
+    }
+
+    function adetchanged(btn) {
+
+        $(document).ready(function () {
+
+            if (btn.name == "satilanMiktar") {
+                var array = btn.id.split("satilanMiktar", 2);
+                hareketTuru = document.getElementById("satilantur" + array[1]).value;
+            }
+            else {
+                array = btn.id.split("alinanMiktar", 2);
+                hareketTuru = document.getElementById("alinantur" + array[1]).value;
+            }
+
+            if (hareketTuru == "GİRİŞ" || hareketTuru == "A BORÇ") {
+
+                var array = btn.id.split("alinanMiktar", 2);
+                if (document.getElementById("malzemeKodu" + array[1]).value == "KREDİ KARTI") {
+
+                    document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                    getkomisyon();
+                    kreditoplam = parseFloat(document.getElementById('krediKarti').value.replace(',', '.'));
+                    var o = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                    document.getElementById('krediKarti').value = (kreditoplam + o).toFixed(3);
+
+                }
+                else if (document.getElementById("malzemeKodu" + array[1]).value == "TÜRK LİRASI") {
+
+                    array = btn.id.split("alinanMiktar", 2);
+                    var a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                    document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                    var son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))
+                    var o = Number.parseFloat(document.getElementById('nakit').value.replace(',', '.')) + (son1 - a1);
+                    document.getElementById('nakit').value = o.toFixed(3);
+
+                }
+                else {
+
+                        array = btn.id.split("alinanMiktar", 2);
+                        var a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                        document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.')) * parseFloat(document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.'))).toFixed(3).replace('.', ',');
+                        var son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                        var o = Number.parseFloat(document.getElementById('alisToplami').value.replace(',', '.')) + (son1 - a1);
+                        document.getElementById('alisToplami').value = o.toFixed(3);
+                        toplam = o;
+                    
+                }
+            }
+
+            else if (hareketTuru == "A EMANET") {
+                array = btn.id.split("alinanMiktar", 2);
+                var a1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'));
+                document.getElementById('alinanSatisFiyat' + array[1]).value = (Number.parseFloat(document.getElementById('alinanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('alinanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                var son1 = Number.parseFloat(document.getElementById('alinanSatisFiyat' + array[1]).value.replace(',', '.'))
+            }
+            else if (hareketTuru == "BORÇ") {
+                var array = btn.id.split("satilanMiktar", 2);
+                var a = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'));
+                document.getElementById('satilanSatisFiyatTL' + array[1]).value = (Number.parseFloat(document.getElementById('satilanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                var son = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))
+            }
+            else {
+
+                var array = btn.id.split("satilanMiktar", 2);
+                var a = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'));
+                document.getElementById('satilanSatisFiyatTL' + array[1]).value = (Number.parseFloat(document.getElementById('satilanBirimFiyat' + array[1]).value.replace(',', '.') * document.getElementById('satilanMiktar' + array[1]).value.replace(',', '.')).toFixed(3)).replace('.', ',');
+                var son = Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + array[1]).value.replace(',', '.'))
+                
+                var o = Number.parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) + (son - a);
+                document.getElementById('satisToplami').value = o.toFixed(3);
+                toplam = o
+
+            }
+
+            getfark();
+            getkalanfark();
+        });
+    }
+
+    function deleteRow(btn) {
+        y = btn.id;
+        var hareketTuru;
+
+        if (btn.name == "satilanIptalEt") {
+            hareketTuru = document.getElementById("satilantur" + y).value;
+        }
+        else {
+            hareketTuru = document.getElementById("alinantur" + y).value;
+        }
+
+        if (hareketTuru == "GİRİŞ" || hareketTuru == "A BORÇ") {
+            var alinantoplam = parseFloat(document.getElementById('alisToplami').value.replace(',', '.'));
+            if (document.getElementById("malzemeKodu" + y).value == "KREDİ KARTI") {
+                kreditoplam = parseFloat(document.getElementById('krediKarti').value.replace(',', '.'));
+                kreditoplam = kreditoplam - Number.parseFloat(document.getElementById("alinanSatisFiyat" + y).value.replace(',', '.'));
+                var u = kreditoplam.toFixed(3);
+                document.getElementById('krediKarti').value = u.toString();
+
+            }
+            else if (document.getElementById("malzemeKodu" + y).value == "TÜRK LİRASI") {
+                var nakit = parseFloat(document.getElementById('nakit').value.replace(',', '.'));
+                nakit = nakit - Number.parseFloat(document.getElementById("alinanSatisFiyat" + y).value.replace(',', '.'));
+                var u = nakit.toFixed(3);
+                document.getElementById('nakit').value = u.toString();
+
+            }
+            else {
+
+                alinantoplam = alinantoplam - Number.parseFloat(document.getElementById('alinanSatisFiyat' + y).value.replace(',', '.'));
+                var u = alinantoplam.toFixed(3);
+                document.getElementById('alisToplami').value = u.toString();
+
+            }
+        }
+        else if (hareketTuru == "A EMANET") {
+
+        }
+        else if (hareketTuru == "ÇIKIŞ") {
+            var satistoplam = parseFloat(document.getElementById("satisToplami").value.replace(',', '.'));
+            satistoplam = satistoplam - Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + y).value.replace(',', '.'));
+            var u = satistoplam.toFixed(3);
+            document.getElementById('satisToplami').value = u.toString();
+        }
+        else if (hareketTuru == "EMANET") {
+            var satistoplam = parseFloat(document.getElementById("satisToplami").value.replace(',', '.'));
+            satistoplam = satistoplam - Number.parseFloat(document.getElementById('satilanSatisFiyatTL' + y).value.replace(',', '.'));
+            var u = satistoplam.toFixed(3);
+            document.getElementById('satisToplami').value = u.toString();
+        }
+        else if (hareketTuru == "BORÇ") {
+
+        }
+
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+        getfark();
+        getkalanfark();
+    }
+
+    function temp() {
+        m = true;
+    }
+
+    function getbakiye() {
+        var value = document.getElementById("musteriAdi").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/FaturaGiris1",
+            data: { MusteriAdi: value },
+            success: function (data) {
+                data = JSON.parse(data);
+                var array = data.split(", ", 8);
+                for (var i = 0; i < 8; i++) {
+                    if (parseFloat(array[i]) < 0) {
+                        var num = 0 - parseFloat(array[i].replace(',', '.'));
+                        document.getElementById("Borc" + i).value = num;
+                        document.getElementById("Borc" + i).value = document.getElementById("Borc" + i).value.replace('.', ',');
+                        document.getElementById("Alacak" + i).value = 0;
+                    }
+                    else if (parseFloat(array[i]) > 0) {
+                        document.getElementById("Borc" + i).value = 0;
+                        document.getElementById("Alacak" + i).value = array[i].replace('.', ',');
+                    }
+                    else {
+                        document.getElementById("Borc" + i).value = 0;
+                        document.getElementById("Alacak" + i).value = 0;
+                    }
+                }
+            }
+        });
+    }
+
+    function getOzellik() {
+        var value = document.getElementById("satilanUrunListesi").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/FaturaGiris3",
+            data: { barkod: value },
+            success: function (data) {
+                data = JSON.parse(data);
+                var array = data.split(", ", 5);
+                if (data == "failed")
+                    alert("Bu Ürün Veritabanında Bulunamadı!");
+                else {
+                    var array = data.split(", ", 5);
+
+                    document.getElementById("satisToplami").value = (parseFloat(document.getElementById("satisToplami").value.replace(",", ".")) + parseFloat(array[4].replace(",", ".")));
+                    document.getElementById("satisToplami").value = (parseFloat(document.getElementById("satisToplami").value).toFixed(3)).replace(".", ",");
+                    getfark();
+                    getkalanfark();
+                    addField(array[0], array[1], array[2], array[3], array[4]);
+                    getfark();
+                    getkalanfark();
+                }
+            }
+        });
+    }
+
+    let k = 0;
+    function getOzellikAlinan() {
+        var value = document.getElementById("alinanUrun").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/FaturaGiris4",
+            data: { barkod: value },
+            success: function (data) {
+                data = JSON.parse(data);
+                var array = data.split(", ", 5);
+                if (data == "failed")
+                    alert("Bu Ürün Veritabanında Bulunamadı!");
+                else {
+                    var array = data.split(", ", 5);
+                    if (array[0] == "TÜRK LİRASI") {
+                        document.getElementById("nakit").value = (parseFloat(document.getElementById("nakit").value.replace(",", ".")) + parseFloat(array[4].replace(",", ".")));
+                        document.getElementById("nakit").value = (parseFloat(document.getElementById("nakit").value).toFixed(3)).replace(".", ",");
+                    }
+                    else {
+
+                        document.getElementById("alisToplami").value = (parseFloat(document.getElementById("alisToplami").value.replace(",", ".")) + parseFloat(array[4].replace(",", ".")));
+                        document.getElementById("alisToplami").value = (parseFloat(document.getElementById("alisToplami").value).toFixed(3)).replace(".", ",");
+                    }
+                    addFieldAlinan(array[0], array[1], array[2], array[3], array[4]);
+                    getfark();
+                    getkalanfark();
+                }
+                ///////////////////////////////////////////////////////////////////////
+                //if (document.getElementById("alinanBirimFiyat0").value == "") {
+
+                //    Window.alert(k);
+                //    document.getElementById("alinanBirimFiyat" + k).value = "0";
+                //    document.getElementById("alinanSatisFiyat"+ k).value = "0";
+                //}
+                /////////////////////////////////////////
+            }
+        });
+
+        k = k + 1;
+    }
+
+    function gettaksit() {
+         var value = document.getElementById("bankaadi").value;
+     
+        addFieldAlinan("KREDİ KARTI", value, 0, 1, 0);
+            
+        
+    }
+
+    function getkomisyon() {
+
+        var value = document.getElementById("bankaadi").value;
+        var value1 = document.getElementById("taksit").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/FaturaGiris6",
+            data: { bankaadi: value, taksit: value1 },
+            success: function (data) {
+                var x = parseFloat(document.getElementById("alinanSatisFiyat" + (j - 1)).value.replace(',', '.'));
+
+                //document.getElementById("alinanSatisFiyat" + (j - 1)).value = (x + ((x / 100) * data)).toFixed(3).replace('.', ',');
+                document.getElementById("alinanMiktar" + (j - 1)).value = (x - ((x / 100) * data)).toFixed(3).replace('.', ',');
+            },
+            error: function () {
+                //document.getElementById("alinanSatisFiyat" + (j - 1)).value = (parseFloat(document.getElementById("alinanMiktar" + (j - 1)).value.replace(',', '.')) * parseFloat(document.getElementById("alinanBirimFiyat" + (j - 1)).value.replace(',', '.'))).toFixed(3);
+                document.getElementById("alinanMiktar" + (j - 1)).value = (x - ((x / 100) * data)).toFixed(3).replace('.', ',');
+            }
+        });
+    }
+    function getfark() {
+
+        var satisValue, alisValue;
+        satisValue = parseFloat(document.getElementById('satisToplami').value.replace(',', '.'));
+        alisValue = parseFloat(document.getElementById('alisToplami').value.replace(',', '.'));
+
+        //document.getElementById('fark').value = (parseFloat(document.getElementById('satisToplami').value.replace(',', '.')) - parseFloat(document.getElementById('alisToplami').value.replace(',', '.'))).toFixed(3);
+        if (Number.isNaN(alisValue) == true) {
+
+            alisValue = 0;  
+        }
+        document.getElementById('fark').value = (satisValue - alisValue).toFixed(3).replace('.',',');
+    }
+    function getkalanfark() {
+
+
+        document.getElementById('kalanFark').value = (Number.parseFloat(document.getElementById('fark').value.replace(',', '.')) - Number.parseFloat(document.getElementById('nakit').value.replace(',', '.')) - Number.parseFloat(document.getElementById('krediKarti').value.replace(',', '.'))).toFixed(3).replace('.',',');
+    }
+
+    function result() {
+        ekle();
+        ekle2();
+       
+        var value = parseFloat(document.getElementById('kalanFark').value.replace(',', '.'));
+        var value2 = document.getElementById('sube').value.replace(',', '.');
+        var value3 = document.getElementById('bankaadi').value;
+        var value4 = parseFloat(document.getElementById('nakit').value.replace(',', '.'));
+        var value5 = parseInt(document.getElementById('taksit').value);
+        var m = JSON.stringify({
+            'fatura1': things, 'fatura2': things2, 'toplam': value, 'Subeno': value2, 'Bankaadi': value3, 'nakit': value4, 'Taksit' : value5
+        });
+        things = [];
+        things2 = [];
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "/Kuyumcu/FaturaGiris7",
+                contentType: "application/json; charset=utf-8",
+                dataType: "Json",
+                data: m,
+                success: function (data) {
+                    alert("İşlem Başarılı");
+
+                    for (var u = 0; u < 10; u++) {
+                        try {
+                            var element = document.getElementById(u);
+                            var row = element.parentNode.parentNode;
+                            row.parentNode.removeChild(row);
+
+                        } catch {
+                        }
+                    }
+
+                    for (var u = 0; u < 10; u++) {
+                        try {
+                            var element = document.getElementById(u);
+                            var row = element.parentNode.parentNode;
+                            row.parentNode.removeChild(row);
+
+                        } catch {
+                        }
+                    }
+                    i = 0;
+                    j = 0;
+                    document.getElementById("satisToplami").value = "0";
+                    document.getElementById("alisToplami").value = "0";
+                    document.getElementById("fark").value = "0";
+                    document.getElementById("nakit").value = "0";
+                    document.getElementById("krediKarti").value = "0";
+                    document.getElementById("kalanFark").value = "0";
+                    document.getElementById("islemYapanPersonel").value = "Seçiniz";
+                    document.getElementById("musteriAdi").value = "";
+                    document.getElementById("aciklama").value = "";
+                    document.getElementById("satilanUrunListesi").value = "Seçiniz";
+                    document.getElementById("alinanUrun").value = "Seçiniz";
+                    document.getElementById("bankaadi").value = "Seçiniz";
+                    document.getElementById("taksit").value = "0";
+                    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth() + 1; //January is 0!
+                    var yyyy = today.getFullYear();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    if (dd < 10) {
+                        dd = '0' + dd;
+                    }
+                    if (mm < 10) {
+                        mm = '0' + mm;
+                    }
+                    today = dd + '.' + mm + '.' + yyyy + ' ' + time;
+                    document.getElementById("Tarih").value = today;
+                    for (var l = 0; l < 8; l++) {
+                        document.getElementById("Borc" + l).value = "0";
+                        document.getElementById("Alacak" + l).value = "0";
+                    }
+                    things = [];
+                    things2 = [];
+                    toplam = parseFloat("0");
+                    oncekitur;
+                    kreditoplam = parseFloat("0");
+                    alinantoplam = parseFloat("0");
+                    //window.location.reload(true);
+                },
+                error: function (data) {
+                    alert("Lütfen Tüm Alanları Doldurun.");
+                }
+
+            });
+        });
+    }
+
+    function ekle() {
+        
+        for (k = 0; k < i; k++) {
+            k = k.toString();
+            try {
+                things.push({
+                    MusteriAdSoyad: document.getElementById('musteriAdi').value,
+                    StokId: document.getElementById('urunKodu' + k).value,
+                    Tarih: document.getElementById('Tarih').value,
+                    Miktar: document.getElementById('satilanMiktar' + k).value.replace('.', ','),
+                    BirimFiyati: document.getElementById('satilanBirimFiyat' + k).value.replace('.', ','),
+                    HareketTuru: document.getElementById('satilantur' + k).value,
+                    SatisTutari: document.getElementById('satilanSatisFiyatTL' + k).value.replace('.', ','),
+                    Islemci: document.getElementById('islemYapanPersonel').value,
+                    Aciklama: document.getElementById('aciklama').value
+                });
+            } catch {
+                continue;
+            }
+
+        }
+    }
+    function ekle2() {
+
+        for (k = 0; k < j; k++) {
+            k = k.toString();
+            try {
+                things2.push({
+                    MusteriAdSoyad2: document.getElementById('musteriAdi').value,
+                    StokId2: document.getElementById('malzemeKodu' + k).value,
+                    Tarih2: document.getElementById('Tarih').value,
+                    Miktar2: document.getElementById('alinanMiktar' + k).value.replace('.', ','),
+                    BirimFiyati2: document.getElementById('alinanBirimFiyat' + k).value.replace('.', ','),
+                    HareketTuru2: document.getElementById('alinantur' + k).value,
+                    SatisTutari2: document.getElementById('alinanSatisFiyat' + k).value.replace('.', ','),
+                    Islemci2: document.getElementById('islemYapanPersonel').value,
+                    Aciklama2: document.getElementById('aciklama').value
+                });
+            } catch {
+                continue;
+            }
+
+        }
+    }
+
+    $(document).ready(function () {
+        $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+    });
+
+    
+
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#musteriAdi").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: '/Kuyumcu/AutoComplete/',
+                    data: "{ 'prefix': '" + request.term + "'}",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return item;
+                        }))
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            },
+            select: function (e, i) {
+                $("#hfCustomer").val(i.item.val);
+            },
+            minLength: 0
+        }).focus(function () {
+            $(this).autocomplete("search");
+        });
+    });
+</script>
+
+
+<style>
+    .ui-autocomplete {
+        overflow: auto;
+        max-height: 100px;
+    }
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .kuyumcuAraclari {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .kuyumcuAraclari {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .inputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 50%;
+    }
+
+    .Label {
+        display: inline-block;
+        text-align: left;
+        width: 120px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    .comboBox {
+        /*width: 170px;*/
+        width: 100%;
+        text-align: center;
+        height: 32px;
+    }
+
+
+    thead th {
+        text-align: center;
+    }
+
+    #satilanUrunTablosu {
+        margin-top: 10px;
+        width: 100%;
+        alignment: center;
+    }
+
+    .satilanUrunTablosu {
+        border: 2px solid darkslategrey;
+        text-align: center;
+    }
+
+    #satilanUrunTablosu input {
+        width: 100%;
+    }
+
+    #alinanUrunTablosu {
+        margin-top: 10px;
+        width: 100%;
+        alignment: center;
+    }
+
+    .alinanUrunTablosu {
+        border: 2px solid darkslategrey;
+        text-align: center;
+    }
+
+    #alinanUrunTablosu input {
+        width: 100%;
+    }
+</style>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        <div class="navbar" style="background-color:#394F85">
+            <a class="navbar-brand">
+                <img src="~/Images/logoson.png"
+                     style="width: 125px;height:38px;">
+            </a>
+            <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+            <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+            <a href="Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+            <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+            <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+            <a href="/Finans" button class="btn btn-light">FİNANS</a>
+            <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+            <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+            <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+        </div>
+        <div id="Araclar" class="collapsed">
+            <a href="HizliAlimSatim" button class="btn btn-dark kuyumcuAraclari">SİPARİŞ İŞLEMLERİ</a>
+            <a href="Tabela" button class="btn btn-dark kuyumcuAraclari">TABELA</a>
+            <a href="UrunEkle" button class="btn btn-dark kuyumcuAraclari">ÜRÜN EKLE</a>
+            <a href="OzellikEkle" button class="btn btn-dark kuyumcuAraclari">ÖZELLİK EKLE</a>
+            <a href="UrunDonusum" button class="btn btn-dark kuyumcuAraclari">HURDA DÖNÜŞÜM</a>
+            <a href="FaturaGiris" button class="btn btn-dark kuyumcuAraclari">FATURA GİRİŞ</a>   
+            <a href="StokListesi" button class="btn btn-dark kuyumcuAraclari">STOK LİSTESİ</a>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--TARİH-->
+                    <div>
+                        <label class="Label" for="tarih">Tarih</label>
+                        @Html.TextBoxFor(x => x.Hareket.Tarih, new { @class = "datepicker", id = "Tarih", type = "text" })
+                    </div>
+                    <label class="Label" for="sube">Şube No</label>
+                    @Html.TextBoxFor(x => x.Hareket.SubeNo, new { @class = "inputField", id= "sube", type = "text", @Value = "NO1", @readonly = "readonly"})
+                   
+                    <!--Personel-->
+                    <div>
+                        <label class="Label" for="islemYapanPersonel">Personel</label>
+                        @Html.DropDownListFor(x => x.Hareket.Islemci, new SelectList(Model.Personel).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "islemYapanPersonel",
+                             style = "width:50%",
+
+                         })
+                    </div>
+                    <!--TOPTANCI ADI ve KODU-->
+                    <div>
+                        <label class="Label" for="musteriAdi">Müşteri Adı</label>
+                        @Html.TextBoxFor(x => x.Hareket.MusteriAdi, new { @class = "inputField", type = "text", id = "musteriAdi", onclick = "getbakiye()" })
+                        <input type="hidden" id="hfCustomer" name="CustomerId" />
+                        <button id="ekle" type="button" class="btn-m btn-success" onclick="window.open('/Musteri/MusteriEkle','_blank')"> <i class="fa fa-xs fa-plus-square"></i> </button>
+                    </div>
+
+                    <!--AÇIKLAMA-->
+                    <div>
+                        <label class="Label" for="aciklama">Açıklama</label>
+                        @Html.TextBoxFor(x => x.Hareket.Aciklama, new { @class = "inputField", type = "text", id = "aciklama" })
+                    </div>
+                </div>
+                <!--        TOPTANCI AKTARIM 1-->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table id="borcAlacakTablosu">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <th>BORÇ</th>
+                                        <th>ALACAK</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>HAS</th>
+                                        <td>
+                                            <input name="hasBorc" id="Borc0" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="hasAlacak" id="Alacak0" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            <input name="tlBorc" id="Borc1" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="tlAlacak" id="Alacak1" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            <input name="euroBorc" id="Borc2" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="euroAlacak" id="Alacak2" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            <input name="usdBorc" id="Borc3" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="usdAlacak" id="Alacak3" type="text">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table id="borcAlacakTablosu2">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <th>BORÇ</th>
+                                        <th>ALACAK</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            <input name="strlBorc" id="Borc4" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="strlAlacak" id="Alacak4" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ÇEYREK</th>
+                                        <td>
+                                            <input name="ceyrekBorc" id="Borc5" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="ceyrekAlacak" id="Alacak5" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ATA</th>
+                                        <td>
+                                            <input name="ataBorc" id="Borc6" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="ataAlacak" id="Alacak6" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>22 AYAR</th>
+                                        <td>
+                                            <input name="22ayarBorc" id="Borc7" type="text">
+                                        </td>
+                                        <td>
+                                            <input name="22ayarAlacak" id="Alacak7" type="text">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="Label" for="urunInput" style="text-align: center">SATILAN ÜRÜN</label>
+                    <input type="text" class="inputField" style="width:100%" id="urunInput" name="urunInput">
+                </div>
+                <div class="col-md-2">
+                    <label class="Label" for="satilanUrunListesi" style="text-align: center">ÜRÜN LİSTESİ</label>
+                    @Html.DropDownListFor(x => x.Hareket.StokId, new SelectList(Model.Urunler).ToList(),
+                    "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "satilanUrunListesi",
+                        onchange = "getOzellik()"
+                    })
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <!--İşlemler Tablosu (GEÇMİŞ)-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--            TABLOYU BURAYA KOYABİLİRSİN-->
+                    <table id="satilanUrunTablosu" class="satilanUrunTablosu">
+                        <thead class="satilanUrunTablosu">
+                        <th id="11">ÜRÜN KODU</th>
+                        <th id="22">ÜRÜN ADI</th>
+                        <th id="33">MİKTAR</th>
+                        <th id="44">BİRİM FİYAT</th>
+                        <th id="55">SATIŞ FİYATI</th>
+                        <th id="66">TÜR</th>
+                        <th></th>
+                        </thead>
+                    </table>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <!--SATIŞ TOPLAMI-->
+                    <div>
+                        <label class="Label" for="satisToplami" style="text-align: center;width:auto">SATIŞ TOPLAMI</label>
+                        <input type="text" class="inputField" value="0" style="" id="satisToplami"
+                               name="satisToplami" readonly="readonly">
+                    </div>
+                    <!--ALIŞ TOPLAMI-->
+                    <div>
+                        <label class="Label" for="alisToplami">ALIŞ TOPLAMI</label>
+                        <input type="text" class="inputField" value="0" style="" id="alisToplami"
+                               name="alisToplami" readonly="readonly">
+                    </div>
+                    <!--FARK-->
+                    <div>
+                        <label class="Label" for="fark">FARK</label>
+                        @*<input type="text" class="inputField" value="0" style="" id="fark"
+                            name="fark">*@
+                        @Html.TextBoxFor(x => x.Toplam, new { @class = "inputField", type = "text", id = "fark", value = "0" })
+                    </div>
+                    <!--NAKİT-->
+                    <div>
+                        <label class="Label" for="nakit">NAKİT</label>
+                        <input type="text" class="inputField" value="0" style="" id="nakit"
+                               name="nakit" onchange="getkalanfark()">
+                    </div>
+                    <!--KREDİ KARTI-->
+                    <div>
+                        <label class="Label" for="krediKarti">KREDİ KARTI</label>
+                        <input type="text" class="inputField" value="0" id="krediKarti" name="krediKarti" readonly="readonly" >
+                    </div>
+                    <!--KALAN FARK-->
+                    <div>
+                        <label class="Label" for="kalanFark">KALAN FARK</label>
+                        <input type="text" class="inputField" value="0" id="kalanFark" name="kalanFark" onchange="getkalanfark()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top:40px ">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="Label" for="alinanUrun" style="text-align: center">ALINAN ÜRÜN</label>
+                    @Html.DropDownListFor(x => x.Hareket.StokId, new SelectList(Model.Urunler).ToList(),
+                    "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "alinanUrun",
+                        onchange = "getOzellikAlinan()"
+                    })
+                </div>
+                <div class="col-md-2">
+                    <label class="Label" for="bankaAdi" style="text-align: center">BANKA ADI</label>
+                    @Html.DropDownListFor(x => x.Hareket.StokId, new SelectList(Model.Bankalar).ToList(),
+                   "Seçiniz", new
+                   {
+                       @Class = "comboBox",
+                       @id = "bankaadi",
+                       onchange = "gettaksit()"
+                   })
+                </div>
+                <div class="col-md-1">
+                    <label class="Label" for="taksit" style="text-align: center">TAKSİT</label>
+                    @Html.TextBoxFor(x => x.Hareket.Taksit, new { type = "text", id = "taksit", style = "width:120px; text-align:center" })
+                    @*@Html.DropDownListFor(x => x.Hareket.Miktar, new SelectList(Model.Taksitler).ToList(),
+        "Seçiniz", new
+        {
+            @Class = "comboBox",
+            @id = "taksit",
+        })*@
+                </div>
+            </div>
+            @*<div class="row">
+                    <div class="col-md-2">
+                        <label class="Label" for="alinanAciklama" style="text-align: center">AÇIKLAMA</label>
+                        <input type="text" class="inputField" style="width:100%" id="alinanAciklama" name="alinanAciklama">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="Label" for="alinanMilyem" style="text-align: center">MİLYEM</label>
+                        <input type="text" class="inputField" style="width:100%" id="alinanMilyem" name="alinanMilyem">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="Label" for="alinanMiktar" style="text-align: center">MİKTAR</label>
+                        <input type="text" class="inputField" style="width:100%" id="alinanMiktar" name="alinanMiktar">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="Label" for="alinanFiyat" style="text-align: center">FİYAT</label>
+                        <input type="text" class="inputField" style="width:100%" id="alinanFiyat" name="alinanFiyat">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="Label" for="alinanToplam" style="text-align: center">TOPLAM</label>
+                        <input type="text" class="inputField" style="width:100%" id="alinanToplam" name="alinanToplam">
+                    </div>
+                </div>*@
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--            TABLOYU BURAYA KOYABİLİRSİN-->
+                    <table id="alinanUrunTablosu" class="alinanUrunTablosu">
+                        <thead class="UrunTablosu">
+                        <th>MALZEME KODU</th>
+                        <th>AÇIKLAMA</th>
+                        <th>MİKTAR</th>
+                        <th>BİRİM FİYAT</th>
+                        <th>SATIŞ FİYATI</th>
+                        <th>TÜR</th>
+                        <th></th>
+                        </thead>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    @*<button type="button" class="btn-lg btn-success">ONAYLA</button>*@
+                    <button type="button" class="btn btn-success" onclick="result()">ONAYLA</button>
+                    <button type="button" class="btn btn-warning" id="TemizleButton" onClick="document.location.reload(true)">TEMİZLE</button>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+
+</html>
+
+

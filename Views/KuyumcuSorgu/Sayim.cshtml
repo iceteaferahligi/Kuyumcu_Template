@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script>
+
+    $(document).ready(function () {
+        $("#barkodGirisi").on("keyup", function (e) {
+            var key = e.which;
+
+            if (key == 13) // the enter key ascii code
+            {
+                var value = document.getElementById("barkodGirisi").value;
+
+                $(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/KuyumcuSorgu/Sayim1",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "Json",
+                        data: JSON.stringify({
+                            barkod: value
+                        }),
+                        success: function (data) {
+                            $("#devextreme1").dxDataGrid("refresh");
+                            $("#devextreme2").dxDataGrid("refresh");
+                            $(".productphoto").attr("src", data);
+                        }
+                    });
+                });
+                document.getElementById("barkodGirisi").value = "";
+            }
+        });
+    });
+    function changesayim() {
+        var answer = confirm("Sıfırlarsanız tüm sayım verisi kaybolacak devam etmek istiyor musunuz?");
+        if (answer) {
+            $(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/KuyumcuSorgu/Sayim2",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "Json",
+                    success: function (data) {
+                        alert("Sayım Sıfırlantı!");
+                        window.location.reload(true);
+                    }
+                });
+            });
+        }
+        else {
+            //some code
+        }
+    }
+
+    function selection_changed(selectedItems) {
+        var data = selectedItems.selectedRowsData[0];
+        if (data) {
+            $(".productphoto").attr("src", data.Image);
+        }
+    }
+</script>
+<style>
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .kuyumcuAraclari {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .tabStyle {
+        text-align: center;
+        justify-content: center;
+        /*border: 3px groove;*/
+    }
+
+    thead th {
+        text-align: center;
+    }
+
+    .butonLayout {
+        margin-top: 10px;
+        text-align: center;
+        padding: 5px;
+        border-top: 5px groove;
+    }
+
+    .Label {
+        display: block;
+        text-align: left;
+        /*width: 92px;*/
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    .inputField {
+        background-color: whitesmoke;
+        text-align: center;
+        border-style: inset;
+        width: 80%;
+    }
+
+    .comboBox {
+        /*width: 170px;*/
+        width: 70%;
+        text-align: center;
+        height: 30px;
+    }
+
+    .pairRow {
+        display: inline-flex;
+        text-align: left;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+</style>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark kuyumcuAraclari">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark kuyumcuAraclari">BUGÜN</a>
+        <a href="/KuyumcuSorgu/Pozisyonlar" button class="btn btn-dark kuyumcuAraclari">POZİSYONLAR</a>
+        <a href="/KuyumcuSorgu/Sayim" button class="btn btn-dark kuyumcuAraclari">SAYIM</a>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="container-fluid">
+                    <div class="row" style="margin-bottom:10px;">
+                        @*<div class="col-md-2">
+                            <label class="Label" for="grup">Grup</label>
+                            <select class="comboBox" id="grup">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="Label" for="cinsi">Cinsi</label>
+                            <select class="comboBox" id="cinsi">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="Label" for="altGrup">Alt Grup</label>
+                            <select class="comboBox" id="altGrup">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="Label" for="banko">Banko</label>
+                            <select class="comboBox" id="banko">
+                                <option></option>
+                            </select>
+                        </div>*@
+                    </div>
+                    @*<div class="row">
+                        <div class="col-md-3">
+                            <button type="button" class="btn-info btn-block">
+                                <i class="fa fa-fw fa-search-minus"></i>FİLTRELİ
+                                SAYIM
+                            </button>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn-info btn-block">
+                                <i class="fa fa-fw fa-search-plus"></i>KOMPLE
+                                SAYIM
+                            </button>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="container-fluid" style="margin-top:15px;">
+                    <ul class="nav nav-tabs nav-justified" style="justify-content: center;">
+                        <li>
+                            <a class="nav-item nav-link active" id="nav-orijinalUrunler-tab" data-toggle="tab"
+                               href="#nav-orijinalUrunler"
+                               role="tab"
+                               aria-controls="nav-orijinalUrunler" aria-selected="true">Orijinal Stok Listesi</a>
+                        </li>
+                        <li>
+                            <a class="nav-item nav-link" id="nav-okutulanUrunler-tab" data-toggle="tab"
+                               href="#nav-okutulanUrunler"
+                               role="tab"
+                               aria-controls="nav-okutulanUrunler" aria-selected="false">Okutulan Ürünler</a>
+                        </li>
+                        <li>
+                            <a class="nav-item nav-link" id="nav-okutulmayanUrunler-tab" data-toggle="tab"
+                               href="#nav-okutulmayanUrunler"
+                               role="tab"
+                               aria-controls="nav-okutulmayanUrunler" aria-selected="false">Okutulmayan Ürünler</a>
+                        </li>
+                        <!--</div>-->
+                    </ul>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div>
+
+                            <script src="/Scripts/jszip.min.js"></script>
+                            <link href="/Content/dx.common.css" rel="stylesheet">
+                            <link href="/Content/dx.light.css" rel="stylesheet">
+                            <script src="/Scripts/jquery-2.2.3.js"></script>
+                            <script src="/Scripts/bootstrap.js"></script>
+                            <script src="/Scripts/cldr.js"></script>
+                            <script src="/Scripts/cldr/event.js"></script>
+                            <script src="/Scripts/cldr/supplemental.js"></script>
+                            <script src="/Scripts/cldr/unresolved.js"></script>
+                            <script src="/Scripts/globalize.js"></script>
+                            <script src="/Scripts/globalize/message.js"></script>
+                            <script src="/Scripts/globalize/number.js"></script>
+                            <script src="/Scripts/globalize/currency.js"></script>
+                            <script src="/Scripts/globalize/date.js"></script>
+                            <script src="/Scripts/dx.all.debug.js"></script>
+                            <script src="/Scripts/aspnet/dx.aspnet.data.js"></script>
+                            <script src="/Scripts/aspnet/dx.aspnet.mvc.js"></script>
+                        </div>
+                        <div class="tab-pane fade show active" id="nav-orijinalUrunler" role="tabpanel"
+                             aria-labelledby="nav-orijinalUrunler-tab">
+                            <div class="row">
+
+                                <div class="col-md-12" style="height: 500px">
+                                    @(Html.DevExtreme().DataGrid()
+
+                                                                            .ShowBorders(true)
+                                                                            .DataSource(d => d.WebApi().Controller("Orders").Key("StokId"))
+                                                                            .Columns(columns =>
+                                                                            {
+                                                                                columns.Add().DataField("StokId");
+                                                                                columns.Add().DataField("StokCinsi");
+                                                                                columns.Add().DataField("StokGrubu");
+                                                                                columns.Add().DataField("StokAltGrubu");
+                                                                                columns.Add().DataField("ToptanciAdi");
+                                                                                columns.Add().DataField("Tarih").DataType(GridColumnDataType.Date);
+                                                                                columns.Add().DataField("Miktar");
+                                                                                columns.Add().DataField("BirimFiyat");
+                                                                                columns.Add().DataField("Maliyet");
+                                                                                columns.Add().DataField("SatisTutari");
+                                                                                columns.Add().DataField("Ozellik1");
+                                                                                columns.Add().DataField("Ozellik2");
+                                                                                columns.Add().DataField("Ozellik3");
+                                                                                columns.Add().DataField("Ozellik4");
+
+                                                                            })
+                                                                             .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                                             .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                                             .Paging(p => p.PageSize(10))
+                                                                             .FilterRow(f => f.Visible(true))
+                                                                             .HeaderFilter(f => f.Visible(true))
+                                                                             .GroupPanel(p => p.Visible(true))
+                                                                             .Grouping(g => g.AutoExpandAll(false))
+                                                                             .AllowColumnReordering(true)
+                                                                             .AllowColumnResizing(true)
+                                                                             .RemoteOperations(true)
+                                                                             .OnSelectionChanged("selection_changed")
+                                                                             .Summary(s => s
+                                                                             .TotalItems(totalItems =>
+                                                                             {
+                                                                                 totalItems.Add().Column("StokId").SummaryType(SummaryType.Count);
+                                                                             })
+                                                                             .GroupItems(groupItems =>
+                                                                             {
+                                                                                 groupItems.Add().SummaryType(SummaryType.Count);
+                                                                             })
+                                                                            )
+                                                                             .ColumnAutoWidth(true)
+                                    )
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-okutulanUrunler" role="tabpanel"
+                             aria-labelledby="nav-okutulmayanUrunler-tab">
+                            <div class="row">
+                                <div class="col-md-12" style="height: 500px">
+                                    @(Html.DevExtreme().DataGrid()
+                                                                                   .ShowBorders(true)
+                                                                                   .DataSource(d => d.WebApi().Controller("Orders").LoadAction("Get15").Key("StokId"))
+                                                                                   .Columns(columns =>
+                                                                                   {
+                                                                                       columns.Add().DataField("StokId");
+                                                                                       columns.Add().DataField("StokCinsi");
+                                                                                       columns.Add().DataField("StokGrubu");
+                                                                                       columns.Add().DataField("ToptanciAdi");
+                                                                                       columns.Add().DataField("Miktar");
+
+                                                                                   })
+
+                                                                                    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                                                    .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                                                    .Paging(p => p.PageSize(10))
+                                                                                    .FilterRow(f => f.Visible(true))
+                                                                                    .HeaderFilter(f => f.Visible(true))
+                                                                                    .GroupPanel(p => p.Visible(true))
+                                                                                    .Grouping(g => g.AutoExpandAll(false))
+                                                                                    .AllowColumnReordering(true)
+                                                                                    .AllowColumnResizing(true)
+                                                                                    .RemoteOperations(true)
+                                                                                    .OnSelectionChanged("selection_changed")
+                                                                                    .Summary(s => s
+                                                                                    .TotalItems(totalItems =>
+                                                                                    {
+                                                                                        totalItems.Add().Column("StokId").SummaryType(SummaryType.Count);
+                                                                                        totalItems.Add().Column("Miktar").SummaryType(SummaryType.Sum);
+                                                                                    })
+                                                                                    .GroupItems(groupItems =>
+                                                                                    {
+                                                                                        groupItems.Add().SummaryType(SummaryType.Count);
+                                                                                    })
+                                                                                   )
+                                                                                     .ColumnAutoWidth(true)
+                                    )
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-okutulmayanUrunler" role="tabpanel"
+                             aria-labelledby="nav-okutulmayanUrunler-tab">
+                            <div class="row">
+                                <div class="col-md-12" style="height: 500px">
+                                    @(Html.DevExtreme().DataGrid()
+                                                                                   .ShowBorders(true)
+                                                                                   .DataSource(d => d.WebApi().Controller("Orders").LoadAction("Get16").Key("StokId"))
+                                                                                   .Columns(columns =>
+                                                                                   {
+                                                                                       columns.Add().DataField("StokId");
+                                                                                       columns.Add().DataField("StokCinsi");
+                                                                                       columns.Add().DataField("StokGrubu");
+                                                                                       columns.Add().DataField("ToptanciAdi");
+                                                                                       columns.Add().DataField("Miktar");
+
+                                                                                   })
+                                                                                   
+                                                                                    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                                                    .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                                                    .Paging(p => p.PageSize(10))
+                                                                                    .FilterRow(f => f.Visible(true))
+                                                                                    .HeaderFilter(f => f.Visible(true))
+                                                                                    .GroupPanel(p => p.Visible(true))
+                                                                                    .Grouping(g => g.AutoExpandAll(false))
+                                                                                    .AllowColumnReordering(true)
+                                                                                    .AllowColumnResizing(true)
+                                                                                    .RemoteOperations(true)
+                                                                                    .OnSelectionChanged("selection_changed")
+                                                                                    .Summary(s => s
+                                                                                    .TotalItems(totalItems =>
+                                                                                    {
+                                                                                        totalItems.Add().Column("StokId").SummaryType(SummaryType.Count);
+                                                                                        totalItems.Add().Column("Miktar").SummaryType(SummaryType.Sum);
+                                                                                    })
+                                                                                    .GroupItems(groupItems =>
+                                                                                    {
+                                                                                        groupItems.Add().SummaryType(SummaryType.Count);
+                                                                                    })
+                                                                                   )
+                                                                                    .ColumnAutoWidth(true)
+                                    )
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pairRow">
+                    @*<div>
+                        <label class="Label" for="urunAdedi">Ürün Adedi</label>
+                        <input type="text" class="inputField" id="urunAdedi" name="urunAdedi">
+                    </div>
+                    <div>
+                        <label class="Label" for="gramAdet">Gram / Adet</label>
+                        <input type="text" class="inputField" id="gramAdet" name="gramAdet">
+                    </div>*@
+                    <!--             <div>-->
+                    <!--                    <label class="Label" for="gramAdet">Gram / Adet</label>-->
+                    <!--                    <input type="text" class="inputField" id="gramAdet" name="gramAdet">-->
+                    <!--                </div>-->
+                </div>
+                <div>
+                    <div>
+                        <label class="Label" for="barkodGirisi">Barkod Girişi</label>
+                        <input type="text" class="inputField" id="barkodGirisi" name="barkodGirisi">
+                    </div>
+                </div>
+                <div style="margin-top:10px;height: 300px;border-style:groove">
+                    @*<img src="" alt="Ürün Resmi" style="width: 100%;max-height: 100%" />*@
+                    <img class="productphoto" alt="Ürün Resmi" style="width: 100%;max-height: 100%" />
+                </div>
+                <div style="text-align: center;margin-top: 15px;">
+                    <button type="button" id="ara" class="btn btn-success" onclick="changesayim()"><i class="fa fa-search"></i>SIFIRLA</button>
+                    @*<button type="button" id="yazdir" class="btn btn-danger">
+                        <i class="fa fa-fw fa-print"></i>YAZDIR
+                    </button>
+                    <button type="button" id="temizle" class="btn btn-primary">
+                        <i class="fa fa-fw fa-remove"></i>TEMİZLE
+                    </button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

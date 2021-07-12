@@ -1,0 +1,89 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    //var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridFaturaDetayPartial" + ViewData["FisNo"];
+        settings.SettingsDetail.MasterGridName = "GridFatura";
+        settings.CallbackRouteValues = new { Controller = "Finans", Action = "GridFaturaDetayPartialPartial", FisNo = ViewData["FisNo"] };
+        settings.Width = Unit.Percentage(100);
+
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Finans", Action = "GridFaturaDetayPartialPartialAddNew" , FisNo = ViewData["FisNo"] };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Finans", Action = "GridFaturaDetayPartialPartialUpdate" , FisNo = ViewData["FisNo"]};
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Finans", Action = "GridFaturaDetayPartialPartialDelete" , FisNo = ViewData["FisNo"] };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+        settings.SettingsCommandButton.NewButton.Text = "Yeni";
+        settings.SettingsCommandButton.DeleteButton.Text = "Sil";
+        settings.SettingsCommandButton.EditButton.Text = "Düzenle";
+        settings.SettingsCommandButton.CancelButton.Text = "Ýptal";
+        settings.SettingsCommandButton.UpdateButton.Text = "Güncelle";
+
+        settings.KeyFieldName = "IslemNo";
+
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+
+        //settings.Init = (s, e) =>
+        //{
+        //    var GridFaturaDetayPartial = (s as MVCxGridView);
+        //    for (int i = 0; i < GridFaturaDetayPartial.Columns.Count; i++)
+        //    {
+        //        var column = GridFaturaDetayPartial.Columns[i] as GridViewDataColumn;
+        //        if (column != null)
+        //        {
+        //            column.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+        //            column.SortIndex = i;
+        //        }
+        //    }
+        //};
+
+
+        //settings.Columns.Add("IslemNo");
+        settings.Columns.Add("FisNo");
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Tarih";
+            column.ColumnType = MVCxGridViewColumnType.DateEdit;
+            var colSettings = column.PropertiesEdit as DateEditProperties;
+            colSettings.DisplayFormatString = "dd/MM/yyyy";
+            colSettings.DisplayFormatInEditMode = true;
+        });
+        settings.Columns.Add("StokId");
+        settings.Columns.Add("Miktar");
+        settings.Columns.Add("BirimFiyati");
+        settings.Columns.Add("MusteriAdi");
+        settings.Columns.Add("HareketTuru");
+        settings.Columns.Add("SubeNo");
+        settings.Columns.Add("Islemci");
+        settings.Columns.Add("Aciklama");
+        settings.Columns.Add("DonusumMiktar");
+        settings.Columns.Add("Taksit");
+        //settings.Columns.Add("KomisyonOrani");
+
+        settings.Settings.ShowFooter = true;
+
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+
+
+}
+@grid.Bind(Model).GetHtml()

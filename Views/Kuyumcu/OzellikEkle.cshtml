@@ -1,0 +1,361 @@
+﻿@model Kuyumcu.Models.Ozellik
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    
+    <script>
+
+    </script>
+</head>
+<style>
+    #Araclar {
+        margin: 8px;
+    }
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .inputField {
+        text-align: center;
+        border-style: inset;
+        background-color: whitesmoke;
+        width: 42%;
+    }
+
+    .labelLayout {
+        /*display: flex;*/
+        display: inline-flex;
+        /*margin-top: 3px;*/
+    }
+
+    .urunLabel {
+        /*BANKA TANIMLAMA*/
+        /*width: 92px;*/
+        text-align: left;
+        width: 140px;
+        margin: 8px;
+        font-weight: bold;
+    }
+
+
+    .comboBox {
+        /*width: 170px;*/
+        width: 42%;
+        text-align: center;
+        height: 32px;
+    }
+
+
+    .searchBar {
+        /*width: 30%;*/
+        margin: 15px;
+    }
+
+    #bar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    #bar.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    .toptanciStyle {
+        text-align: center;
+    }
+
+    .urunStyle {
+        text-align: center;
+        border-right: 5px ridge;
+        border-left: 5px ridge;
+    }
+
+    .butonLayout {
+        margin-top: 2%;
+        text-align: center;
+        padding: 2%;
+        border-top: 5px groove;
+    }
+</style>
+
+
+<!--navbar-->
+<div class="navbar" style="background-color:#394F85">
+    <a class="navbar-brand"><img src="~/Images/logoson.png" style="width: 125px;height:38px;"></a>
+    <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+    <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+    <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+    <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+    <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+    <a href="/Finans" button class="btn btn-light">FİNANS</a>
+    <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+    <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+    <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+</div>
+<!--Kuyumcu Menüsü-->
+<div id="Araclar" class="collapsed">
+    <a href="/Kuyumcu/HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+    <a href="/Kuyumcu/Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+    <a href="/Kuyumcu/UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+    <a href="/Kuyumcu/OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+    <a href="/Kuyumcu/UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+    <a href="/Kuyumcu/FaturaGiris" button class="btn btn-dark araclarMenu">FATURA GİRİŞ</a>
+    <a href="/Kuyumcu/StokListesi" button class="btn btn-dark araclarMenu">STOK LİSTESİ</a>
+</div>
+
+@using (Html.BeginForm("OzellikEkle","Kuyumcu",FormMethod.Post))
+{
+    <div>
+        <div id="bar" class="searchBar" style="display:flex">
+            @Html.TextBoxFor(x => x.ToptanciAdi, new { type = "text", id = "toptanciAdiArama", placeholder = "Toptancı Adını Giriniz.." })
+            <input name="submit" class="btn btn-primary" type="submit" id="Search" value="ARA"/>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 toptanciStyle">
+
+                <!--            TOPTANCI ID-->
+                <div>
+                    <label class="urunLabel" for="toptanciID">Toptancı ID</label>
+                    @Html.TextBoxFor(x => x.id, new { @class = "inputField", type = "text", id = "ToptanciId", disabled = "disabled" })
+                </div>
+                <!--            TOPTANCI ADI-->
+                <div>
+                    <label class="urunLabel" for="toptanciAdi">Toptancı Adı</label>
+                    @Html.TextBoxFor(x => x.Toptanci.ToptanciAdi, new { @class = "inputField", type = "text", id = "ToptanciAdi" })
+                </div>
+                <!--            TOPTANCI ADRES-->
+                <div>
+                    <label class="urunLabel" for="toptanciAdres">Toptancı Adres</label>
+                    @Html.TextBoxFor(x => x.Toptanci.ToptanciAdres, new { @class = "inputField", type = "text", id = "ToptanciAdres" })
+                </div>
+
+                <!--            YETKİLİ KİŞİ-->
+                <div>
+                    <label class="urunLabel" for="toptanciYetkili">Yetkili Kişi</label>
+                    @Html.TextBoxFor(x => x.Toptanci.ToptanciYetkili, new { @class = "inputField", type = "text", id = "ToptanciYetkili" })
+                </div>
+
+                <!--            TOPTANCI TELEFON/FAX NO-->
+
+                <div>
+                    <label class="urunLabel" for="toptanciTelefon">Telefon</label>
+                    @Html.TextBoxFor(x => x.Toptanci.ToptanciTel, new { @class = "inputField", type = "text", id = "ToptanciTel" })
+                </div>
+
+
+                <!--            Şube Adı/No-->
+                <div>
+                    <label class="urunLabel" for="subeAdi">Şube Adı/No</label>
+                    @Html.TextBoxFor(x => x.Toptanci.MagazaNo, new { @class = "inputField", type = "text", id = "ToptanciSubeNo", @Value= "NO1", @readonly = "readonly"})
+                </div>
+
+                <div>
+                    <label class="urunLabel" for="hesapDovizTuru">Döviz Türü</label>
+                    <!--                    <input type="text" class="inputField" id="hesapDoviz" name="hesapDoviz">-->
+                    @Html.DropDownListFor(x => x.Toptanci.Turu, new List<SelectListItem>
+                    {
+                       new SelectListItem { Text = "USD", Value = "USD"},
+                       new SelectListItem { Text = "HAS", Value = "HAS"},
+                       new SelectListItem { Text = "TL", Value = "TL"},
+                       new SelectListItem { Text = "EURO", Value = "EURO"},
+                    }, "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "hesapDovizTuru",
+                    })
+                </div>
+
+
+                <!--            TOPTANCI BAKİYE-->
+
+                <div>
+
+                    <label class="urunLabel" for="toptanciBakiye">Toptancı Bakiye</label>
+                    @Html.TextBoxFor(x => x.Toptanci.Bakiye, new { @class = "inputField", type = "text", id = "Bakiye" })
+
+                </div>
+                <!--            TOPTANCI TİPİ-->
+                <div>
+                    <label class="urunLabel" for="toptanciTipi">Toptancı Tipi</label>
+                    <!--                    <input type="text" class="inputField" id="hesapDoviz" name="hesapDoviz">-->
+
+                    @Html.DropDownListFor(x => x.Toptanci.ToptanciTipi, new List<SelectListItem>
+                    {
+                       new SelectListItem { Text = "GENEL", Value = "GENEL"},
+                       new SelectListItem { Text = "GÜNLÜK", Value = "GÜNLÜK"},
+                       new SelectListItem { Text = "TAMİRCİ", Value = "TAMİRCİ"},
+                    }, "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "toptanciTipi",
+                    })
+
+                </div>
+
+                <!--            KAYIT TÜRÜ-->
+                <div>
+                    <label class="urunLabel" for="kayitTuru">Kayıt Türü</label>
+                    @Html.DropDownListFor(x => x.Toptanci.KayitTuru, new List<SelectListItem>
+                    {
+                       new SelectListItem { Text = "NORMAL", Value = "NORMAL"},
+                       new SelectListItem { Text = "KONSİNYE", Value = "KONSİNYE"},
+                    }, "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "kayitturu",
+                    })
+                </div>
+                <div>
+                    <label class="urunLabel" for="kayitTuru">Durum</label>
+                    @Html.DropDownListFor(x => x.Toptanci.Durum, new List<SelectListItem>
+                    {
+                       new SelectListItem { Text = "AKTİF", Value = "True"},
+                       new SelectListItem { Text = "PASİF", Value = "False"}
+                    }, "Seçiniz", new
+                    {
+                        @Class = "comboBox",
+                        @id = "hesapDovizTuru",
+                    })
+                </div>
+            </div>
+            <div class="col-4 urunStyle">
+                <div>
+                    <label class="urunLabel" for="urunCinsi">Cinsi</label>
+                    @Html.TextBoxFor(x => x.Cins.Cins, new { @class = "inputField", type = "text", id = "Cins" })
+                </div>
+                <!--Ürün Grubu-->
+                <div>
+                    <label class="urunLabel" for="urunGrubu">Grubu</label>
+                    @Html.TextBoxFor(x => x.Cins.Grup, new { @class = "inputField", type = "text", id = "Grup" })
+
+
+                </div>
+                <!--Ürün Alt Grubu-->
+                <div>
+                    <label class="urunLabel" for="urunAltGrubu">Alt Grubu</label>
+                    @Html.TextBoxFor(x => x.Cins.AltGrup, new { @class = "inputField", type = "text", id = "AltGrup" })
+
+                </div>
+                <!--            Ürün Adı-->
+                <div>
+                    <label class="urunLabel" for="urunAdi">Ürün Adı</label>
+                    @Html.TextBoxFor(x => x.Cins.Adi, new { @class = "inputField", type = "text", id = "Adi" })
+                </div>
+
+                <!--                MİLYEM-->
+                <div>
+                    <label class="urunLabel" for="urunAdi">Milyem</label>
+                    @Html.TextBoxFor(x => x.Cins.Milyem, new { @class = "inputField", type = "text", id = "Milyem" })
+                </div>
+
+                <!--            TÜRÜ-->
+                <div>
+                    <label class="urunLabel" for="urunAdi">TÜRÜ</label>
+                    @Html.TextBoxFor(x => x.Cins.Tur, new { @class = "inputField", type = "text", id = "Tur" })
+                </div>
+            </div>
+            <div class="col-4">
+                <!--            Stok Grubu-->
+                <div>
+                    <label class="urunLabel" for="StokGrubu">Stok Grubu</label>
+                    @Html.DropDownListFor(x => x.UrunOzellik.StokGrubu, new SelectList(Model.Gruplar).ToList(),
+                     "Seçiniz", new
+                     {
+                         @Class = "comboBox",
+                         @id = "urunGrubu"
+                     })
+                </div>
+                <div>
+                    <label class="urunLabel" for="ozellikNumarasi">Özellik Numarası</label>
+                    @Html.DropDownListFor(x => x.UrunOzellik.OzellikNumarasi, new List<SelectListItem>
+                    {
+                       new SelectListItem { Text = "Özellik 1", Value = "1"},
+                       new SelectListItem { Text = "Özellik 2", Value = "2"},
+                       new SelectListItem { Text = "Özellik 3", Value = "3"},
+                    }, "Seçiniz",
+                       new {
+                           @class = "comboBox",
+                           id = "ozellikNumarasi"
+                       })
+                </div>
+                <!--Özellik-->
+                <div>
+                    <label class="urunLabel" for="ozellik">Özellik</label>
+                    @Html.TextBoxFor(x => x.UrunOzellik.Ozellik, new { @class = "inputField", type = "text", id = "ozellik" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--BUTONLAR-->
+    <div class="container-fluid butonLayout">
+        <div class="row">
+
+            <div class="col-3">
+                <button name="submit" id="submit" type="submit" value="SİL" class="btn btn-dark"><i class="fa fa-fw fa-trash"></i>SİL</button>
+            </div>
+            <div class="col-3">
+                <button name="submit" id="submit" type="submit" value="GÜNCELLE" class="btn btn-danger"><i class="fa fa-fw fa-edit"></i>GÜNCELLE</button>
+            </div>
+            <div class="col-3">
+                <button name="submit" id="submit" type="submit" value="KAYDET" class="btn btn-success"><i class="fa fa-fw fa-save"></i>KAYDET</button>
+            </div>
+            <div class="col-3">
+                <button name="submit" id="submit" type="submit" value="İPTAL" class="btn btn-warning"><i class="fa fa-fw fa-undo"></i>İPTAL</button>
+            </div>
+        </div>
+    </div>
+}

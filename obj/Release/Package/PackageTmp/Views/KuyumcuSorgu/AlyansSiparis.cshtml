@@ -1,0 +1,246 @@
+﻿@model Kuyumcu.Models.Kuyumcu.StokKart
+
+@{
+    /**/
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script type="text/javascript">
+    let i = 0;
+
+    function addField() {
+        let myTable = document.getElementById("alyansSatisTablosu");
+        let currentRow = myTable.insertRow(-1);
+
+        // myTable.setAttribute("class", "alyansSatisTablosu");
+
+        var alyansIsim = document.createElement("input");
+        alyansIsim.setAttribute("id", "alyansIsim" + i);
+        alyansIsim.setAttribute("placeholder", "Alyans adı.");
+
+
+        var alyansOzellik1 = document.createElement("input");
+        alyansOzellik1.setAttribute("id", "alyansOzellik1" + i);
+        alyansOzellik1.setAttribute("placeholder", "alyansOzellik1");
+
+        var alyansOzellik2 = document.createElement("input");
+        alyansOzellik2.setAttribute("id", "alyansOzellik2" + i);
+        alyansOzellik2.setAttribute("placeholder", "alyansOzellik2");
+
+        var alyansOzellik3 = document.createElement("input");
+        alyansOzellik3.setAttribute("id", "alyansOzellik3" + i);
+        alyansOzellik3.setAttribute("placeholder", "alyansOzellik3");
+
+        var alyansOzellik4 = document.createElement("input");
+        alyansOzellik4.setAttribute("id", "alyansOzellik4" + i);
+        alyansOzellik4.setAttribute("placeholder", "alyansOzellik4");
+
+
+        var alyansMiktar = document.createElement("input");
+        alyansMiktar.setAttribute("id", "alyansMiktar" + i);
+        alyansMiktar.setAttribute("placeholder", "alyansMiktar");
+
+
+        var alyansMilyem = document.createElement("input");
+        alyansMilyem.setAttribute("id", "alyansMilyem" + i);
+        alyansMilyem.setAttribute("placeholder", "alyansMilyem");
+
+
+        var alyansIscilikCM = document.createElement("input");
+        alyansIscilikCM.setAttribute("id", "alyansIscilikCM" + i);
+        alyansIscilikCM.setAttribute("placeholder", "alyansIscilikCM");
+
+        var alyansIscilikGR = document.createElement("input");
+        alyansIscilikGR.setAttribute("id", "alyansIscilikGR" + i);
+        alyansIscilikGR.setAttribute("placeholder", "alyansIscilikGR");
+
+
+        var iptalEtBox = document.createElement("input");
+        iptalEtBox.setAttribute("type", "button");
+        iptalEtBox.setAttribute("value", "İptal");
+        iptalEtBox.setAttribute("onclick", "deleteRow(this);");
+        iptalEtBox.setAttribute("id", "button");
+        iptalEtBox.setAttribute("class", "btn btn-outline-danger");
+
+
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansIsim);
+
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansOzellik1);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansOzellik2);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansOzellik3);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansOzellik4);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansMiktar);
+
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansMiktar);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansMilyem);
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansIscilikCM);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(alyansIscilikGR);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(iptalEtBox);
+
+        i = i + 1;
+    }
+
+    function deleteRow(btn) {
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+
+</script>
+<style>
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    #alyansSatisTablosu {
+        margin-left: 20px;
+        margin-top: 30px;
+        width: auto;
+        alignment: center;
+    }
+
+    .alyansSatisTablosu {
+        border: 2px solid darkslategrey;
+        text-align: center;
+    }
+
+    .fixedNavbar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .footer {
+        position: fixed;
+        right: 0;
+        bottom: 10px;
+        width: 200%;
+        text-align: center;
+    }
+
+
+
+    .midsoftLogo {
+        width: 5%;
+        height: 50px;
+        /*float:right;*/
+        padding-top: 3px;
+        position: absolute;
+        right: 25px;
+    }
+
+    .searchBar {
+        /*width: 30%;*/
+        margin: 15px;
+    }
+
+    #bar.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 30%;
+        background: #f1f1f1;
+    }
+
+    #bar.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    .footerTutar {
+        position: static;
+        /*right: 0;*/
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark araclarMenu">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark araclarMenu">ALYANS SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark araclarMenu">ALYANS SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark araclarMenu">ALYANS TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark araclarMenu">BUGÜN</a>
+    </div>
+</body>
+</html>

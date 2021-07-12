@@ -1,0 +1,155 @@
+﻿@model List<Kuyumcu.Models.Personel_Takip.personelEkle>
+
+
+@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 50, canSort: true, selectionFieldName: "SelectedRow");
+    grid.Pager(WebGridPagerModes.All);
+
+
+}
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+
+
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        .midsoftLogo {
+            width: 5%;
+            height: 50px;
+            /*float:right;*/
+            padding-top: 3px;
+            position: absolute;
+            right: 25px;
+        }
+
+        .form-container {
+            width: 100%;
+            border-style: groove;
+            margin-top: 5px;
+        }
+        .webgridColumn{
+            width:200px
+         }
+         .webgrid-alternating-row {
+            background-color: whitesmoke;
+            padding: 3px 7px 2px;
+        }
+         .webgrid-table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            width: 100%;
+            display: table;
+            border-collapse: collapse;
+            border: solid 1px #394F85;
+            background-color: white;
+            text-align: center;
+        }
+         .webgrid-header {
+            text-align: center;
+            background-color: #394F85;
+            color: #FFFFFF;
+            padding-bottom: 4px;
+            padding-top: 5px;
+            /*text-align: left;*/
+        }
+         .webgrid-row-style {
+            padding: 3px 7px 2px;
+        }
+         .webgrid-table a {
+                color: #fff;
+            }
+         .webgrid-footer a {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+    <div id="Araclar" class="collapsed">
+        <a href="/PersonelTakip/PersonelEkle" button class="btn btn-dark araclarMenu">PERSONEL İŞLEMLERİ</a>
+        <a href="/PersonelTakip/PersonelIslem" button class="btn btn-dark araclarMenu">PERSONEL LİSTESİ </a>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+<div id="personelTable" class="container-fluid">
+    
+    <div id="personelSearch" class="md md-col-4" style="display:flex">
+        @Html.TextBox("searchString", null, new { @class = "inputField", type = "text", name = "personelAdSoyad", placeholder = "Personel adını giriniz." })
+        <input name="submit" class=" btn btn-primary" type="submit" id="searchBtn" value="ARA" />
+
+    </div>
+   <br><br>
+    @grid.GetHtml(headerStyle: "webgrid-header", tableStyle: "webgrid-table", footerStyle: "webgrid-footer", rowStyle: "webgrid-row-style", alternatingRowStyle: "webgrid-alternating-row", selectedRowStyle: "selectedRowStyle", columns: grid.Columns(
+grid.Column(columnName: "AdiSoyadi", header: "Ad Soyad", style: "webgridColumn"),
+grid.Column(columnName: "DogumTarihi", header: "Doğum Tarihi", format: @<text>@item.DogumTarihi.ToString("dd-MM-yyyy")</text>, style: "webgridColumn"),
+grid.Column(columnName: "TelNo", header: "Telefon", style: "webgridColumn"),
+grid.Column(columnName: "Adres1", header: "Adres1", style: "webgridColumn"),
+grid.Column(columnName: "Adres2", header: "Adres2", style: "webgridColumn"),
+grid.Column(columnName: "Email", header: "Email", style: "webgridColumn"),
+grid.Column(columnName: "SigortaNo", header: "Sigorta No", style: "webgridColumn"),
+grid.Column(columnName: "GirisTarihi", header: "İşe Giriş Tarihi", format: @<text>@item.GirisTarihi.ToString("dd-MM-yyyy")</text>, style: "webgridColumn"),
+grid.Column(columnName: "Maas", header: "Maaş", style: "webgridColumn"),
+grid.Column(columnName: "SubeNo", header: "Şube No", style: "webgridColumn"),
+grid.Column(columnName: "Departman", header: "Departman", style: "webgridColumn")))
+
+
+</div>
+    }
+
+</body>
+</html>
+

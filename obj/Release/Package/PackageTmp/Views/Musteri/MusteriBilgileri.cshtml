@@ -1,0 +1,205 @@
+﻿@model List<Kuyumcu.Models.Kuyumcu.StokHareket>
+
+@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 10);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    <style>
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        .searchBar {
+            /*width: 30%;*/
+            margin: 15px;
+        }
+
+        form.searchBar input[type=text] {
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 30%;
+            background: #f1f1f1;
+        }
+
+        form.searchBar button {
+            float: left;
+            /*width: 14%;*/
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+        #tableMusteriBilgi {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            border-style: solid;
+            border-color: cadetblue;
+            /*background-color: whitesmoke;*/
+            border-spacing: 10px;
+        }
+
+            #tableMusteriBilgi td, #tableMusteriBilgi th {
+                border: 2px solid #ddd;
+                padding: 15px;
+            }
+
+            #tableMusteriBilgi tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #tableMusteriBilgi tr:hover {
+                background-color: darkseagreen;
+            }
+
+            #tableMusteriBilgi th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        .webgrid-table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            width: 100%;
+            display: table;
+            border-collapse: collapse;
+            border: solid 1px #394F85;
+            background-color: white;
+            text-align: center;
+        }
+
+            .webgrid-table a {
+                color: #fff;
+            }
+
+            .webgrid-table td, th {
+                border: 1px #394F85;
+                padding: 3px 7px 2px;
+            }
+
+        .webgrid-header {
+            text-align: center;
+            background-color: #394F85;
+            color: #FFFFFF;
+            padding-bottom: 4px;
+            padding-top: 5px;
+            /*text-align: left;*/
+        }
+
+        .webgrid-footer a {
+            color: black;
+        }
+
+        .webgrid-row-style {
+            padding: 3px 7px 2px;
+        }
+
+        .webgrid-alternating-row {
+            background-color: whitesmoke;
+            padding: 3px 7px 2px;
+        }
+    </style>
+</head>
+
+
+<div class="navbar" style="background-color:#394F85">
+    <a class="navbar-brand">
+        <img src="~/Images/logoson.png"
+             style="width: 125px;height:38px;">
+    </a>
+    <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+    <a href="MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+    <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+    <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+    <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+    <a href="/Finans" button class="btn btn-light">FİNANS</a>
+    <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+    <a href="../" button class="btn btn-light">ÇIKIŞ YAP</a>
+</div>
+<div id="Araclar" class="collapsed">
+    <a href="MusteriEkle" button class="btn btn-dark araclarMenu">MÜŞTERİ EKLE</a>
+    <a href="MusteriBilgileri" button class="btn btn-dark araclarMenu">MÜŞTERİ BİLGİLER</a>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    <div id="Bar" class="searchBar" style="display:flex">
+
+        @*<input type="text" placeholder="Müşteri Adını Giriniz..">*@
+        @Html.TextBox("SearchString", null, new { @class = "inputField", type = "text", name = "musteriAdSoyad", placeholder = "Müşteri adını giriniz." })
+        @*<button type="submit"><i class="fa fa-search" id="Search" value="Search"></i></button>*@
+        <input name="submit" class="btn btn-primary" type="submit" id="Search" value="ARA" />
+
+    </div>
+    <div>
+        <div id="content">
+            @grid.GetHtml(
+            tableStyle:"webgrid-table",
+            headerStyle:"webgrid-header",
+            footerStyle:"webgrid-footer",
+            alternatingRowStyle:"webgrid-alternating-row",
+            rowStyle:"webgrid-row-style",
+            columns:grid.Columns(
+                //here i will add column for serial no
+                grid.Column(columnName: "IslemNo", header: "İşlem No"),
+                grid.Column(columnName: "MusteriAdi", header: "Müşteri Adı"),
+                grid.Column(columnName: "StokId", header: "Ürün Barkod"),
+                grid.Column(columnName: "StokAdi", header: "Ürün Adı"),
+                grid.Column(columnName: "Hesaplama", header: "Gram/Adet"),
+                grid.Column(columnName: "Miktar", header: "Miktar"),
+                grid.Column(columnName: "SatisTutari", header: "Satış Fiyatı"),
+                grid.Column(columnName: "HareketTuru", header: "Hareket Türü"),
+                grid.Column(columnName: "SubeNo", header: "Mağaza"),
+                grid.Column(columnName: "Islemci", header: "Satıcı")
+                ))
+        </div>
+    </div>
+
+}
+    </body>
+
+</html>
+

@@ -1,0 +1,162 @@
+﻿@model List<Kuyumcu.Models.Musteri_Islemleri.Musteri>
+
+
+@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 50,canSort:true,selectionFieldName:"SelectedRow");
+    grid.Pager(WebGridPagerModes.All);
+
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .tcNo{
+            width:200px;
+            vertical-align:central;
+        }
+        .selectedRowStyle{
+            background-color:red;
+        }
+         #Araclar {
+            margin: 8px;
+        }
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+        .navbar .btn {
+            color: #394F85;
+        }
+        .btn {
+            font-weight: 500;
+        }
+         .form-group{
+            margin-bottom:2px;
+        }
+         .webgridColumn{
+            width:200px
+         }
+         .webgrid-alternating-row {
+            background-color: whitesmoke;
+            padding: 3px 7px 2px;
+        }
+         .webgrid-table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            width: 100%;
+            display: table;
+            border-collapse: collapse;
+            border: solid 1px #394F85;
+            background-color: white;
+            text-align: center;
+        }
+         .webgrid-header {
+            text-align: center;
+            background-color: #394F85;
+            color: #FFFFFF;
+            padding-bottom: 4px;
+            padding-top: 5px;
+            /*text-align: left;*/
+        }
+         .webgrid-row-style {
+            padding: 3px 7px 2px;
+        }
+         .webgrid-table a {
+                color: #fff;
+            }
+         .webgrid-footer a {
+            color: black;
+        }
+    </style>
+    
+        
+    
+</head>
+
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed" >
+        <a href="/Musteri/MusteriEkle" button class="btn btn-dark araclarMenu">MÜŞTERİ EKLE</a>
+        <a href="/Musteri/MusteriBilgileri" button class="btn btn-dark araclarMenu">MÜŞTERİ BİLGİLER</a>
+        <a href="/Musteri/UrunIade" button class="btn btn-dark araclarMenu">ÜRÜN İADE</a>
+        <a href="/Musteri/MusteriDuzenle" button class="btn btn-dark araclarMenu">MÜŞTERİ DÜZENLE</a> 
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+        
+<div id="musteriTable" class="container-fluid">
+
+    <div id="musteriDuzenleSearchBar" class="md md-col-4" style="display:flex">
+        @Html.TextBox("searchString", null, new { @class = "inputField", type = "text", name = "musteriAdSoyad", placeholder = "Müşteri adını giriniz." })
+        <input name="submit" class=" btn btn-primary" type="submit" id="searchBtn" value="ara" />
+    </div>
+
+    @grid.GetHtml(headerStyle: "webgrid-header", tableStyle: "webgrid-table", footerStyle: "webgrid-footer", rowStyle: "webgrid-row-style", alternatingRowStyle: "webgrid-alternating-row", selectedRowStyle: "selectedRowStyle", columns: grid.Columns(
+    grid.Column(columnName: "id", header: "ID", style: "webgridColumn"),
+    grid.Column(columnName: "TcNo", header: "TC Numarası", style: "webgridColumn"),
+    grid.Column(columnName: "AdSoyad", header: "Adı Soyadı", style: "webgridColumn"),
+    grid.Column(columnName: "CepTel", header: "Cep Telefonu", style: "webgridColumn"),
+    grid.Column(columnName: "Email", header: "E-Mail", style: "webgridColumn"),
+    grid.Column(columnName: "MusteriMemnuniyet", header: "Müşteri Memnuniyeti", style: "webgridColumn"),      
+    grid.Column(header: "Düzenle", style: "webgridColumn", format: @<text><button name="submit" class=" btn btn-primary" type="submit" id="@item.id" value="@item.id">Edit</button></text>)
+))
+    <script type="text/javascript">
+        $('tr').each(function (index) { //iterate over all table rows
+            if (index > 0) { //skip header
+                if ($(this).children('td:nth-child(6)').text() == "Memnun") //look for the 3rd td in each row. thats where your age is.
+                {
+                    $(this).children('td:nth-child(6)').css("background-color", "green");
+                }
+                else if ($(this).children('td:nth-child(6)').text() == "Memnun Değil") {
+                    $(this).children('td:nth-child(6)').css("background-color", "red");
+                }
+                else {
+                    $(this).children('td:nth-child(6)').css("background-color", "");
+                }
+            }
+        });
+    </script>
+    @if (grid.HasSelection)
+    {
+        //Sonradan kullanılabilir.
+    }
+
+
+
+</div>
+    }
+</body>
+</html>

@@ -1,0 +1,285 @@
+﻿@model Kuyumcu.Models.IadeModel
+
+@{
+    /**/
+
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <style>
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .kuyumcuAraclari {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+
+        .pairRow {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 40%;
+        }
+
+        .toptanciGirisBilgi {
+            margin-top: 25px;
+            text-align: center;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .toptanciInputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+
+        thead th {
+            text-align: center;
+        }
+
+        .tabStyle {
+            text-align: center;
+            justify-content: center;
+            /*border: 3px groove;*/
+        }
+
+        label {
+            margin-bottom: 3px;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*margin-top: 5px;*/
+            font-weight: bold;
+        }
+
+        .label2 {
+            text-align: center;
+            font-weight: bold;
+            /*margin: 3px;*/
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 80%;
+        }
+
+        .inputField2 {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            /*margin-bottom: 12px;*/
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 100%;
+            text-align: center;
+            height: 32px;
+        }
+
+        .butonLayout {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        var key;
+        var ilksatis;
+        function OnRowClick(s, e) {
+            var grid = MVCxClientGridView.Cast(s);
+            key = grid.GetRowKey(e.visibleIndex);
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Musteri/UrunIade1",
+                data: { barkod: key },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 3);
+                    document.getElementById("iadeTutar").value = array[0];
+                    document.getElementById("urunEderi").value = array[0];
+                    document.getElementById("urunEderi").value = array[1];
+                    document.getElementById("StokId").value = key;
+                    document.getElementById("musteriAdi2").value = array[2];
+                    document.getElementById("iadeFark").value = 0;
+
+                    document.getElementById("kar").value = (parseFloat(document.getElementById("urunEderi").value.replace(',', '.')) - parseFloat(document.getElementById("iadeTutar").value.replace(',', '.'))).toFixed(3);
+                    document.getElementById("kar").value = document.getElementById("kar").value.replace('.', ',');
+                    ilksatis = parseFloat(array[0].replace('.', ','));
+                }
+            });
+        }
+        function degistir() {
+            document.getElementById("iadeFark").value = (parseFloat(document.getElementById("satisTutari").value.replace(',', '.')) - parseFloat(document.getElementById("iadeTutar").value.replace(',', '.'))).toFixed(3);
+            document.getElementById("iadeFark").value = document.getElementById("iadeFark").value.replace('.', ',');
+            document.getElementById("kar").value = (parseFloat(document.getElementById("urunEderi").value.replace(',', '.')) - parseFloat(document.getElementById("iadeTutar").value.replace(',', '.'))).toFixed(3);
+            document.getElementById("kar").value = document.getElementById("kar").value.replace('.', ',');
+            document.getElementById("satisTutari").value = document.getElementById("iadeTutar").value.replace('.', ',');
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="/Musteri/MusteriEkle" button class="btn btn-dark kuyumcuAraclari">MÜŞTERİ EKLE</a>
+        <a href="/Musteri/MusteriBilgileri" button class="btn btn-dark kuyumcuAraclari">MÜŞTERİ BİLGİLER</a>
+        <a href="/Musteri/UrunIade" button class="btn btn-dark kuyumcuAraclari">ÜRÜN İADE</a>
+        <a href="/Musteri/MusteriDuzenle" button class="btn btn-dark kuyumcuAraclari">MÜŞTERİ DÜZENLE</a>
+    </div>
+    @using (Html.BeginForm("UrunIade2", "Musteri", FormMethod.Post))
+    {
+       
+    <div>
+        @{ Html.EnableClientValidation(false); }
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 ">
+                    <table id="urunIadeTablosu">
+
+                        @Html.Action("IadeGridViewPartial")
+
+                    </table>
+                </div>
+                <!--        ÜRÜN FOTOĞRAFI-->
+                <div class="col-md-3">
+                    <div style="height: 360px;border-style:groove">
+                        <img src="" alt=" " style="width: 100%;max-height: 100%" />
+                    </div>
+                    <div>
+                        <!--Müşteri Adı-->
+                        <div>
+                            <label class="urunLabel" for="musteriAdi2">Müşteri Adı</label>
+                            @Html.TextBoxFor(x => x.Hareket.MusteriAdi, new { @class = "inputField", id = "musteriAdi2", @readonly = true })
+
+                        </div>
+                        <!--ÜRÜN-->
+                        <div>
+                            <label class="urunLabel" for="urun">Ürün</label>
+                            @Html.TextBoxFor(x => x.Hareket.StokId, new { @class = "inputField", id = "StokId", @readonly = true })
+
+                        </div>
+                        <!--SATIŞ TUTARI-->
+                        <div>
+                            <label class="urunLabel" for="satisTutari">Satış Tutarı</label>
+                            @Html.TextBoxFor(x => x.Hareket.SatisTutari, new { @class = "inputField", id = "satisTutari", @readonly = true })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row tabStyle">
+            <table>
+                <tr>
+                    <th><label class="label2" for="personel">Personel</label></th>
+                    <th><label class="label2" for="iadeTutar">İade Tutar</label></th>
+                    <th><label class="label2" for="iadeFark">İade Fark</label></th>
+                    <th><label class="label2" for="urunEderi">Ürün Ederi</label></th>
+                </tr>
+                <tr>
+                    <td>
+
+                        @Html.DropDownListFor(x => x.Hareket.Islemci, new SelectList(Model.Personel).ToList(),
+                         "Seçiniz", new
+                         {
+                             @Class = "comboBox",
+                             @id = "personel"
+                         })
+                    </td>
+                    <td>
+
+                        @Html.TextBoxFor(x => x.Hareket.SatisTutari, new { @class = "inputField2", id = "iadeTutar", onchange = "degistir()" })
+                    </td>
+                    <td><input type="text" class="inputField2" id="iadeFark" name="iadeFark"></td>
+                    <td>
+
+                        @Html.TextBoxFor(x => x.Hareket.Maliyet, new { @class = "inputField2", id = "urunEderi" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row tabStyle">
+            <table>
+                <tr>
+                    <th><label class="label2" for="karZarar">Kar/Zarar TL</label></th>
+                    <th><label class="label2" for="iadeNedeni">İade Nedeni</label></th>
+                    <th><label class="label2" for="islemTuru">İşlem Türü</label></th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(x => x.Hareket.Kar, new { @class = "inputField2", id = "kar", @readonly = true })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Hareket.Aciklama, new { @class = "inputField2", @style = "width:550px;", id = "iadeNedeni" })
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(x => x.Hareket.HareketTipi, new List<SelectListItem>
+                        {
+                           new SelectListItem { Text = "Peşin Ödeme Yap", Value = "Peşin Ödeme Yap"},
+                           new SelectListItem { Text = "Cari Alacaklıya Kaydet", Value = "Cari Alacaklıya Kaydet"},
+                        }, "Seçiniz", new
+                        {
+                            id = "islemTuru",
+                            @Class = "comboBox",
+                        })
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row tabStyle butonLayout">
+            <div class="col-md-3">
+                <button type="submit " class="btn btn-success"><i class="fa fa-fw fa-save"></i>KAYDET</button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>SİL</button>
+            </div>
+        </div>
+    </div>
+    }
+</body>
+</html>

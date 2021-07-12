@@ -1,0 +1,602 @@
+﻿@model Kuyumcu.Models.Pozisyonlar
+
+@{
+/**/
+
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .searchBar {
+        /*padding: 20px;*/
+        width: 33%;
+        height: 42px;
+    }
+    #Araclar {
+        margin: 8px;
+    }
+
+    .kuyumcuAraclari {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .tabStyle {
+        text-align: center;
+        justify-content: center;
+        /*border: 3px groove;*/
+    }
+
+    thead th {
+        text-align: center;
+    }
+
+    .butonLayout {
+        margin-top: 10px;
+        text-align: center;
+        padding: 5px;
+        border-top: 5px groove;
+    }
+
+    .Label {
+        display: block;
+        text-align: left;
+        /*width: 92px;*/
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    .inputField {
+        background-color: whitesmoke;
+        text-align: center;
+        border-style: inset;
+        width: 80%;
+    }
+</style>
+<body>
+    @using (Html.BeginForm("Pozisyonlar", "KuyumcuSorgu", FormMethod.Post))
+    {
+        <div class="navbar" style="background-color:#394F85">
+            <a class="navbar-brand">
+                <img src="~/Images/logoson.png"
+                     style="width: 125px;height:38px;">
+            </a>
+            <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+            <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+            <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+            <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+            <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+            <a href="/Finans" button class="btn btn-light">FİNANS</a>
+            <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+            <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+            <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+        </div>
+
+        <div id="Araclar" class="collapsed">
+            <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark kuyumcuAraclari">RAPORLAR</a>
+            <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SATIŞ</a>
+            <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA SİPARİŞ</a>
+            <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark kuyumcuAraclari">ALYANS/PIRLANTA TAMİR</a>
+            <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark kuyumcuAraclari">BUGÜN</a>
+            <a href="/KuyumcuSorgu/Pozisyonlar" button class="btn btn-dark kuyumcuAraclari">POZİSYONLAR</a>
+            <a href="/KuyumcuSorgu/Sayim" button class="btn btn-dark kuyumcuAraclari">SAYIM</a>
+            <form class="searchBar" action="action_page.php" style="display: inline-flex ">
+                <br><br>
+                    <div class="navSearch">
+
+                        @Html.TextBoxFor(x => x.SubeNo, new { @class = "inputfield", id = "subeno", type = "text", @Value = "NO1", @readonly = "readonly", style = "height:30px;width:60px" })
+                        @Html.TextBoxFor(x => x.Tarih, new { @class = "inputfield", @id = "Tarih", @type = "date" })
+
+                        <input name="submit" type="submit" value="ISTENILEN TARIH" class="btn-success">
+                        <input name="submit" type="submit" value="BUGUN" class="btn-success">
+                        @*<i class="fa fa-search"></i>*@
+
+                    </div>
+
+            </form>
+        </div>
+
+        <div class="container-fluid">
+            <ul class="nav nav-tabs nav-justified" style="justify-content: center;">
+                <li>
+                    <a class="nav-item nav-link active" id="nav-pozisyonlar-tab" data-toggle="tab" href="#nav-pozisyonlar"
+                       role="tab"
+                       aria-controls="nav-pozisyonlar" aria-selected="true">POZİSYONLAR</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" id="nav-hurdaSarrafiye-tab" data-toggle="tab" href="#nav-hurdaSarrafiye"
+                       role="tab"
+                       aria-controls="nav-hurdaSarrafiye" aria-selected="false">HURDA / SARRAFİYE</a>
+                </li>
+                <!--</div>-->
+            </ul>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-pozisyonlar" role="tabpanel"
+                     aria-labelledby="nav-pozisyonlar-tab">
+                    <div class="row">
+                        <!--TOPTANCI-->
+                        <div class="offset-md-2 col-md-4">
+                            <label class="Label" for="toptanciTablosu">TOPTANCI</label>
+                            <table id="toptanciTablosu">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>BORÇLARIMIZ</th>
+                                        <th>ALACAKLARIMIZ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>HAS</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.THas2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.THas, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TTL2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TTL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TEURO2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TEURO, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TUSD2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TUSD, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>CHF</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TCHF2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TCHF, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TSTRL2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TSTRL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ÇEYREK</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TCeyrek2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TCeyrek, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>22 AYAR</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TYi2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TYi, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--MÜŞTERİ-->
+                        <div class="col-md-4">
+                            <label class="Label" for="musteriTablosu">MÜŞTERİ</label>
+                            <table id="musteriTablosu">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>BORÇLARIMIZ</th>
+                                        <th>ALACAKLARIMIZ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>HAS</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MHas2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MHas, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MTL2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MTL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MEURO2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MEURO, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MUSD2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MUSD, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>CHF</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MCHF2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MCHF, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MSTRL2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MSTRL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ÇEYREK</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MCeyrek2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MCeyrek, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>22 AYAR</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MYi2, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.MYi, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:15px;justify-content: center">
+                        <!--MEVCUTLAR-->
+                        <div class="col-md-4">
+                            <label class="Label" for="mevcutTablosu">MEVCUT</label>
+                            <table id="mevcutTablosu">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <th>KASA</th>
+                                        @*<th>ALACAKLARIMIZ</th>*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.ToplamTLB, new { type = "text" })
+                                        </td>
+                                        @*<td>
+                                            @Html.TextBoxFor(x => x.ToplamTLA, new { type = "text" })
+                                        </td>*@
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.ToplamUSDB, new { type = "text" })
+                                        </td>
+                                        @*<td>
+                                            @Html.TextBoxFor(x => x.ToplamUSDA, new { type = "text" })
+                                        </td>*@
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.ToplamEUROB, new { type = "text" })
+                                        </td>
+                                        @*<td>
+                                            @Html.TextBoxFor(x => x.ToplamEUROA, new { type = "text" })
+                                        </td>*@
+                                    </tr>
+                                    <tr>
+                                        <th>CHF</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.ToplamCHFB, new { type = "text" })
+                                        </td>
+                                        @*<td>
+                                            @Html.TextBoxFor(x => x.ToplamCHFA, new { type = "text" })
+                                        </td>*@
+                                    </tr>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.ToplamSTRLB, new { type = "text" })
+                                        </td>
+                                        @*<td>
+                                            @Html.TextBoxFor(x => x.ToplamSTRLA, new { type = "text" })
+                                        </td>*@
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--POZİSYON-->
+                        <div class="col-md-4">
+                            <label class="Label" for="pozisyonTablosu">POZİSYON</label>
+                            <table id="pozisyonTablosu">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <th>AÇIK POZİSYONLAR</th>
+                                        <th>FAZLA POZİSYONLAR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.AcikTL, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.FazlaTL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.AcikUSD, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.FazlaUSD, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.AcikEURO, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.FazlaEURO, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>CHF</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.AcikCHF, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.FazlaCHF, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.AcikSTRL, new { type = "text" })
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.FazlaSTRL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--BANKALAR-->
+                        <div class="col-md-2">
+                            <label class="Label" for="bankalarTablosu">BANKALAR</label>
+                            <table id="bankalarTablosu">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>BAKİYE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>TL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.TL, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>USD</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.USD, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>EURO</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.EURO, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>CHF</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.CHF, new { type = "text" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>STRL</th>
+                                        <td>
+                                            @Html.TextBoxFor(x => x.STRL, new { type = "text" })
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="row tabStyle butonLayout">
+                        @*<div class="col-md-3">
+                                <button type="button" class="btn btn-success"><i class="fa fa-fw fa-save"></i>KAYDET</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>SİL</button>
+                            </div>*@
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="nav-hurdaSarrafiye" role="tabpanel" aria-labelledby="nav-hurdaSarrafiye-tab">
+                    <!--            HURDALAR-->
+                    <div>
+
+                        <script src="/Scripts/jszip.min.js"></script>
+                        <link href="/Content/dx.common.css" rel="stylesheet">
+                        <link href="/Content/dx.light.css" rel="stylesheet">
+                        <script src="/Scripts/jquery-2.2.3.js"></script>
+                        <script src="/Scripts/bootstrap.js"></script>
+                        <script src="/Scripts/cldr.js"></script>
+                        <script src="/Scripts/cldr/event.js"></script>
+                        <script src="/Scripts/cldr/supplemental.js"></script>
+                        <script src="/Scripts/cldr/unresolved.js"></script>
+                        <script src="/Scripts/globalize.js"></script>
+                        <script src="/Scripts/globalize/message.js"></script>
+                        <script src="/Scripts/globalize/number.js"></script>
+                        <script src="/Scripts/globalize/currency.js"></script>
+                        <script src="/Scripts/globalize/date.js"></script>
+                        <script src="/Scripts/dx.all.debug.js"></script>
+                        <script src="/Scripts/aspnet/dx.aspnet.data.js"></script>
+                        <script src="/Scripts/aspnet/dx.aspnet.mvc.js"></script>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="height: 350px">
+
+                            @(Html.DevExtreme().DataGrid()
+                                                                                                .ShowBorders(true)
+                                                                                                .DataSource(d => d.WebApi().Controller("Orders").LoadAction("Get11").Key("StokCinsi"))
+                                                                                                .Columns(columns =>
+                                                                                                {
+                                                                                                    columns.Add().DataField("StokCinsi");
+                                                                                                    columns.Add().DataField("Miktar");
+                                                                                                    columns.Add().DataField("AlisFiyati");
+                                                                                                    columns.Add().DataField("SatisFiyati");
+                                                                                                    columns.Add().DataField("HsNet");
+                                                                                                    columns.Add().DataField("HsNetSatis");
+
+
+                                                                                                })
+                                                                                                 .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                                                                 .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                                                                 .Paging(p => p.PageSize(10))
+                                                                                                 .FilterRow(f => f.Visible(true))
+                                                                                                 .HeaderFilter(f => f.Visible(true))
+                                                                                                 .GroupPanel(p => p.Visible(true))
+                                                                                                 .Grouping(g => g.AutoExpandAll(false))
+                                                                                                 .AllowColumnReordering(true)
+                                                                                                 .AllowColumnResizing(true)
+                                                                                                 .RemoteOperations(true)
+                                                                                                 .Summary(s => s
+                                                                                                 .TotalItems(totalItems =>
+                                                                                                 {
+                                                                                                     totalItems.Add().Column("TCNo").SummaryType(SummaryType.Count);
+                                                                                                 })
+                                                                                                 .GroupItems(groupItems =>
+                                                                                                 {
+                                                                                                     groupItems.Add().SummaryType(SummaryType.Count);
+                                                                                                 })
+                                                                                                )
+
+                            )
+
+
+
+                        </div>
+                        <!--            SARRAFİYELER-->
+                        <div class="col-md-6">
+
+                            @(Html.DevExtreme().DataGrid()
+                                                                                    .ShowBorders(true)
+                                                                                    .DataSource(d => d.WebApi().Controller("Orders").LoadAction("Get12").Key("StokCinsi"))
+                                                                                    .Columns(columns =>
+                                                                                    {
+                                                                                        columns.Add().DataField("StokCinsi");
+                                                                                        columns.Add().DataField("Miktar");
+                                                                                        columns.Add().DataField("AlisFiyati");
+                                                                                        columns.Add().DataField("SatisFiyati");
+                                                                                        columns.Add().DataField("HsNet");
+                                                                                        columns.Add().DataField("HsNetSatis");
+
+
+                                                                                    })
+                                                                                     .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                                                     .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                                                     .Paging(p => p.PageSize(10))
+                                                                                     .FilterRow(f => f.Visible(true))
+                                                                                     .HeaderFilter(f => f.Visible(true))
+                                                                                     .GroupPanel(p => p.Visible(true))
+                                                                                     .Grouping(g => g.AutoExpandAll(false))
+                                                                                     .AllowColumnReordering(true)
+                                                                                     .AllowColumnResizing(true)
+                                                                                     .RemoteOperations(true)
+                                                                                     .Summary(s => s
+                                                                                     .TotalItems(totalItems =>
+                                                                                     {
+                                                                                         totalItems.Add().Column("TCNo").SummaryType(SummaryType.Count);
+                                                                                     })
+                                                                                     .GroupItems(groupItems =>
+                                                                                     {
+                                                                                         groupItems.Add().SummaryType(SummaryType.Count);
+                                                                                     })
+                                                                                    )
+
+                            )
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    }
+</body>
+</html>

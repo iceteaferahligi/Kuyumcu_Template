@@ -1,0 +1,279 @@
+﻿@model Kuyumcu.Models.OzelBanka
+
+@{
+    Layout = null;
+    var grid = new WebGrid(source: Model.Kasalar, canPage: true, rowsPerPage: 8);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function iptalet() {
+            window.location.reload(true);
+        }
+
+        function getHesapNo() {
+            var value = document.getElementById("bankalar").value;
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/KomisyonTanim1",
+                data: { banka: value },
+                success: function (data) {
+                    var select = document.getElementById("hesaplar");
+                    $(hesaplar).empty();
+                    data = JSON.parse(data);
+                    select.append(new Option("Seçiniz", "Seçiniz"));
+                    for (index in data) {
+                        select.append(new Option(data[index], data[index]));
+                    }
+
+                }
+            });
+        }
+    </script>
+
+    <style>
+        @@media screen and (max-width: 400px) {
+            .navbar {
+                float: none;
+                width: 60%;
+            }
+        }
+
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        .inputField {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 88%;
+        }
+
+        .inputField2 {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 70%;
+        }
+
+        .urunLabel {
+            display: block;
+            text-align: left;
+            /*width: 92px;*/
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .comboBox {
+            /*width: 170px;*/
+            width: 88%;
+            text-align: center;
+            height: 32px;
+        }
+
+        .pairRow {
+            display: inline-flex;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .butonLayout {
+            margin-top: 2%;
+            text-align: center;
+            padding: 2%;
+            border-top: 5px groove;
+        }
+
+        .webgrid-table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            width: 100%;
+            display: table;
+            border-collapse: separate;
+            border: solid 1px deepskyblue;
+            background-color: white;
+        }
+
+            .webgrid-table td, th {
+                border: 1px solid deepskyblue;
+                padding: 3px 7px 2px;
+            }
+
+        .webgrid-header {
+            background-color: darkcyan;
+            color: white;
+            padding-bottom: 4px;
+            padding-top: 5px;
+            text-align: left;
+        }
+
+        .webgrid-footer a {
+            color: black;
+        }
+
+        .webgrid-row-style {
+            padding: 3px 7px 2px;
+        }
+
+        .webgrid-alternating-row {
+            background-color: #EAF2D3;
+            padding: 3px 7px 2px;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="Onay" button class="btn btn-dark araclarMenu">FATURA EKRANI</a>
+        <a href="BankaTanim" button class="btn btn-dark araclarMenu">BANKA TANIM</a>
+        <a href="KomisyonTanim" button class="btn btn-dark araclarMenu">KOMİSYON TANIM</a>
+        <a href="Gelir_Gider" button class="btn btn-dark araclarMenu">GELİR-GİDER</a>
+        <a href="Kasa" button class="btn btn-dark araclarMenu">KASA</a>
+        <a href="BankaIslemleri" button class="btn btn-dark araclarMenu">BANKA İŞLEMLERİ</a>
+        <a href="BankadanOdeme" button class="btn btn-dark araclarMenu">BANKADAN ÖDEME</a>
+        <a href="ToptanciAlim" button class="btn btn-dark araclarMenu">TOPTANCI ALIM</a>
+        <a href="ToptanciyaOdeme" button class="btn btn-dark araclarMenu">TOPTANCIYA ÖDEME</a>
+    </div>
+
+    @using (Html.BeginForm("Kasa", "Finans", FormMethod.Post))
+    {
+        <div class="container-fluid">
+            <div class="row">
+
+                <!--TABLOYU BU ALANA YERLEŞTİREBİLİRSİN-->
+
+
+                <div class="col-md-9 col-sm-12 ">
+                    <div>
+                        <div id="content">
+                            @*@grid.GetHtml(
+                            tableStyle:"webgrid-table",
+                            headerStyle:"webgrid-header",
+                            footerStyle:"webgrid-footer",
+                            alternatingRowStyle:"webgrid-alternating-row",
+                            rowStyle:"webgrid-row-style",
+                            columns:grid.Columns(
+                                //here i will add column for serial no
+                                grid.Column(columnName: "SubeNo", header: "Şube No"),
+                                grid.Column(columnName: "KasaAdi", header: "Kasa Adi"),
+                                grid.Column(columnName: "DovizTuru", header: "Döviz Türü"),
+                                grid.Column(columnName: "BaslangicBakiye", header: "Bakiye")
+                                ))*@
+                            @Html.DevExpress().GetStyleSheets(
+                               new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                               new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+                               new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+                           )
+                            @Html.DevExpress().GetScripts(
+                                new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+                                new Script { ExtensionSuite = ExtensionSuite.Editors },
+                                new Script { ExtensionSuite = ExtensionSuite.GridView }
+                            )
+                            
+@Html.Action("GridKasaPartial")
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8">
+                    <div>
+                        <label class="urunLabel" for="bankaAdi">Şube No</label>
+                        @Html.DropDownListFor(x => x.Kasa.SubeNo, new List<SelectListItem>
+                            {
+                            new SelectListItem { Text = "NO1", Value = "NO1"},
+                            new SelectListItem { Text = "NO9", Value = "NO9"},
+
+                            }, "Seçiniz", new
+                            {
+                                @Class = "comboBox",
+                                id ="subeno"
+                            })
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="bankaHesapNumarasi">Kasa Adı</label>
+                        @Html.TextBoxFor(x => x.Kasa.KasaAdi, new { @class = "inputField", id = "KasaAdi", name = "KasaAdi" })
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="hesapDovizTuru">Döviz Türü</label>
+                        @Html.TextBoxFor(x => x.Kasa.DovizTuru, new { @class = "inputField", id = "DovizTuru", name = "DovizTuru" })
+                    </div>
+                    <div>
+                        <label class="urunLabel" for="esnekBakiyeLimiti">Başlangıç Bakiyesi</label>
+                        @*<input type="text" class="inputField" id="esnekBakiyeLimiti" name="esnekBakiyeLimiti">*@
+                        @Html.TextBoxFor(x => x.Kasa.BaslangicBakiye, new { @class = "inputField", id = "BaslangicBakiye", name = "BaslangicBakiye" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid butonLayout">
+            <div class="row">
+                <div class="col-3">
+                    @*<button type="submit" class="btn btn-success"><i class="fa fa-fw fa-save" value="KAYDET"></i>KAYDET</button>*@
+                    <input name="submit" class="btn btn-success" type="submit" id="submit" value="KAYDET" />
+                </div>
+                <div class="col-3">
+                    <a href="Kasa">
+                        <button type="button" class="btn btn-warning"><i class="fa fa-fw fa-undo"></i>İPTAL</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
+

@@ -1,0 +1,1248 @@
+﻿@model Kuyumcu.Models.OzelModel
+
+@{
+    ViewBag.Title = "HizliAlimSatim";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+
+    #Araclar {
+        margin: 8px;
+    }
+
+    .inputField {
+        text-align: center;
+        border-style: inset;
+        width: 92%;
+    }
+
+    .araclarMenu {
+        display: inline;
+        height: 45px;
+        /*width: 100px; !* Optional to keep buttons same size *!*/
+        padding: 0px 1px;
+        text-align: center;
+        background-color: #394F85;
+        padding: 2px 8px;
+    }
+
+    .navbar .btn {
+        color: #394F85;
+    }
+
+    .btn {
+        font-weight: 500;
+    }
+
+    .btnTabela {
+        background-color: #394F85;
+    }
+
+
+    /**/
+    .imageb {
+        border-width: 1px;
+        width: 30px;
+        height: 30px;
+        border-color: Black;
+        /*margin-right: 5px;*/
+    }
+
+    /*.table {*/
+    /*    !*margin: 20px;*!*/
+    /*    width: 50%;*/
+    /*    !*max-width: 50% !important;*!*/
+    /*    text-align: center;*/
+    /*    !*border-right-style: solid;*!*/
+    /*    !*border-color: cadetblue;*!*/
+    /*    !*background-color: whitesmoke;*!*/
+    /*    border-collapse: collapse;*/
+    /*    border-spacing: 10px;*/
+    /*    display: inline-table;*/
+    /*}*/
+
+
+    /*.tbody {*/
+    /*    display: table-row-group;*/
+    /*}*/
+
+    /*.tr {*/
+    /*    display: table-row;*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*}*/
+
+
+
+    /*.td {*/
+    /*    text-align: center;*/
+    /*    height: 100%;*/
+    /*    display: table-cell;*/
+    /*    !*border: 0px solid darkslategrey;*!*/
+    /*    padding: 12px;*/
+    /*}*/
+
+
+    .tableTitle {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-collapse: collapse;
+        border-spacing: 15px;
+        display: table-caption;
+        /*background-color: bisque;*/
+    }
+
+
+    form.searchBar input[type=text] {
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+
+    form.searchBar button {
+        float: left;
+        /*width: 14%;*/
+        width: 20%;
+        padding: 5px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    #islemTablosu {
+        margin-left: 20px;
+        margin-top: 30px;
+        width: auto;
+        alignment: center;
+    }
+
+
+    #tahsilat {
+        color: #394F85;
+    }
+
+
+    .kurTablosu {
+        display: inline-table;
+        margin-top: 10px;
+        /*margin-left: 60px;*/
+        border-style: hidden;
+        border-collapse: collapse;
+    }
+
+    .tabloBaslik {
+        text-align: center;
+        /*background-color: bisque;*/
+        font-size: 12pt;
+        font-weight: 500;
+    }
+
+    .cellSize {
+        width: 100px;
+        text-align: center;
+</style>
+<script>
+    function edit(element) {
+        let tr = $(element).parent().parent();
+        if (!tr.hasClass("editing")) {
+            tr.addClass("editing");
+            tr.find("DIV.td").each(function () {
+                if (!jQuery(this).hasClass("action")) {
+                    var value = jQuery(this).text();
+                    jQuery(this).text("");
+                    jQuery(this).append('<input type="text" value="' + value + '" />');
+                } else {
+                    jQuery(this).find("BUTTON").text("Save");
+                }
+            });
+        } else {
+            tr.removeClass("editing");
+            tr.find("DIV.td").each(function () {
+                if (!jQuery(this).hasClass("action")) {
+                    let value = jQuery(this).find("INPUT").val();
+                    jQuery(this).text(value);
+                    jQuery(this).find("INPUT").remove();
+                } else {
+                    jQuery(this).find("BUTTON").text("Edit");
+                }
+            });
+        }
+    }
+
+    function duzenle() {
+        document.getElementById("CeyrekA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("CeyrekM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("CeyrekS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("CeyrekH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YarimA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("YarimM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YarimS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("YarimH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("AtatekA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("AtatekM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("AtatekS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("AtatekH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("IkibucukluA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("IkibucukluM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("IkibucukluS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("IkibucukluH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("CliraA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("CliraM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("CliraS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("CliraH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiIkiGramA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("YirmiIkiGramM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiIkiGramS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("YirmiIkiGramH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiDortGramA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("YirmiDortGramM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiDortGramS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("YirmiDortGramH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("HamitLiraA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("HamitLiraM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("HamitLiraS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("HamitLiraH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("SekhurdaA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("SekhurdaM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("SekhurdaS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("SekhurdaH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("OndorthurdaA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("OndorthurdaM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("OndorthurdaS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("OndorthurdaH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("OnsekhurdaA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("OnsekhurdaM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("OnsekhurdaS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("OnsekhurdaH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirbirhurdaA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("YirbirhurdaM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirbirhurdaS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("YirbirhurdaH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiikihurdaA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("YirmiikihurdaM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("YirmiikihurdaS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("YirmiikihurdaH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("ResatBesliA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("ResatBesliM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("ResatBesliS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("ResatBesliH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("HamitBesliA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("HamitBesliM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("HamitBesliS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("HamitBesliH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("CUMBesliA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("CUMBesliM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("CUMBesliS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("CUMBesliH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("ResatLiraA").value = (document.getElementById("KulceA").value.replace(',', '.') * document.getElementById("ResatLiraM").value.replace(',', '.')).toFixed(3).replace('.', ',');
+        document.getElementById("ResatLiraS").value = (document.getElementById("KulceS").value.replace(',', '.') * document.getElementById("ResatLiraH").value.replace(',', '.')).toFixed(3).replace('.', ',');
+
+    }
+
+    function gettime() {
+        var value = document.getElementById("logtarih").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/Tabela1",
+            data: { tarih: value },
+            success: function (data) {
+                var select = document.getElementById("saatler");
+                $(saatler).empty();
+                data = JSON.parse(data);
+                select.append(new Option("Seçiniz", "Seçiniz"));
+                for (index in data) {
+                    select.append(new Option(data[index], data[index]));
+                }
+
+            }
+        });
+    }
+
+    function logGetir() {
+        var value = document.getElementById("logtarih").value;
+        var value1 = document.getElementById("saatler").value;
+        $.ajax({
+            dataType: "html",
+            type: "POST",
+            url: "/Kuyumcu/Tabela2",
+            data: { tarih: value, time: value1 },
+            success: function (data) {
+                data = JSON.parse(data);
+                var array = data.split(", ", 93);
+                document.getElementById("CeyrekA").value = array[0];
+                document.getElementById("CeyrekS").value = array[1];
+                document.getElementById("CeyrekM").value = array[2];
+                document.getElementById("CeyrekH").value = array[3];
+                document.getElementById("YarimA").value = array[4];
+                document.getElementById("YarimS").value = array[5];
+                document.getElementById("YarimM").value = array[6];
+                document.getElementById("YarimH").value = array[7];
+                document.getElementById("AtatekA").value = array[8];
+                document.getElementById("AtatekS").value = array[9];
+                document.getElementById("AtatekM").value = array[10];
+                document.getElementById("AtatekH").value = array[11];
+                document.getElementById("IkibucukluA").value = array[12];
+                document.getElementById("IkibucukluS").value = array[13];
+                document.getElementById("IkibucukluM").value = array[14];
+                document.getElementById("IkibucukluH").value = array[15];
+                document.getElementById("CliraA").value = array[16];
+                document.getElementById("CliraS").value = array[17];
+                document.getElementById("CliraM").value = array[18];
+                document.getElementById("CliraH").value = array[19];
+                document.getElementById("YirmiIkiGramA").value = array[20];
+                document.getElementById("YirmiIkiGramS").value = array[21];
+                document.getElementById("YirmiIkiGramM").value = array[22];
+                document.getElementById("YirmiIkiGramH").value = array[23];
+                document.getElementById("YirmiDortGramA").value = array[24];
+                document.getElementById("YirmiDortGramS").value = array[25];
+                document.getElementById("YirmiDortGramM").value = array[26];
+                document.getElementById("YirmiDortGramH").value = array[27];
+                document.getElementById("HamitLiraA").value = array[28];
+                document.getElementById("HamitLiraS").value = array[29];
+                document.getElementById("HamitLiraM").value = array[30];
+                document.getElementById("HamitLiraH").value = array[31];
+                document.getElementById("SekhurdaA").value = array[32];
+                document.getElementById("SekhurdaS").value = array[33];
+                document.getElementById("SekhurdaM").value = array[34];
+                document.getElementById("SekhurdaH").value = array[35];
+                document.getElementById("OndorthurdaA").value = array[36];
+                document.getElementById("OndorthurdaS").value = array[37];
+                document.getElementById("OndorthurdaM").value = array[38];
+                document.getElementById("OndorthurdaH").value = array[39];
+                document.getElementById("OnsekhurdaA").value = array[40];
+                document.getElementById("OnsekhurdaS").value = array[41];
+                document.getElementById("OnsekhurdaM").value = array[42];
+                document.getElementById("OnsekhurdaH").value = array[43];
+                document.getElementById("YirbirhurdaA").value = array[44];
+                document.getElementById("YirbirhurdaS").value = array[45];
+                document.getElementById("YirbirhurdaM").value = array[46];
+                document.getElementById("YirbirhurdaH").value = array[47];
+                document.getElementById("YirmiikihurdaA").value = array[48];
+                document.getElementById("YirmiikihurdaS").value = array[49];
+                document.getElementById("YirmiikihurdaM").value = array[50];
+                document.getElementById("YirmiikihurdaH").value = array[51];
+                document.getElementById("DolarA").value = array[52];
+                document.getElementById("DolarS").value = array[53];
+                document.getElementById("EuroA").value = array[54];
+                document.getElementById("EuroS").value = array[55];
+                document.getElementById("CHFA").value = array[56];
+                document.getElementById("CHFS").value = array[57];
+                document.getElementById("DKKA").value = array[58];
+                document.getElementById("DKKS").value = array[59];
+                document.getElementById("SterlinA").value = array[60];
+                document.getElementById("SterlinS").value = array[61];
+                document.getElementById("IsvecKronuA").value = array[62];
+                document.getElementById("IsvecKronuS").value = array[63];
+                document.getElementById("NorvecKronuA").value = array[64];
+                document.getElementById("NorvecKronuS").value = array[65];
+                document.getElementById("JaponYeniA").value = array[66];
+                document.getElementById("JaponYeniS").value = array[67];
+                document.getElementById("KanDolariA").value = array[68];
+                document.getElementById("KanDolariS").value = array[69];
+                document.getElementById("AvusDolariA").value = array[70];
+                document.getElementById("AvusDolariS").value = array[71];
+                document.getElementById("RusRubleA").value = array[72];
+                document.getElementById("RusRubleS").value = array[73];
+                document.getElementById("RiyalA").value = array[74];
+                document.getElementById("RiyalS").value = array[75];
+                document.getElementById("KulceA").value = array[76];
+                document.getElementById("KulceS").value = array[77];
+                document.getElementById("ResatBesliA").value = array[78];
+                document.getElementById("ResatBesliS").value = array[79];
+                document.getElementById("ResatBesliM").value = array[80];
+                document.getElementById("ResatBesliH").value = array[81];
+                document.getElementById("HamitBesliA").value = array[82];
+                document.getElementById("HamitBesliS").value = array[83];
+                document.getElementById("HamitBesliM").value = array[84];
+                document.getElementById("HamitBesliH").value = array[85];
+                document.getElementById("CUMBesliA").value = array[86];
+                document.getElementById("CUMBesliS").value = array[87];
+                document.getElementById("CUMBesliM").value = array[88];
+                document.getElementById("CUMBesliH").value = array[89];
+                document.getElementById("ResatLiraA").value = array[90];
+                document.getElementById("ResatLiraS").value = array[91];
+                document.getElementById("ResatLiraM").value = array[92];
+                document.getElementById("ResatLiraH").value = array[93];
+  
+
+            }
+        });
+    }
+
+    function AlisDegisim(name) {
+        var k = name.id;
+        k = k.substring(0, k.length - 1);
+        document.getElementById(k + "M").value = (document.getElementById(name.id).value.replace(',', '.') / document.getElementById("KulceA").value.replace(',', '.')).toFixed(3).replace('.', ',');
+
+    }
+
+    function SatisDegisim(name) {
+        var k = name.id;
+        k = k.substring(0, k.length - 1);
+        document.getElementById(k + "H").value = (document.getElementById(name.id).value.replace(',', '.') / document.getElementById("KulceS").value.replace(',', '.')).toFixed(3).replace('.', ',');
+    }
+
+    function AlisHasDegisim(name) {
+        var k = name.id;
+        k = k.substring(0, k.length - 1);
+        document.getElementById(k + "A").value = (document.getElementById(name.id).value.replace(',', '.') * document.getElementById("KulceA").value.replace(',', '.')).toFixed(3).replace('.', ',');
+    }
+
+    function SatisHasDegisim(name) {
+        var k = name.id;
+        k = k.substring(0, k.length - 1);
+        document.getElementById(k + "S").value = (document.getElementById(name.id).value.replace(',', '.') * document.getElementById("KulceS").value.replace(',', '.')).toFixed(3).replace('.', ',');
+
+    }
+</script>
+<body>
+
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn  btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="HizliAlimSatim" button class="btn btn-dark araclarMenu">SİPARİŞ İŞLEMLERİ</a>
+        <a href="Tabela" button class="btn btn-dark araclarMenu">TABELA</a>
+        <a href="UrunEkle" button class="btn btn-dark araclarMenu">ÜRÜN EKLE</a>
+        <a href="OzellikEkle" button class="btn btn-dark araclarMenu">ÖZELLİK EKLE</a>
+        <a href="UrunDonusum" button class="btn btn-dark araclarMenu">HURDA DÖNÜŞÜM</a>
+        <a href="Takas" button class="btn btn-dark araclarMenu">TAKAS</a>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="container-fluid" style="display: inline-block;text-align:right">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <table class="kurTablosu">
+                        <thead class="tabloBaslik">
+                            <tr>
+                                <td></td>
+                                <td>ALIŞ KURU</td>
+                                <td>SATIŞ KURU</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <!--        KÜLÇE-->
+                        <tr>
+                            <th>Külçe</th>
+                            <th>
+                                @*<input name="alisKuru" type="text" value=@ViewBag.isaf>*@
+                                @Html.TextBoxFor(x => x.KulceA, new { @class = "input cellSize", type = "text", id = "KulceA" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.issf>*@
+                                @Html.TextBoxFor(x => x.KulceS, new { @class = "input cellSize", type = "text", id = "KulceS" })
+                            </th>
+                            <th>
+                                <button type="button" class="btn-primary" onclick="duzenle()">DÜZENLE</button>
+                            </th>
+
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <table class="kurTablosu">
+                        <thead class="tabloBaslik">
+                            <tr>
+                                <td></td>
+                                <td>ALIŞ KURU</td>
+                                <td>SATIŞ KURU</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <!--        24 AYAR GRAM-->
+                        <tr>
+                            <th>24 Gr. Altın</th>
+                            <th>
+                                @*<input name="alisKuru" type="text" value=@ViewBag.cbaf>*@
+                                @Html.TextBoxFor(x => x.YirmiDortGramA, new { @class = "input cellSize", type = "text", id =
+                                "YirmiDortGramA", onchange = "AlisDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.cbsf>*@
+                                @Html.TextBoxFor(x => x.YirmiDortGramS, new { @class = "input cellSize", type = "text", id =
+                                "YirmiDortGramS", onchange = "SatisDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.cbsf>*@
+                                @Html.HiddenFor(x => x.YirmiDortGramM, new { @class = "input cellSize", type = "hidden", id =
+                                "YirmiDortGramM", onchange = "AlisHasDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.cbsf>*@
+                                @Html.HiddenFor(x => x.YirmiDortGramH, new { @class = "input cellSize", type = "hidden", id =
+                                "YirmiDortGramH", onchange = "SatisHasDegisim(this)" })
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <table class="kurTablosu">
+                        <thead class="tabloBaslik">
+                            <tr>
+                                <td></td>
+                                <td>ALIŞ KURU</td>
+                                <td>SATIŞ KURU</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>22 Gr. Altın</th>
+                            <th>
+                                @*<input name="alisKuru" type="text" value=@ViewBag.slaf>*@
+                                @Html.TextBoxFor(x => x.YirmiIkiGramA, new { @class = "input cellSize", type = "text", id =
+                                "YirmiIkiGramA", onchange = "AlisDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.slsf>*@
+                                @Html.TextBoxFor(x => x.YirmiIkiGramS, new { @class = "input cellSize", type = "text", id =
+                                "YirmiIkiGramS", onchange = "SatisDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                @Html.HiddenFor(x => x.YirmiIkiGramM, new { @class = "input cellSize", type = "hidden", id =
+                                "YirmiIkiGramM", onchange = "AlisHasDegisim(this)" })
+                            </th>
+                            <th>
+                                @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                @Html.HiddenFor(x => x.YirmiIkiGramH, new { @class = "input cellSize", type = "hidden", id =
+                                "YirmiIkiGramH", onchange = "SatisHasDegisim(this)" })
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div style="text-align:right; margin-top:10px">
+            @*Altın*@
+            <div class="container-fluid" style="border-top-style:groove; margin-top:10px">
+                <div class="row">
+                    <!--Altın-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <!--alış satış kuru-->
+                                <tr>
+                                    <td></td>
+                                    <td>ALIŞ KURU</td>
+                                    <td>SATIŞ KURU</td>
+                                </tr>
+                            </thead>
+                            <!--        Çeyrek Altın-->
+                            <tr>
+                                <th>Çeyrek Altın</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ca>*@
+                                    @Html.TextBoxFor(x => x.CeyrekA, new { @class = "input cellSize", type = "text", id = "CeyrekA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.cf>*@
+                                    @Html.TextBoxFor(x => x.CeyrekS, new { @class = "input cellSize", type = "text", id = "CeyrekS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.cf>*@
+                                    @*@Html.TextBoxFor(x => x.CeyrekM, new { @class = "input cellSize", type = "hidden", id =
+                                        "CeyrekM",
+                                        onchange = "AlisHasDegisim(this)" })*@
+                                    @Html.HiddenFor(x => x.CeyrekM, new { @class = "input cellSize", type = "hidden", id =
+                                    "CeyrekM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.cf>*@
+                                    @Html.HiddenFor(x => x.CeyrekH, new { @class = "input cellSize", type = "hidden", id =
+                                    "CeyrekH",
+                                    onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        Yarım Altın-->
+                            <tr>
+                                <th>
+                                    Yarım Altın
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ya>*@
+                                    @Html.TextBoxFor(x => x.YarimA, new { @class = "input cellSize", type = "text", id = "YarimA",
+                                    onchange
+                                    = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.yf>*@
+                                    @Html.TextBoxFor(x => x.YarimS, new { @class = "input cellSize", type = "text", id = "YarimS",
+                                    onchange
+                                    = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.yf>*@
+                                    @Html.HiddenFor(x => x.YarimM, new { @class = "input cellSize", type = "hidden", id = "YarimM",
+                                    onchange
+                                    = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.yf>*@
+                                    @Html.HiddenFor(x => x.YarimH, new { @class = "input cellSize", type = "hidden", id = "YarimH",
+                                    onchange
+                                    = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        ATATEK-->
+                            <tr>
+                                <th>
+                                    Atatek
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.af>*@
+                                    @Html.TextBoxFor(x => x.AtatekA, new { @class = "input cellSize", type = "text", id = "AtatekA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.TextBoxFor(x => x.AtatekS, new { @class = "input cellSize", type = "text", id = "AtatekS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.AtatekM, new { @class = "input cellSize", type = "hidden", id =
+                                    "AtatekM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.AtatekH, new { @class = "input cellSize", type = "hidden", id =
+                                    "AtatekH",
+                                    onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        2.5LU-->
+                            <tr>
+                                <th>
+                                    2.5LU
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ikiaf>*@
+                                    @Html.TextBoxFor(x => x.IkibucukluA, new { @class = "input cellSize", type = "text", id =
+                                    "IkibucukluA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ikisf>*@
+                                    @Html.TextBoxFor(x => x.IkibucukluS, new { @class = "input cellSize", type = "text", id =
+                                    "IkibucukluS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.IkibucukluM, new { @class = "input cellSize", type = "hidden", id =
+                                    "IkibucukluM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.IkibucukluH, new { @class = "input cellSize", type = "hidden", id =
+                                    "IkibucukluH", onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        Cumhuriyet Lirası-->
+                            <tr>
+                                <th>
+                                    Cumhuriyet Lirası
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.claf>*@
+                                    @Html.TextBoxFor(x => x.CliraA, new { @class = "input cellSize", type = "text", id = "CliraA",
+                                    onchange
+                                    = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.clsf>*@
+                                    @Html.TextBoxFor(x => x.CliraS, new { @class = "input cellSize", type = "text", id = "CliraS",
+                                    onchange
+                                    = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.CliraM, new { @class = "input cellSize", type = "hidden", id = "CliraM",
+                                    onchange
+                                    = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ass>*@
+                                    @Html.HiddenFor(x => x.CliraH, new { @class = "input cellSize", type = "hidden", id = "CliraH",
+                                    onchange
+                                    = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--Hamit Reşat-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <!--alış satış kuru-->
+                                <tr>
+                                    <td></td>
+                                    <td>ALIŞ KURU</td>
+                                    <td>SATIŞ KURU</td>
+                                </tr>
+                            </thead>
+                            <!--        HAMİT LİRA-->
+                            <tr>
+                                <th>
+                                    Hamit Lira
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.hraf>*@
+                                    @Html.TextBoxFor(x => x.HamitLiraA, new { @class = "input cellSize", type = "text", id =
+                                    "HamitLiraA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.TextBoxFor(x => x.HamitLiraS, new { @class = "input cellSize", type = "text", id =
+                                    "HamitLiraS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.HamitLiraM, new { @class = "input cellSize", type = "hidden", id =
+                                    "HamitLiraM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.HamitLiraH, new { @class = "input cellSize", type = "hidden", id =
+                                    "HamitLiraH",
+                                    onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        REŞAT 5'Lİ-->
+                            <tr>
+                                <th>
+                                    Reşat 5'li
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.hraf>*@
+                                    @Html.TextBoxFor(x => x.ResatBesliA, new { @class = "input cellSize", type = "text", id =
+                                    "ResatBesliA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.TextBoxFor(x => x.ResatBesliS, new { @class = "input cellSize", type = "text", id =
+                                    "ResatBesliS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.ResatBesliM, new { @class = "input cellSize", type = "hidden", id =
+                                    "ResatBesliM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.ResatBesliH, new { @class = "input cellSize", type = "hidden", id =
+                                    "ResatBesliH", onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        HAMİT 5'Lİ-->
+                            <tr>
+                                <th>
+                                    Hamit 5'li
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.hraf>*@
+                                    @Html.TextBoxFor(x => x.HamitBesliA, new { @class = "input cellSize", type = "text", id =
+                                    "HamitBesliA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.TextBoxFor(x => x.HamitBesliS, new { @class = "input cellSize", type = "text", id =
+                                    "HamitBesliS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.HamitBesliM, new { @class = "input cellSize", type = "hidden", id =
+                                    "HamitBesliM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.HamitBesliH, new { @class = "input cellSize", type = "hidden", id =
+                                    "HamitBesliH", onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        CUM. BEŞLİ-->
+                            <tr>
+                                <th>
+                                    Cum. Beşli
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.hraf>*@
+                                    @Html.TextBoxFor(x => x.CUMBesliA, new { @class = "input cellSize", type = "text", id =
+                                    "CUMBesliA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.TextBoxFor(x => x.CUMBesliS, new { @class = "input cellSize", type = "text", id =
+                                    "CUMBesliS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.CUMBesliM, new { @class = "input cellSize", type = "hidden", id =
+                                    "CUMBesliM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.CUMBesliH, new { @class = "input cellSize", type = "hidden", id =
+                                    "CUMBesliH",
+                                    onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        REŞAT LİRA-->
+                            <tr>
+                                <th>
+                                    Reşat Lira
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.hraf>*@
+                                    @Html.TextBoxFor(x => x.ResatLiraA, new { @class = "input cellSize", type = "text", id =
+                                    "ResatLiraA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.TextBoxFor(x => x.ResatLiraS, new { @class = "input cellSize", type = "text", id =
+                                    "ResatLiraS",
+                                    onchange = "SatisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.ResatLiraM, new { @class = "input cellSize", type = "hidden", id =
+                                    "ResatLiraM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.hrsf>*@
+                                    @Html.HiddenFor(x => x.ResatLiraH, new { @class = "input cellSize", type = "hidden", id =
+                                    "ResatLiraH",
+                                    onchange = "SatisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--Hurda-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <tr>
+                                    <td></td>
+                                    <td>Alış Fiyatı</td>
+                                    <td>Satış Fiyatı</td>
+                                </tr>
+                            </thead>
+                            <!--        8 HURDA-->
+                            <tr>
+                                <th>
+                                    8 Hurda
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.shaf>*@
+                                    @Html.TextBoxFor(x => x.SekhurdaA, new { @class = "input cellSize", type = "text", id =
+                                    "SekhurdaA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.shaf>*@
+                                    @Html.TextBoxFor(x => x.SekhurdaS, new { @class = "input cellSize", type = "text", id =
+                                    "SekhurdaS",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.shsf>*@
+                                    @Html.HiddenFor(x => x.SekhurdaM, new { @class = "input cellSize", type = "hidden", id =
+                                    "SekhurdaM",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.shsf>*@
+                                    @Html.HiddenFor(x => x.SekhurdaH, new { @class = "input cellSize", type = "hidden", id =
+                                    "SekhurdaH",
+                                    onchange = "AlisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        14 HURDA-->
+                            <tr>
+                                <th>
+                                    14 Hurda
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.odhaf>*@
+                                    @Html.TextBoxFor(x => x.OndorthurdaA, new { @class = "input cellSize", type = "text", id =
+                                    "OndorthurdaA", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.odhaf>*@
+                                    @Html.TextBoxFor(x => x.OndorthurdaS, new { @class = "input cellSize", type = "text", id =
+                                    "OndorthurdaS", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.odhsf>*@
+                                    @Html.HiddenFor(x => x.OndorthurdaM, new { @class = "input cellSize", type = "hidden", id =
+                                    "OndorthurdaM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.odhsf>*@
+                                    @Html.HiddenFor(x => x.OndorthurdaH, new { @class = "input cellSize", type = "hidden", id =
+                                    "OndorthurdaH", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        18 HURDA-->
+                            <tr>
+                                <th>
+                                    18 Hurda
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.oshaf>*@
+                                    @Html.TextBoxFor(x => x.OnsekhurdaA, new { @class = "input cellSize", type = "text", id =
+                                    "OnsekhurdaA",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.oshaf>*@
+                                    @Html.TextBoxFor(x => x.OnsekhurdaS, new { @class = "input cellSize", type = "text", id =
+                                    "OnsekhurdaS",
+                                    onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.oshsf>*@
+                                    @Html.HiddenFor(x => x.OnsekhurdaM, new { @class = "input cellSize", type = "hidden", id =
+                                    "OnsekhurdaM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.oshsf>*@
+                                    @Html.HiddenFor(x => x.OnsekhurdaH, new { @class = "input cellSize", type = "hidden", id =
+                                    "OnsekhurdaH", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        21 HURDA-->
+                            <tr>
+                                <th>
+                                    21 Hurda
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ybhaf>*@
+                                    @Html.TextBoxFor(x => x.YirbirhurdaA, new { @class = "input cellSize", type = "text", id =
+                                    "YirbirhurdaA", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ybhaf>*@
+                                    @Html.TextBoxFor(x => x.YirbirhurdaS, new { @class = "input cellSize", type = "text", id =
+                                    "YirbirhurdaS", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ybhsf>*@
+                                    @Html.HiddenFor(x => x.YirbirhurdaM, new { @class = "input cellSize", type = "hidden", id =
+                                    "YirbirhurdaM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ybhsf>*@
+                                    @Html.HiddenFor(x => x.YirbirhurdaH, new { @class = "input cellSize", type = "hidden", id =
+                                    "YirbirhurdaH", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                            <!--        22 HURDA-->
+                            <tr>
+                                <th>
+                                    22 Hurda
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.yihaf>*@
+                                    @Html.TextBoxFor(x => x.YirmiikihurdaA, new { @class = "input cellSize", type = "text", id =
+                                    "YirmiikihurdaA", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.yihaf>*@
+                                    @Html.TextBoxFor(x => x.YirmiikihurdaS, new { @class = "input cellSize", type = "text", id =
+                                    "YirmiikihurdaS", onchange = "AlisDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.yihsf>*@
+                                    @Html.HiddenFor(x => x.YirmiikihurdaM, new { @class = "input cellSize", type = "hidden", id =
+                                    "YirmiikihurdaM", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.yihsf>*@
+                                    @Html.HiddenFor(x => x.YirmiikihurdaH, new { @class = "input cellSize", type = "hidden", id =
+                                    "YirmiikihurdaH", onchange = "AlisHasDegisim(this)" })
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            @*Döviz*@
+            <div class="container-fluid" style="border-top-style:groove; margin-top:10px">
+                <div class="row">
+                    <!--Döviz1-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <tr>
+                                    <td></td>
+                                    <td>ALIŞ KURU</td>
+                                    <td>SATIŞ KURU</td>
+                                </tr>
+                            </thead>
+                            <!--        EURO-->
+                            <tr>
+                                <th>Euro</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.euaf>*@
+                                    @Html.TextBoxFor(x => x.EuroA, new { @class = "input cellSize", type = "text", id = "EuroA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.eusf>*@
+                                    @Html.TextBoxFor(x => x.EuroS, new { @class = "input cellSize", type = "text", id = "EuroS" })
+                                </th>
+                            </tr>
+                            <!--        DOLAR-->
+                            <tr>
+                                <th>Amerikan Doları</th>
+
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.adaf>*@
+                                    @Html.TextBoxFor(x => x.DolarA, new { @class = "input cellSize", type = "text", id = "DolarA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.adsf>*@
+                                    @Html.TextBoxFor(x => x.DolarS, new { @class = "input cellSize", type = "text", id = "DolarS" })
+                                </th>
+                            </tr>
+                            <!--        CHF-->
+                            <tr>
+                                <th>İsviçre Frangı (CHF)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ifaf>*@
+                                    @Html.TextBoxFor(x => x.IsvicFranA, new { @class = "input cellSize", type = "text", id = "CHFA"
+                                    })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ifsf>*@
+                                    @Html.TextBoxFor(x => x.IsvicFranS, new { @class = "input cellSize", type = "text", id = "CHFS"
+                                    })
+                                </th>
+                            </tr>
+                            <!--        STERLİN-->
+                            <tr>
+                                <th>İngiliz Sterlini</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.isaf>*@
+                                    @Html.TextBoxFor(x => x.SterlinA, new { @class = "input cellSize", type = "text", id =
+                                    "SterlinA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.issf>*@
+                                    @Html.TextBoxFor(x => x.SterlinS, new { @class = "input cellSize", type = "text", id =
+                                    "SterlinS" })
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--Döviz2-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <tr>
+                                    <td></td>
+                                    <td>ALIŞ KURU</td>
+                                    <td>SATIŞ KURU</td>
+                                </tr>
+                            </thead>
+
+                            <!--        SEK-->
+                            <tr>
+                                <th>İsveç Kronu (SEK)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.adaf>*@
+                                    @Html.TextBoxFor(x => x.IsvecKronuA, new { @class = "input cellSize", type = "text", id = "IsvecKronuA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.adsf>*@
+                                    @Html.TextBoxFor(x => x.IsvecKronuS, new { @class = "input cellSize", type = "text", id = "IsvecKronuS" })
+                                </th>
+                            </tr>
+                            <!--        NOK-->
+                            <tr>
+                                <th>Norveç K. (NOK)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.euaf>*@
+                                    @Html.TextBoxFor(x => x.NorvecKronuA, new { @class = "input cellSize", type = "text", id = "NorvecKronuA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.eusf>*@
+                                    @Html.TextBoxFor(x => x.NorvecKronuS, new { @class = "input cellSize", type = "text", id = "NorvecKronuS" })
+                                </th>
+                            </tr>
+                            <!--        DKK-->
+                            <tr>
+                                <th>Danimarka K. (DKK)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.dkaf>*@
+                                    @Html.TextBoxFor(x => x.DankronA, new { @class = "input cellSize", type = "text", id = "DKKA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.dksf>*@
+                                    @Html.TextBoxFor(x => x.DankronS, new { @class = "input cellSize", type = "text", id = "DKKS" })
+                                </th>
+                            </tr>
+                            <!--        JPY-->
+                            <tr>
+                                <th>Japon Yeni (JPY)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ifaf>*@
+                                    @Html.TextBoxFor(x => x.JaponYeniA, new { @class = "input cellSize", type = "text", id = "JaponYeniA"
+                               })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ifsf>*@
+                                    @Html.TextBoxFor(x => x.JaponYeniS, new { @class = "input cellSize", type = "text", id = "JaponYeniS"
+                               })
+                                </th>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <!--Döviz3-->
+                    <div class="col-md-4 col-sm-6">
+                        <table class="kurTablosu">
+                            <thead class="tabloBaslik">
+                                <tr>
+                                    <td></td>
+                                    <td>ALIŞ KURU</td>
+                                    <td>SATIŞ KURU</td>
+                                </tr>
+                            </thead>
+                            <!--        KD-->
+                            <tr>
+                                <th>Kanada Doları (KD)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.adaf>*@
+                                    @Html.TextBoxFor(x => x.KanDolariA, new { @class = "input cellSize", type = "text", id = "KanDolariA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.adsf>*@
+                                    @Html.TextBoxFor(x => x.KanDolariS, new { @class = "input cellSize", type = "text", id = "KanDolariS" })
+                                </th>
+                            </tr>
+                            <!--        AD-->
+                            <tr>
+                                <th>Avusturalya D. (AD)</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.euaf>*@
+                                    @Html.TextBoxFor(x => x.AvusDolariA, new { @class = "input cellSize", type = "text", id = "AvusDolariA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.eusf>*@
+                                    @Html.TextBoxFor(x => x.AvusDolariS, new { @class = "input cellSize", type = "text", id = "AvusDolariS" })
+                                </th>
+                            </tr>
+                            <!--        RUB-->
+                            <tr>
+                                <th>Rus Rublesi</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.ifaf>*@
+                                    @Html.TextBoxFor(x => x.RusRubleA, new { @class = "input cellSize", type = "text", id = "RusRubleA"
+                               })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.ifsf>*@
+                                    @Html.TextBoxFor(x => x.RusRubleS, new { @class = "input cellSize", type = "text", id = "RusRubleS"
+                               })
+                                </th>
+                            </tr>
+                            <!--        RIYAL-->
+                            <tr>
+                                <th>Riyal</th>
+                                <th>
+                                    @*<input name="alisKuru" type="text" value=@ViewBag.dkaf>*@
+                                    @Html.TextBoxFor(x => x.RiyalA, new { @class = "input cellSize", type = "text", id = "RiyalA" })
+                                </th>
+                                <th>
+                                    @*<input name="satisKuru" type="text" value=@ViewBag.dksf>*@
+                                    @Html.TextBoxFor(x => x.RiyalS, new { @class = "input cellSize", type = "text", id = "RiyalS" })
+                                </th>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" style="text-align:center">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <table class="kurTablosu">
+                        <thead class="tabloBaslik">
+                            <tr>
+                                <td>TARİH</td>
+                                <td>SAAT</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>
+                                @*<input name="alisKuru" type="text" value=@ViewBag.isaf>*@
+                                @Html.TextBoxFor(x => x.Logtarih, new { @class = "inputField datePicker", id = "logtarih", type =
+                                "date", name = "Eski Tabela", onchange = "gettime()" })
+                            </th>
+                            <th>
+                                @Html.DropDownListFor(x => x.Saat, new SelectList(Model.Saatler).ToList(),
+                                "Seçiniz", new
+                                {
+                                @Class = "comboBox",
+                                @id = "saatler"
+                                })
+                            </th>
+                            <th>
+                                <button type="button" class="btn-primary" onclick="logGetir()">SORGULA</button>
+                            </th>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid" style="margin-top: 30px;text-align:center;border: groove steelblue;">
+            <div class="row" style="margin:3px;">
+                <div class="col-md-3 col-sm-6">
+                    <button type="submit" class="btn btn-dark btnTabela">KAYDET</button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="Tabela">
+                        <button type="button" class="btn btn-dark btnTabela">İPTAL</button>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <button type="submit" class="btn btn-dark btnTabela">TCMB GÜNCELLE</button>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <button type="submit" class="btn btn-dark btnTabela ">YAZDIR</button>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

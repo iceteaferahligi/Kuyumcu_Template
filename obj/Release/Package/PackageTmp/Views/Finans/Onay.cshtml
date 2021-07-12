@@ -1,0 +1,157 @@
+﻿@model Kuyumcu.Models.FinansOzel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #Araclar {
+            margin: 8px;
+        }
+
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        #GridFaturaPartial table {
+            margin: auto;
+        }
+    </style>
+</head>
+<div class="navbar" style="background-color:#394F85">
+    <a class="navbar-brand">
+        <img src="~/Images/logoson.png"
+             style="width: 125px;height:38px;">
+    </a>
+    <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+    <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+    <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+    <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+    <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+    <a href="/Finans" button class="btn btn-light">FİNANS</a>
+    <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+    <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+</div>
+
+
+<div id="Araclar" class="collapsed">
+    <a href="Onay" button class="btn btn-dark araclarMenu">FATURA EKRANI</a>
+    <a href="BankaTanim" button class="btn btn-dark araclarMenu">BANKA TANIM</a>
+    <a href="KomisyonTanim" button class="btn btn-dark araclarMenu">KOMİSYON TANIM</a>
+    <a href="Gelir_Gider" button class="btn btn-dark araclarMenu">GELİR-GİDER</a>
+    <a href="Kasa" button class="btn btn-dark araclarMenu">KASA</a>
+    <a href="BankaIslemleri" button class="btn btn-dark araclarMenu">BANKA İŞLEMLERİ</a>
+    <a href="BankadanOdeme" button class="btn btn-dark araclarMenu">BANKADAN ÖDEME</a>
+    <a href="ToptanciAlim" button class="btn btn-dark araclarMenu">TOPTANCI ALIM</a>
+    <a href="ToptanciyaOdeme" button class="btn btn-dark araclarMenu">TOPTANCIYA ÖDEME</a>
+</div>
+<script>
+    var key;
+    function OnRowClick(s, e) {
+        var grid = MVCxClientGridView.Cast(s);
+        key = grid.GetRowKey(e.visibleIndex);
+        alert(key);
+        $.ajax({
+            dataType: "html",
+            type: "GET",
+            url: "/Finans/GridFaturaDetayPartialPartial",
+            data: { id: key }
+            //success: function () {
+            //    window.location.reload(true);
+
+            //}
+        });
+    }
+</script>
+<style>
+    #finansOnay {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+        #finansOnay td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #finansOnay tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #finansOnay tr:hover {
+            background-color: #ddd;
+        }
+
+        #finansOnay th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+    #GridFaturaPartial table {
+        /*margin: auto;*/
+        width: 85%;
+        margin-bottom: 25px;
+    }
+
+
+
+</style>
+
+
+<div id="GridFaturaPartial">
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    @Html.DevExpress().GetScripts(
+        new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new Script { ExtensionSuite = ExtensionSuite.Editors },
+        new Script { ExtensionSuite = ExtensionSuite.GridView }
+    )
+
+    @Html.Action("GridFaturaPartial")
+
+    @Html.Action("GridFaturaDetayPartialPartial")
+
+
+</div>
+
+
+</html>

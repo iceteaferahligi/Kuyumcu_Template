@@ -1,0 +1,374 @@
+﻿@*@model Kuyumcu.Models.Kuyumcu.StokKart*@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <link href="~/Content/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            font-weight: 750 !important;
+        }
+
+        #Araclar {
+            margin: 8px;
+        }
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            padding: 0px 1px;
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .navbar .btn {
+            color: #394F85;
+        }
+
+        .btn {
+            font-weight: 500;
+        }
+
+        span {
+            /*color: #fff;*/
+        }
+    </style>
+
+</head>
+
+
+<body id="page-top">
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="../KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+
+
+
+
+    <div id="Araclar" class="collapsed">
+        <a href="/KuyumcuSorgu/Raporlar" button class="btn btn-dark araclarMenu">RAPORLAR</a>
+        <a href="/KuyumcuSorgu/AlyansSatis" button class="btn btn-dark araclarMenu">ALYANS/PIRLANTA SATIŞ</a>
+        <a href="/KuyumcuSorgu/AlyansSiparis" button class="btn btn-dark araclarMenu">ALYANS/PIRLANTA SİPARİŞ</a>
+        <a href="/KuyumcuSorgu/AlyansTamir" button class="btn btn-dark araclarMenu">ALYANS/PIRLANTA TAMİR</a>
+        <a href="/KuyumcuSorgu/Bugun" button class="btn btn-dark araclarMenu">BUGÜN</a>
+        <a href="/KuyumcuSorgu/Pozisyonlar" button class="btn btn-dark araclarMenu">POZİSYONLAR</a>
+        <a href="/KuyumcuSorgu/Sayim" button class="btn btn-dark araclarMenu">SAYIM</a>
+    </div>
+
+
+    <div class="row">
+        <!-- Page Wrapper -->
+        <div class="col-md-2">
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#394F85;">
+
+                <hr class="sidebar-divider my-0">
+
+
+                <li class="nav-item active" style="font-size:20pt">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-chart-line"></i>
+                        <span style="font-size:15px; color: #fff;">RAPORLAR</span>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCrmRapor"
+                       aria-expanded="true" aria-controls="collapseCrmRapor">
+                        <i class="fas fa-fw fa-business-time"></i>
+                        <span>CRM Rapor</span>
+                    </a>
+                    <div id="collapseCrmRapor" class="collapse" aria-labelledby="headingCrm" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">CRM Rapor</h6>
+                            <a class="collapse-item" href=MusteriListesi>Müşteri Listesi</a>
+                            <!--        <a class="collapse-item" href=""></a>-->
+                        </div>
+                    </div>
+                </li>
+
+
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="StokRapor" data-toggle="collapse" data-target="#collapseStokRapor"
+                       aria-expanded="true" aria-controls="collapseStokRapor">
+                        <i class="fas fa-fw fa-boxes"></i>
+                        <span>Stok Rapor</span>
+                    </a>
+                    <div id="collapseStokRapor" class="collapse" aria-labelledby="headingStok"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Stok Raporları</h6>
+                            <a class="collapse-item" href="StokListesi">Stok Listesi</a>
+                            <a class="collapse-item" href="RafOmru">Raf Ömrü</a>
+                            <a class="collapse-item" href="GrisKontrol">Giriş Kontrol</a>
+                            <a class="collapse-item" href="PirlantaListesi">Pırlanta Stok</a>
+                            <a class="collapse-item" href="PirlantaSatis">Pırlanta Satış</a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSatisRapor"
+                       aria-expanded="true" aria-controls="collapsSatisRapor">
+                        <i class="fas fa-fw fa-wallet"></i>
+                        <span>Satış Rapor</span>
+                    </a>
+                    <div id="collapseSatisRapor" class="collapse" aria-labelledby="headingSatis"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Satış Raporları</h6>
+                            <a class="collapse-item" href="SatisAyrinti">Satış Ayrıntı</a>
+                            <a class="collapse-item" href="FaturaGirisRapor">Fatura Giriş Rapor</a>
+                        </div>
+                    </div>
+                </li>
+
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCariRapor"
+                       aria-expanded="true" aria-controls="collapseCariRapor">
+                        <i class="fas fa-fw fa-exchange-alt"></i>
+                        <span>Cari Rapor</span>
+                    </a>
+                    <div id="collapseCariRapor" class="collapse" aria-labelledby="headingCari" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Cari Raporlar</h6>
+                            <a class="collapse-item" href="MusteriEkstre">Müşteri Ekstre</a>
+                            <a class="collapse-item" href="ToptanciEkstre">Toptancı Ekstre</a>
+                            <a class="collapse-item" href="BankaEkstre">Banka Ekstre</a>
+                            <a class="collapse-item" href="StokEkstre">Stok Ekstre</a>
+                        </div>
+                    </div>
+                </li>
+
+                <hr class="sidebar-divider d-none d-md-block">
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFinansRapor"
+                       aria-expanded="true" aria-controls="collapseFinansRapor">
+                        <i class="fas fa-fw fa-chart-bar"></i>
+                        <span>Finans Rapor</span>
+                    </a>
+                    <div id="collapseFinansRapor" class="collapse" aria-labelledby="headingFinans"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Finans Raporları</h6>
+                            <a class="collapse-item" href="BankaRapor">Banka Rapor</a>
+                            <!--                    <a class="collapse-item" href=""></a>-->
+                        </div>
+                    </div>
+                </li>
+
+                <hr class="sidebar-divider d-none d-md-block">
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSiparisVeTamir"
+                       aria-expanded="true" aria-controls="collapseSiparisVeTamir">
+                        <i class="fas fa-fw fa-hammer"></i>
+                        <span>Sipariş ve Tamir Rapor</span>
+                    </a>
+                    <div id="collapseSiparisVeTamir" class="collapse" aria-labelledby="headingSiparisTamir"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Sipariş ve Tamir Raporları</h6>
+                            <a class="collapse-item" href="AlyanSiparis">Alyans Sipariş Ayrıntı</a>
+                            <!--                    <a class="collapse-item" href=""></a>-->
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+            </ul>
+        </div>
+        <div class="col-md-10" style="padding: 25px;">
+
+            <div>
+
+                <script src="/Scripts/jszip.min.js"></script>
+                <link href="/Content/dx.common.css" rel="stylesheet">
+                <link href="/Content/dx.light.css" rel="stylesheet">
+                <script src="/Scripts/jquery-2.2.3.js"></script>
+                <script src="/Scripts/bootstrap.js"></script>
+                <script src="/Scripts/cldr.js"></script>
+                <script src="/Scripts/cldr/event.js"></script>
+                <script src="/Scripts/cldr/supplemental.js"></script>
+                <script src="/Scripts/cldr/unresolved.js"></script>
+                <script src="/Scripts/globalize.js"></script>
+                <script src="/Scripts/globalize/message.js"></script>
+                <script src="/Scripts/globalize/number.js"></script>
+                <script src="/Scripts/globalize/currency.js"></script>
+                <script src="/Scripts/globalize/date.js"></script>
+                <script src="/Scripts/dx.all.debug.js"></script>
+                <script src="/Scripts/aspnet/dx.aspnet.data.js"></script>
+                <script src="/Scripts/aspnet/dx.aspnet.mvc.js"></script>
+            </div>
+
+
+            @(Html.DevExtreme().DataGrid()
+                                                        .ShowBorders(true)
+                                                        .DataSource(d => d.WebApi().Controller("Orders").Key("StokId"))
+                                                        .Columns(columns =>
+                                                        {
+                                                            columns.Add().DataField("StokId");
+                                                            columns.Add().DataField("StokCinsi");
+                                                            columns.Add().DataField("StokGrubu");
+                                                            columns.Add().DataField("StokAltGrubu");
+                                                            columns.Add().DataField("ToptanciAdi");
+                                                            columns.Add().DataField("Tarih").DataType(GridColumnDataType.Date).Format("dd/MM/yyyy");
+                                                            columns.Add().DataField("Miktar");
+                                                            columns.Add().DataField("BirimFiyat");
+                                                            columns.Add().DataField("Maliyet");
+                                                            columns.Add().DataField("SatisTutari").Caption("Satış Tutarı");
+                                                            columns.Add().DataField("Ozellik1").Caption("Özellik 1");
+                                                            columns.Add().DataField("Ozellik2").Caption("Özellik 2");
+                                                            columns.Add().DataField("Ozellik3").Caption("Özellik 3");
+                                                            columns.Add().DataField("Ozellik4").Caption("Özellik 4");
+
+                                                        })
+                                                         .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+                                                         .Selection(s => s.Mode(SelectionMode.Multiple))
+                                                         .Paging(p => p.PageSize(10))
+                                                         .FilterRow(f => f.Visible(true))
+                                                         .HeaderFilter(f => f.Visible(true))
+                                                         .GroupPanel(p => p.Visible(true))
+                                                         .Grouping(g => g.AutoExpandAll(false))
+                                                         .AllowColumnReordering(true)
+                                                         .AllowColumnResizing(true)
+                                                         .RemoteOperations(true)
+                                                         .OnSelectionChanged("selection_changed")
+                                                         .Summary(s => s
+                                                         .TotalItems(totalItems =>
+                                                         {
+                                                             totalItems.Add().Column("StokId").SummaryType(SummaryType.Count);
+                                                         })
+                                                         .GroupItems(groupItems =>
+                                                         {
+                                                             groupItems.Add().SummaryType(SummaryType.Count);
+                                                         })
+                                                        )
+                                                         .ColumnAutoWidth(true)
+            )
+
+        </div>
+
+    </div>
+    <div style="width: 500px; height: 300px; border:2px groove; margin:auto">
+        <img class="productphoto" style="width: 100%" />
+    </div>
+
+
+    <script>
+
+        function selection_changed(selectedItems) {
+            var data = selectedItems.selectedRowsData[0];
+            if (data) {
+                $(".productphoto").attr("src", data.Image);
+            }
+        }
+
+        function OnRowClick(s, e) {
+            var grid = MVCxClientGridView.Cast(s);
+            key = grid.GetRowKey(e.visibleIndex);
+            alert(key);
+            //$.ajax({
+            //    dataType: "html",
+            //    type: "POST",
+            //    url: "/Finans/BankaIslemleri1",
+            //    data: { islemno: key },
+            //    success: function (data) {
+            //        data = JSON.parse(data);
+            //        var array = data.split(", ", 9);
+
+            //        document.getElementById("fisNo").value = array[0];
+            //        document.getElementById("fisTarih").value = array[1];
+            //        document.getElementById("bankaAdi").value = array[2];
+            //        document.getElementById("cariHesap").value = array[3];
+            //        document.getElementById("komOrani").value = array[4];
+            //        document.getElementById("komTutari").value = array[5];
+            //        document.getElementById("tutar").value = array[6];
+
+
+            //    }
+            //});
+        }
+
+
+
+        !function (t) {
+            "use strict";
+            t("#sidebarToggle, #sidebarToggleTop").on("click", function (o) {
+                t("body").toggleClass("sidebar-toggled"), t(".sidebar").toggleClass("toggled"), t(".sidebar").hasClass("toggled") && t(".sidebar .collapse").collapse("hide")
+            }), t(window).resize(function () {
+                t(window).width() < 768 && t(".sidebar .collapse").collapse("hide")
+            }), t("body.fixed-nav .sidebar").on("mousewheel DOMMouseScroll wheel", function (o) {
+                if (768 < t(window).width()) {
+                    var e = o.originalEvent, l = e.wheelDelta || -e.detail;
+                    this.scrollTop += 30 * (l < 0 ? 1 : -1), o.preventDefault()
+                }
+            }), t(document).on("scroll", function () {
+                100 < t(this).scrollTop() ? t(".scroll-to-top").fadeIn() : t(".scroll-to-top").fadeOut()
+            }), t(document).on("click", "a.scroll-to-top", function (o) {
+                var e = t(this);
+                t("html, body").stop().animate({ scrollTop: t(e.attr("href")).offset().top }, 1e3, "easeInOutExpo"), o.preventDefault()
+            })
+        }(jQuery);
+
+    </script>
+
+</body>
+
+</html>
+
+

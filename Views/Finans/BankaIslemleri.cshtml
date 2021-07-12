@@ -1,0 +1,239 @@
+﻿@model Kuyumcu.Models.Kuyumcu.StokHareket
+
+@{
+
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ercan Kardeşler Kuyumculuk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script>
+        var key;
+        function OnRowClick(s, e) {
+            var grid = MVCxClientGridView.Cast(s);
+            key = grid.GetRowKey(e.visibleIndex);
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BankaIslemleri1",
+                data: { islemno: key },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    var array = data.split(", ", 9);
+
+                    document.getElementById("fisNo").value = array[0];
+                    document.getElementById("fisTarih").value = array[1];
+                    document.getElementById("bankaAdi").value = array[2];
+                    document.getElementById("cariHesap").value = array[3];
+                    document.getElementById("komOrani").value = array[4];
+                    document.getElementById("komTutari").value = array[5];
+                    document.getElementById("tutar").value = array[6];
+                    //document.getElementById("taksit").value = array[7]
+
+
+                }
+            });
+        }
+        function getOnay() {
+            var radbtn;
+
+            if (document.getElementById('defaultChecked').checked) {
+                radbtn = true;
+            } else if (document.getElementById('defaultUnchecked').checked) {
+                radbtn = false;
+            }
+
+
+            $.ajax({
+                dataType: "html",
+                type: "POST",
+                url: "/Finans/BankaIslemleri2",
+                data: { islemno: key, radiobtn: radbtn },
+                success: function () {
+                    window.location.reload(true);
+
+                }
+            });
+        }
+    </script>
+
+    <style>
+        #Araclar {
+            margin: 8px;
+        }
+
+        .araclarMenu {
+            display: inline;
+            height: 45px;
+            /*width: 100px; !* Optional to keep buttons same size *!*/
+            text-align: center;
+            background-color: #394F85;
+            padding: 2px 8px;
+        }
+
+        .midsoftLogo {
+            width: 5%;
+            height: 50px;
+            /*float:right;*/
+            padding-top: 3px;
+            position: absolute;
+            right: 25px;
+        }
+
+        #bar.searchBar input[type=text] {
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid grey;
+            float: left;
+            width: 50%;
+            background: #f1f1f1;
+        }
+
+        #bar.searchBar button {
+            float: left;
+            /*width: 14%;*/
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+        .fisOnay {
+            margin: 10px;
+            text-align: center;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .fisOnayInput {
+            text-align: center;
+            border-style: inset;
+            background-color: whitesmoke;
+            width: 100%;
+        }
+        #bankabakiyepartial table{
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" style="background-color:#394F85">
+        <a class="navbar-brand">
+            <img src="~/Images/logoson.png"
+                 style="width: 125px;height:38px;">
+        </a>
+        <a href="/Anasayfa" button class="btn btn-light">ANA SAYFA</a>
+        <a href="/Musteri/MusteriIslemleri" button class="btn btn-light">MÜŞTERİ İŞLEM</a>
+        <a href="/Kuyumcu/Kuyumcu" button class="btn btn-light">KUYUMCU</a>
+        <a href="/KuyumcuSorgu" button class="btn btn-light">SORGU</a>
+        <a href="/PersonelTakip" button class="btn  btn-light">PERSONEL</a>
+        <a href="/Finans" button class="btn btn-light">FİNANS</a>
+        <a href="/Toptanci" button class="btn btn-light">TOPTANCI</a>
+        <a href="/Ayarlar" button class="btn btn-light ">AYARLAR</a>
+        <a href="../" button class="btn btn-light ">ÇIKIŞ YAP</a>
+    </div>
+    <div id="Araclar" class="collapsed">
+        <a href="Onay" button class="btn btn-dark araclarMenu">FATURA EKRANI</a>
+        <a href="BankaTanim" button class="btn btn-dark araclarMenu">BANKA TANIM</a>
+        <a href="KomisyonTanim" button class="btn btn-dark araclarMenu">KOMİSYON TANIM</a>
+        <a href="Gelir_Gider" button class="btn btn-dark araclarMenu">GELİR-GİDER</a>
+        <a href="Kasa" button class="btn btn-dark araclarMenu">KASA</a>
+        <a href="BankaIslemleri" button class="btn btn-dark araclarMenu">BANKA İŞLEMLERİ</a>
+        <a href="BankadanOdeme" button class="btn btn-dark araclarMenu">BANKADAN ÖDEME</a>
+        <a href="BorcEmanetIslemleri" button class="btn btn-dark araclarMenu">BORÇ-EMANET İŞLEMLERİ</a>
+        <a href="BorcEmanetDetay" button class="btn btn-dark araclarMenu">BORÇ-EMANET DETAY</a>
+        <a href="KKTahsilat" button class="btn btn-dark araclarMenu">KREDİ KARTI TAHSİLAT</a>
+    </div>
+
+    @{ Html.EnableClientValidation(false); }
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    @Html.DevExpress().GetScripts(
+        new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new Script { ExtensionSuite = ExtensionSuite.Editors },
+        new Script { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    <div style="margin:40px;">
+        @Html.Action("GridBankaIslemPartial")
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="display: block">
+                <div class="col-md-12">
+                    <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked="checked">
+                    <label class="custom-control-label" for="defaultChecked">
+                        Komisyonu Düşülerek Bankaya
+                        Aktarılsın
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+                    <label class="custom-control-label" for="defaultUnchecked">
+                        Komisyonu Düşülmeyerek Bankaya
+                        Aktarılsın
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 container-fluid" style="margin-top:15px;display: grid">
+        <table class="fisOnay">
+            <thead>
+                <tr>
+                    <th>Fiş No</th>
+                    <th>Fiş Tarihi</th>
+                    <th>Banka Adı</th>
+                    <th>Cari Hesap</th>
+                    <th>Komisyon Oranı</th>
+                    <th>Komisyon Tutar</th>
+                    <th>Tutar</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="fisOnayInput" id="fisNo" name="fisNo" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="fisTarih" name="fisTarih" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="bankaAdi" name="bankaAdi" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="cariHesap" name="cariHesap" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="komOrani" name="komOrani" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="komTutari" name="komTutari" readonly></td>
+                    <td><input type="text" class="fisOnayInput" id="tutar" name="tutar" readonly></td>
+                    <td>
+                        <input type="button" class="btn btn-success" value="Onay" onclick="getOnay()">
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="bankabakiyepartial">
+
+        @Html.Action("GridBankaBakiyePartial")
+
+    </div>
+
+
+</body>
+</html>
